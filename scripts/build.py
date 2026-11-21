@@ -9,6 +9,7 @@
 
 import datetime
 import html
+import re
 import json
 import os
 import shutil
@@ -98,7 +99,8 @@ def merge(c, fetched):
     if ov.get('address'):
         auto['본사 위치'] = ' '.join(ov['address'].split()[:2])  # 예: "경기도 이천시"
     if ov.get('ceo'):
-        auto['대표'] = ' · '.join(n.strip() for n in ov['ceo'].replace('/', ',').split(',') if n.strip())
+        ceo = re.sub(r'\(?각자\s*대표(이사)?\)?', '', ov['ceo'])
+        auto['대표'] = ' · '.join(n.strip() for n in ceo.replace('/', ',').split(',') if n.strip())
     ordered = {}
     for k in ('설립연도', '본사 위치', '대표', '직원 수', '상장 여부'):
         if k in info:
@@ -117,9 +119,10 @@ def merge(c, fetched):
 def logo_box(c, root):
     """로고가 있으면 그림을, 없으면 첫 글자 상자를 보여줘요."""
     if c.get('logo'):
-        return ('<div class="logo-box has-logo"><img src="%s%s" alt="%s 로고" loading="lazy" '
+        return ('<div class="logo-box has-logo%s"%s><img src="%s%s" alt="%s 로고" loading="lazy" '
                 'onerror="this.parentNode.classList.remove(\'has-logo\');this.parentNode.textContent=\'%s\'"></div>' % (
-                    root, e(c['logo']), e(c['name']), e(c['name'][0])))
+                    ' small-logo' if c.get('logoSmall') else '',
+                    (' style="background: %s"' % e(c['logoBg'])) if c.get('logoBg') else '', root, e(c['logo']), e(c['name']), e(c['name'][0])))
     return '<div class="logo-box" aria-hidden="true">%s</div>' % e(c['name'][0])
 
 
@@ -286,8 +289,12 @@ def main():
         fetched = read_json(os.path.join(FETCHED_DIR, c['id'] + '.json'))
         m = merge(c, fetched)
         lg = logos.get(c['id'])
-        if lg and c.get('logo') is not False and os.path.exists(os.path.join(ROOT, lg['path'])):
+        # 32px보다 작은 로고는 흐릿해서 첫 글자 상자를 써요
+        if lg and c.get('logo') is not False and os.path.exists(os.path.join(ROOT, lg['path'])) and lg.get('px', 64) >= 32:
             m['logo'] = lg['path']
+            m['logoSmall'] = lg.get('px', 64) < 64
+            if c.get('logo_bg'):
+                m['logoBg'] = c['logo_bg']
         companies.append(m)
 
     with open(os.path.join(ROOT, 'data', 'companies.js'), 'w', encoding='utf-8') as f:

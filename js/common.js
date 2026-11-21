@@ -90,7 +90,8 @@ var Atlas = (function () {
   // 로고가 있으면 그림, 없으면(또는 못 불러오면) 첫 글자 상자
   function logoBox(c) {
     if (!c.logo) return '<div class="logo-box" aria-hidden="true">' + initials(c) + '</div>';
-    return '<div class="logo-box has-logo"><img src="' + ROOT + esc(c.logo) + '" alt="' + esc(c.name) + ' 로고" loading="lazy" ' +
+    return '<div class="logo-box has-logo' + (c.logoSmall ? ' small-logo' : '') + '"' +
+      (c.logoBg ? ' style="background: ' + esc(c.logoBg) + '"' : '') + '><img src="' + ROOT + esc(c.logo) + '" alt="' + esc(c.name) + ' 로고" loading="lazy" ' +
       'onerror="this.parentNode.classList.remove(\'has-logo\');this.parentNode.textContent=\'' + initials(c) + '\'"></div>';
   }
 

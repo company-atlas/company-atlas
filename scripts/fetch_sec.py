@@ -23,25 +23,21 @@ def days(a, b):
 
 
 def periods(facts, names):
-    """기간(시작~끝)별 값을 모아요. 같은 기간이 여러 번 나오면 가장 최근에 낸 공시 값을 써요.
+    """기간(시작~끝)별 값을 모아요.
 
-    여러 이름 후보 중에서 가장 최근 기간까지 있는 이름을 골라요.
+    회사가 해마다 다른 이름(예: Revenues → RevenueFromContract…)으로 공시하기도 해서,
+    후보 이름을 모두 합친 뒤 같은 기간이면 가장 최근에 낸 공시 값을 써요.
     """
-    best = None
+    found = {}
     for name in names:
         units = facts.get('us-gaap', {}).get(name, {}).get('units', {}).get('USD', [])
-        found = {}
         for f in units:
             if 'start' not in f or f.get('form') not in ('10-K', '10-Q', '10-K/A', '10-Q/A', '10-KT', 'S-1', 'S-1/A'):
                 continue
             k = (f['start'], f['end'])
             if k not in found or f.get('filed', '') > found[k]['filed']:
                 found[k] = {'val': f['val'], 'filed': f.get('filed', '')}
-        if found:
-            latest = max(e for _, e in found)
-            if best is None or latest > best[0]:
-                best = (latest, {k: v['val'] for k, v in found.items()})
-    return best[1] if best else {}
+    return {k: v['val'] for k, v in found.items()}
 
 
 def split(vals):
