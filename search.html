@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>검색 결과 · Company Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page-shell">
+  <header id="site-header"></header>
+
+  <main class="wrap page">
+    <form class="search-box" action="search.html" method="get" role="search" style="max-width: none">
+      <label class="sr-only" for="q">기업명</label>
+      <input class="input" id="q" name="q" type="search" placeholder="기업명을 입력하세요">
+      <div class="selects" style="display: contents">
+        <label class="sr-only" for="country">국가</label>
+        <select class="select" id="country" name="country"><option value="">국가 전체</option></select>
+        <label class="sr-only" for="industry">산업</label>
+        <select class="select" id="industry" name="industry"><option value="">산업 전체</option></select>
+      </div>
+      <button class="btn" type="submit">검색</button>
+    </form>
+
+    <div class="result-head"><h1 id="result-title">검색 결과</h1></div>
+    <div class="result-list" id="results"></div>
+  </main>
+
+  <footer id="site-footer"></footer>
+</div>
+
+<script src="data/companies.js"></script>
+<script src="js/common.js"></script>
+<script src="js/search.js"></script>
+</body>
+</html>

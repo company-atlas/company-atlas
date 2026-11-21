@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Company Atlas · 세계 모든 기업의 정보를 쉽게</title>
+<meta name="description" content="기업명을 검색하거나, 국가·산업별로 둘러보세요. 한국·미국 상장사 정보를 쉽게 정리했어요.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page-shell">
+  <header id="site-header"></header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <h1>세계 모든 기업의 정보를 쉽게</h1>
+        <p>기업명을 검색하거나, 국가·산업별로 둘러보세요</p>
+        <form class="search-box" action="search.html" method="get" role="search">
+          <label class="sr-only" for="q">기업명</label>
+          <input class="input" id="q" name="q" type="search" placeholder="기업명을 입력하세요">
+          <div class="selects" style="display: contents">
+            <label class="sr-only" for="country">국가</label>
+            <select class="select" id="country" name="country"><option value="">국가 전체</option></select>
+            <label class="sr-only" for="industry">산업</label>
+            <select class="select" id="industry" name="industry"><option value="">산업 전체</option></select>
+          </div>
+          <button class="btn" type="submit">검색</button>
+        </form>
+      </div>
+    </section>
+
+    <div class="wrap home-sections">
+      <section class="sec">
+        <h2>산업별로 찾기</h2>
+        <div class="cat-grid" id="industry-cards"></div>
+      </section>
+      <section class="sec">
+        <h2>국가별로 찾기</h2>
+        <div class="row-wrap" id="country-chips"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+</div>
+
+<script src="data/companies.js"></script>
+<script src="js/common.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>
