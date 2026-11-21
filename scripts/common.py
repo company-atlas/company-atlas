@@ -54,6 +54,19 @@ def get_json(url, params=None, headers=None, pause=0.15):
     return json.loads(body)
 
 
+def get_bytes(url, params=None, headers=None):
+    """주소에서 파일(압축 파일 등)을 그대로 받아요. 시험할 때는 ATLAS_FIXTURES 폴더의 .bin 파일을 읽어요."""
+    if params:
+        url = url + '?' + urllib.parse.urlencode(params)
+    fixtures = os.environ.get('ATLAS_FIXTURES')
+    if fixtures:
+        with open(os.path.join(fixtures, fixture_key(url) + '.bin'), 'rb') as f:
+            return f.read()
+    req = urllib.request.Request(url, headers=headers or {})
+    with urllib.request.urlopen(req, timeout=120) as res:
+        return res.read()
+
+
 def fixture_key(url):
     """시험용 파일 이름: 인증키를 빼고 주소를 파일 이름으로 바꿔요."""
     parsed = urllib.parse.urlparse(url)

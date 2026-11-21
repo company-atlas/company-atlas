@@ -8,7 +8,7 @@ import datetime
 import math
 import os
 
-from common import FETCHED_DIR, get_json, load_companies, write_json
+from common import FETCHED_DIR, get_json, load_companies, read_json, write_json
 
 BASE = 'https://data.sec.gov/api/xbrl/companyfacts/CIK%s.json'
 CONCEPTS = {
@@ -32,7 +32,7 @@ def periods(facts, names):
         units = facts.get('us-gaap', {}).get(name, {}).get('units', {}).get('USD', [])
         found = {}
         for f in units:
-            if 'start' not in f or f.get('form') not in ('10-K', '10-Q', '10-K/A', '10-Q/A'):
+            if 'start' not in f or f.get('form') not in ('10-K', '10-Q', '10-K/A', '10-Q/A', '10-KT', 'S-1', 'S-1/A'):
                 continue
             k = (f['start'], f['end'])
             if k not in found or f.get('filed', '') > found[k]['filed']:
@@ -57,11 +57,10 @@ def split(vals):
     return annual, quarter
 
 
-def label_quarter(end):
-    d = datetime.date.fromisoformat(end)
-    # 끝나는 날이 분기 첫 며칠이면(예: 1월 2일) 앞 분기로 봐요
-    if d.day <= 7:
-        d = d - datetime.timedelta(days=8)
+def label_quarter(start, end):
+    """기간의 가운데 날짜가 속한 달력 분기로 이름을 붙여요. (예: 9월 28일~12월 27일 → 4분기)"""
+    s, e = datetime.date.fromisoformat(start), datetime.date.fromisoformat(end)
+    d = s + (e - s) / 2
     return '%02d.%dQ' % (d.year % 100, (d.month - 1) // 3 + 1)
 
 
@@ -71,20 +70,33 @@ def collect(facts):
     annual = []
     for k in ends_a:
         row = ['FY%s' % k[1][:4]] + [series[m][0].get(k) for m in ('rev', 'op', 'ni')]
-        if all(v is not None for v in row[1:]):
+        if row[1] is not None and row[3] is not None:
             annual.append(row)
     ends_q = sorted({k for k in series['rev'][1]}, key=lambda k: k[1])
     quarterly = []
     for k in ends_q:
-        row = [label_quarter(k[1])] + [series[m][1].get(k) for m in ('rev', 'op', 'ni')]
-        if all(v is not None for v in row[1:]):
+        row = [label_quarter(*k)] + [series[m][1].get(k) for m in ('rev', 'op', 'ni')]
+        if row[1] is not None and row[3] is not None:
             quarterly.append(row)
     return annual[-5:], quarterly[-8:]
 
 
 def eok(v):
-    """달러를 억 달러로 (소수 없이, 반올림)."""
-    return int(math.floor(v / 1e8 + 0.5))
+    """달러를 억 달러로 (소수 없이, 반올림). 값이 없으면 None."""
+    return None if v is None else int(math.floor(v / 1e8 + 0.5))
+
+
+def ciks(headers):
+    """티커 → SEC 고유번호(CIK) 표. 한 달에 한 번만 새로 받아요."""
+    cache_path = os.path.join(FETCHED_DIR, '_sec_ciks.json')
+    cache = read_json(cache_path) or {}
+    fresh = cache.get('saved', '') >= (datetime.date.today() - datetime.timedelta(days=30)).isoformat()
+    if cache.get('ciks') and fresh:
+        return cache['ciks']
+    data = get_json('https://www.sec.gov/files/company_tickers.json', headers=headers)
+    out = {str(v['ticker']).upper(): str(v['cik_str']).zfill(10) for v in data.values()}
+    write_json(cache_path, {'saved': datetime.date.today().isoformat(), 'ciks': out})
+    return out
 
 
 def main():
@@ -94,8 +106,21 @@ def main():
         return True
     headers = {'User-Agent': 'CompanyAtlas %s' % email, 'Accept-Encoding': 'identity'}
     ok = True
+    table = None
     for c in load_companies():
-        cik = (c.get('sources_ids') or {}).get('sec_cik')
+        ids = c.get('sources_ids') or {}
+        cik = ids.get('sec_cik')
+        if not cik and ids.get('ticker'):
+            try:
+                table = table or ciks(headers)
+            except Exception as e:
+                print('[실패] SEC 고유번호 목록을 받지 못했어요: %s' % e)
+                return False
+            cik = table.get(ids['ticker'].upper())
+            if not cik:
+                print('[실패] %s: 티커 %s를 SEC에서 찾지 못했어요' % (c['name'], ids['ticker']))
+                ok = False
+                continue
         if not cik:
             continue
         try:

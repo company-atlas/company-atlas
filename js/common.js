@@ -4,7 +4,11 @@ var Atlas = (function () {
   // 이 페이지가 사이트 맨 위 폴더에서 얼마나 깊이 있는지 ('' 또는 '../../')
   var ROOT = window.ATLAS_ROOT || '';
   var COUNTRIES = ['한국', '미국'];
+  // 홈 화면에 카드로 보여주는 주요 산업 8개
   var INDUSTRIES = ['반도체·전자', '자동차', 'IT·소프트웨어', '금융·은행', '바이오·제약', '에너지·화학', '유통·소비재', '통신·미디어'];
+  // 전체 보기·검색 칸에만 나오는 그 밖의 산업
+  var MORE_INDUSTRIES = ['항공우주', '지주·투자'];
+  var ALL_INDUSTRIES = INDUSTRIES.concat(MORE_INDUSTRIES);
 
   var ICON_PATHS = {
     '반도체·전자': '<rect x="7" y="7" width="10" height="10" rx="1.5"/><rect x="10" y="10" width="4" height="4"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/>',
@@ -99,7 +103,7 @@ var Atlas = (function () {
   document.addEventListener('DOMContentLoaded', function () { header(); footer(); fixLocalLinks(); });
 
   return {
-    COUNTRIES: COUNTRIES, INDUSTRIES: INDUSTRIES, icon: icon, esc: esc, companies: companies,
+    COUNTRIES: COUNTRIES, INDUSTRIES: INDUSTRIES, ALL_INDUSTRIES: ALL_INDUSTRIES, icon: icon, esc: esc, companies: companies,
     find: find, param: param, count: count, num: num, toKrwTrillion: toKrwTrillion, initials: initials,
     companyUrl: companyUrl, ROOT: ROOT
   };

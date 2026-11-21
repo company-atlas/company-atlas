@@ -17,7 +17,8 @@ from common import FETCHED_DIR, ROOT, load_companies, read_json
 
 KST = datetime.timezone(datetime.timedelta(hours=9))
 COLORS = ['var(--s1)', 'var(--s2)', 'var(--s3)', 'var(--s4)', 'var(--s5)', 'var(--s6)']
-SERIES = [('매출', 'var(--s1)'), ('영업이익', 'var(--s2)'), ('순이익', 'var(--s3)')]
+SERIES_COLORS = ['var(--s1)', 'var(--s2)', 'var(--s3)']
+DEFAULT_LABELS = ['매출', '영업이익', '순이익']
 NAV = [('about', '소개'), ('info', '핵심 정보'), ('biz', '사업'), ('nums', '숫자'), ('perf', '실적'), ('history', '연혁'), ('rivals', '경쟁사')]
 
 
@@ -40,37 +41,67 @@ def to_krw_trillion(value, unit, rate):
 def merge(c, fetched):
     """손으로 쓴 내용에 자동 수집 숫자를 덮어써요. 수집 값이 없으면 예비 값을 써요."""
     fin = dict(c['financials_text'])
+    fin.setdefault('labels', DEFAULT_LABELS)
     fb = c.get('financials_fallback', {})
-    src = fetched if fetched and fetched.get('annual') else None
-    fin['annual'] = src['annual'] if src else fb.get('annual', [])
-    fin['quarterly'] = src['quarterly'] if src and src.get('quarterly') else fb.get('quarterly', [])
+    src = fetched if fetched and (fetched.get('annual') or fetched.get('quarterly')) else None
+    # 자동 수집 값이 있으면 그것을, 없는 칸은 손으로 넣은 예비 값을 써요
+    fin['annual'] = (src or {}).get('annual') or fb.get('annual', [])
+    fin['quarterly'] = (src or {}).get('quarterly') or fb.get('quarterly', [])
     fin['source'] = src['source'] if src else '직접 정리'
 
     out = {k: v for k, v in c.items() if k not in ('financials_fallback', 'financials_text', 'sources_ids')}
     out['financials'] = fin
 
     # 숫자로 보기의 매출·영업이익은 가장 최근 연간 실적으로 자동 갱신
-    if fin['annual']:
+    cap = [h for h in c['highlights'] if h['label'] == '시가총액']
+    out['highlights'] = cap
+    if fin['annual'] and fin['annual'][-1][1] is not None:
         label, rev, op = fin['annual'][-1][0], fin['annual'][-1][1], fin['annual'][-1][2]
+        names = fin['labels']
         year_word = label[2:] + ' 회계연도' if label.startswith('FY') else label + '년'
         unit = fin['unit']
         if unit == '조 원':
             per_day = rev * 10000 / 365  # 억 원
-            day_text = '하루 평균 약 %s억 원어치를 판 셈' % num(round(per_day, -3) if per_day >= 1000 else round(per_day))
+            day_text = '하루 평균 약 %s억 원' % num(round(per_day, -3) if per_day >= 1000 else round(per_day))
         else:
-            day_text = '하루 평균 약 %s억 달러어치를 판 셈' % num(rev / 365)
-        cap = [h for h in c['highlights'] if h['label'] == '시가총액']
-        out['highlights'] = [
-            {'value': rev, 'unit': unit, 'label': year_word + ' 매출', 'note': day_text},
-            {'value': op, 'unit': unit, 'label': year_word + ' 영업이익', 'note': '본업으로 남긴 돈'},
-        ] + cap
+            per_day = rev / 365
+            if per_day >= 1:
+                day_text = '하루 평균 약 %s억 달러' % num(per_day)
+            else:
+                day_text = '하루 평균 약 %s만 달러' % num(round(per_day * 10000, -2))
+        first = [{'value': rev, 'unit': unit, 'label': year_word + ' ' + names[0], 'note': day_text}]
+        if op is not None:
+            first.append({'value': op, 'unit': unit, 'label': year_word + ' ' + names[1],
+                          'note': '본업으로 남긴 돈' if op >= 0 else '본업에서 본 손실'})
+        out['highlights'] = first + cap
+    elif fin['annual'] and fin['annual'][-1][3] is not None:
+        label, ni = fin['annual'][-1][0], fin['annual'][-1][3]
+        year_word = label[2:] + ' 회계연도' if label.startswith('FY') else label + '년'
+        out['highlights'] = [{'value': ni, 'unit': fin['unit'], 'label': year_word + ' 순이익',
+                              'note': '1년 동안 최종적으로 남긴 돈' if ni >= 0 else '1년 동안의 최종 손실'}] + cap
 
     # 기업 개요: 손으로 쓴 값이 없을 때만 DART 값으로 채워요
     ov = (fetched or {}).get('overview') or {}
     info = dict(c['info'])
-    if ov.get('founded') and '설립연도' not in info:
-        info['설립연도'] = ov['founded']
-    out['info'] = [[k, v] for k, v in info.items()]
+    auto = {}
+    if ov.get('founded'):
+        auto['설립연도'] = ov['founded']
+    if ov.get('address'):
+        auto['본사 위치'] = ' '.join(ov['address'].split()[:2])  # 예: "경기도 이천시"
+    if ov.get('ceo'):
+        auto['대표'] = ' · '.join(n.strip() for n in ov['ceo'].replace('/', ',').split(',') if n.strip())
+    ordered = {}
+    for k in ('설립연도', '본사 위치', '대표', '직원 수', '상장 여부'):
+        if k in info:
+            ordered[k] = info[k]
+        elif k in auto:
+            ordered[k] = auto[k]
+    for k, v in info.items():
+        ordered.setdefault(k, v)
+    out['info'] = [[k, v] for k, v in ordered.items()]
+    if not out.get('website') and ov.get('website'):
+        w = ov['website']
+        out['website'] = w if w.startswith('http') else 'https://' + w
     return out
 
 
@@ -107,6 +138,7 @@ def render_company(c, companies, meta):
     for hl in c['highlights']:
         v = hl['value']
         big = ('약 ' if hl.get('approx') else '') + num(v, 1 if v % 1 else 0) + hl['unit']
+        big = big.replace('-', '−')
         note = hl['note']
         krw_line = ''
         if is_usd:
@@ -116,37 +148,61 @@ def render_company(c, companies, meta):
             if other:
                 cap = [x for x in other['highlights'] if x['label'] == '시가총액']
                 if cap:
-                    note += ' · %s의 약 %d배' % (other['name'], round(krw / cap[0]['value']))
+                    ratio = krw / cap[0]['value']
+                    note += ' · %s의 약 %s배' % (other['name'], ('%.1f' % ratio).rstrip('0').rstrip('.') if ratio < 10 else '%d' % round(ratio))
         parts.append('<div class="cell"><div class="big">%s</div>%s<div class="lbl" style="margin-top: 4px">%s · %s</div></div>' % (
             e(big), krw_line, e(hl['label']), e(note)))
     fx_note = ('<p class="note">원화 금액은 1달러 = %s원(%s)으로 환산한 대략적인 값이에요.</p>' % (num(fx['usdKrw'], 1), e(fx['asOf']))) if is_usd else ''
     h.append('<section class="sec" id="nums"><h2>숫자로 보기</h2>%s<div class="cards nums">%s</div></section>' % (fx_note, ''.join(parts)))
 
-    # 사업별 비중
-    items = c['share']['items']
+    # 사업별 비중 (자료가 있을 때만)
+    items = (c.get('share') or {}).get('items') or []
+    if not items:
+        pass
+    else:
+        h.append(render_share(c, items))
+
+    # 실적 흐름 (막대는 js/company.js가 그려요)
+    f = c['financials']
+    h.append(render_perf(c, f, is_usd))
+    rest_of_page(h, c, by_id, root, fx, meta, is_usd, f)
+    return ''.join(h)
+
+
+def render_share(c, items):
     total = sum(v for _, v in items)
     pcts = [round(v / total * 1000) / 10 for _, v in items]
     pcts[0] = round(pcts[0] + round(100 - sum(pcts), 1), 1)
     bar = ''.join('<div style="width: %s%%; background: %s"></div>' % (p, COLORS[i % 6]) for i, p in enumerate(pcts))
     legend = ''.join('<div><span class="sw" style="background: %s"></span><span class="n">%s</span><strong>%.1f%%</strong></div>' % (
         COLORS[i % 6], e(n), pcts[i]) for i, (n, _) in enumerate(items))
-    h.append('<section class="sec" id="share"><h2>어디서 돈을 버나요?</h2><div class="share-bar" role="img" aria-label="%s">%s</div>'
-             '<div class="share-legend">%s</div><p class="note">%s</p></section>' % (e(c['share']['title']), bar, legend, e(c['share']['note'])))
+    return ('<section class="sec" id="share"><h2>어디서 돈을 버나요?</h2><div class="share-bar" role="img" aria-label="%s">%s</div>'
+            '<div class="share-legend">%s</div><p class="note">%s</p></section>' % (e(c['share']['title']), bar, legend, e(c['share']['note'])))
 
-    # 실적 흐름 (막대는 js/company.js가 그려요)
-    f = c['financials']
+
+def render_perf(c, f, is_usd):
+    if not f['annual'] and not f['quarterly']:
+        return ('<section class="sec" id="perf"><h2>실적 흐름</h2><div class="empty">실적 자료를 준비하고 있어요. 매일 아침 자동 업데이트 때 공시 자료로 채워져요.</div>%s</section>' %
+                (('<p class="note">%s</p>' % e(c['fiscalNote'])) if c.get('fiscalNote') else ''))
+    labels = f['labels']
+    q_tab = ('<button type="button" class="tab" data-mode="quarterly">분기별 (최근 %d분기)</button>' % len(f['quarterly'])) if f['quarterly'] else ''
+    a_tab = ('<button type="button" class="tab" data-mode="annual">%s</button>' % e(f['annualTitle'])) if f['annual'] else ''
     cur_tabs = ('<div class="tabs" role="group" aria-label="통화"><button type="button" class="tab" data-cur="orig">달러</button>'
                 '<button type="button" class="tab" data-cur="krw">원화로 보기</button></div>') if is_usd else ''
-    h.append('<section class="sec" id="perf"><h2>실적 흐름</h2><div class="chart-controls"><div class="tabs" role="group" aria-label="기간">'
-             '<button type="button" class="tab" data-mode="annual">%s</button><button type="button" class="tab" data-mode="quarterly">분기별 (최근 %d분기)</button></div>%s</div>'
-             '<div class="legend">%s<span class="unit" id="unit"></span></div>'
-             '<div class="chart-scroll"><div class="chart" id="chart" role="img"></div><div class="chart-labels" id="chart-labels"></div></div>'
-             '<table class="fin-table" id="fin-table"><thead><tr><th scope="col">기간</th><th scope="col">매출</th><th scope="col">영업이익</th><th scope="col">순이익</th></tr></thead><tbody></tbody></table>'
-             '<p class="chart-note" id="chart-note"></p>%s</section>' % (
-                 e(f['annualTitle']), len(f['quarterly']), cur_tabs,
-                 ''.join('<span><span class="sw" style="background: %s"></span>%s</span>' % (col, n) for n, col in SERIES),
-                 ('<p class="note">%s</p>' % e(c['fiscalNote'])) if c.get('fiscalNote') else ''))
+    return ('<section class="sec" id="perf"><h2>실적 흐름</h2><div class="chart-controls"><div class="tabs" role="group" aria-label="기간">'
+            '%s%s</div>%s</div>'
+            '<div class="legend">%s<span class="unit" id="unit"></span></div>'
+            '<div class="chart-scroll"><div class="chart" id="chart" role="img"></div><div class="chart-labels" id="chart-labels"></div></div>'
+            '<table class="fin-table" id="fin-table"><thead><tr><th scope="col">기간</th>%s</tr></thead><tbody></tbody></table>'
+            '<p class="chart-note" id="chart-note"></p>%s%s</section>' % (
+                a_tab, q_tab, cur_tabs,
+                ''.join('<span><span class="sw" style="background: %s"></span>%s</span>' % (col, e(n)) for n, col in zip(labels, SERIES_COLORS)),
+                ''.join('<th scope="col">%s</th>' % e(n) for n in labels),
+                ('<p class="note">%s</p>' % e(f['labelNote'])) if f.get('labelNote') else '',
+                ('<p class="note">%s</p>' % e(c['fiscalNote'])) if c.get('fiscalNote') else ''))
 
+
+def rest_of_page(h, c, by_id, root, fx, meta, is_usd, f):
     h.append('<section class="sec" id="history"><h2>걸어온 길</h2><div class="timeline">%s</div></section>' % ''.join(
         '<div><strong>%s</strong><span>%s</span></div>' % (e(y), e(t)) for y, t in c['history']))
 
@@ -169,7 +225,6 @@ def render_company(c, companies, meta):
     fx_src = ' · 환율 1달러 = %s원(%s)' % (num(fx['usdKrw'], 1), e(fx['asOf'])) if is_usd else ''
     h.append('<div class="sources">출처: %s%s · 마지막 업데이트: %s</div>' % (e(src), fx_src, e(meta['updated'])))
     h.append('</div>')
-    return ''.join(h)
 
 
 PAGE = '''<!doctype html>

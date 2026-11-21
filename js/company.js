@@ -5,35 +5,41 @@ document.addEventListener('DOMContentLoaded', function () {
   var c = Atlas.find(window.ATLAS_COMPANY_ID);
   var root = document.getElementById('company');
   if (!c || !document.getElementById('chart')) return;
+  if (!c.financials.annual.length && !c.financials.quarterly.length) return;
 
   var e = Atlas.esc;
   var fx = window.ATLAS_META.fx;
   var f = c.financials;
   var SERIES = ['var(--s1)', 'var(--s2)', 'var(--s3)'];
-  var state = { mode: 'annual', cur: 'orig' };
+  var state = { mode: f.annual.length ? 'annual' : 'quarterly', cur: 'orig' };
 
   function rows() {
     var src = state.mode === 'annual' ? f.annual : f.quarterly;
     if (state.cur !== 'krw') return src;
     return src.map(function (r) {
-      return [r[0]].concat(r.slice(1).map(function (v) { return Atlas.toKrwTrillion(v, f.unit); }));
+      return [r[0]].concat(r.slice(1).map(function (v) { return v == null ? null : Atlas.toKrwTrillion(v, f.unit); }));
     });
   }
   function unitLabel() { return state.cur === 'krw' ? '조 원' : f.unit; }
-  function fmt(v) { return unitLabel() === '억 달러' ? Atlas.num(v, 0) : Atlas.num(v, 1); }
+  function fmt(v) {
+    if (v == null) return '—';
+    return (unitLabel() === '억 달러' ? Atlas.num(v, 0) : Atlas.num(v, 1)).replace('-', '−');
+  }
 
   function draw() {
     var data = rows();
     var max = 0;
-    data.forEach(function (r) { r.slice(1).forEach(function (v) { max = Math.max(max, Math.abs(v)); }); });
+    data.forEach(function (r) { r.slice(1).forEach(function (v) { if (v != null) max = Math.max(max, Math.abs(v)); }); });
+    max = max || 1;
     var mobile = window.innerWidth <= 640;
     var maxH = mobile ? 168 : 240;
 
     var chart = document.getElementById('chart');
-    chart.setAttribute('aria-label', (state.mode === 'annual' ? f.annualTitle : '분기별') + ' 매출·영업이익·순이익 막대 그래프, 단위 ' + unitLabel());
+    chart.setAttribute('aria-label', (state.mode === 'annual' ? f.annualTitle : '분기별') + ' ' + (f.labels || []).join('·') + ' 막대 그래프, 단위 ' + unitLabel() + (data.some(function (r) { return r.slice(1).some(function (v) { return v < 0; }); }) ? ', 옅은 막대는 손실' : ''));
     chart.innerHTML = data.map(function (r) {
       return '<div class="group">' + r.slice(1).map(function (v, i) {
         // 적자(마이너스)는 막대를 옅게 그리고 숫자에 빼기 표시가 남아요
+        if (v == null) return '<div class="bar-col"><span>—</span><div class="bar" style="height: 0"></div></div>';
         var hgt = Math.max(2, Math.round(Math.abs(v) / max * maxH));
         return '<div class="bar-col"><span>' + fmt(v) + '</span><div class="bar" style="height: ' + hgt + 'px; background: ' +
           SERIES[i] + (v < 0 ? '; opacity: 0.4' : '') + '"></div></div>';

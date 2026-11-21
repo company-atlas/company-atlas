@@ -11,11 +11,15 @@ import datetime
 import math
 import os
 
-from common import FETCHED_DIR, get_json, load_companies, write_json
+import io
+import xml.etree.ElementTree as ET
+import zipfile
+
+from common import FETCHED_DIR, get_bytes, get_json, load_companies, read_json, write_json
 
 BASE = 'https://opendart.fss.or.kr/api/'
 REPORTS = [('11013', 1), ('11012', 2), ('11014', 3), ('11011', 4)]
-ACCOUNTS = {'rev': ('매출액', '수익(매출액)', '영업수익'), 'op': ('영업이익',), 'ni': ('당기순이익',)}
+ACCOUNTS = {'rev': ('매출액', '수익(매출액)', '영업수익', '순영업수익', '보험수익'), 'op': ('영업이익',), 'ni': ('당기순이익',)}
 
 
 def to_won(text):
@@ -43,7 +47,7 @@ def pick(rows, names):
     return None
 
 
-def report(key, corp_code, year, code):
+def report(key, corp_code, year, code, accounts=ACCOUNTS):
     data = get_json(BASE + 'fnlttSinglAcnt.json', {
         'crtfc_key': key, 'corp_code': corp_code, 'bsns_year': str(year), 'reprt_code': code})
     status = data.get('status')
@@ -53,7 +57,7 @@ def report(key, corp_code, year, code):
         raise RuntimeError('DART 오류 %s: %s' % (status, data.get('message')))
     rows = [r for r in data.get('list', []) if r.get('sj_div', 'IS') in ('IS', 'CIS')]
     out = {}
-    for k, names in ACCOUNTS.items():
+    for k, names in accounts.items():
         row = pick(rows, names)
         if not row:
             out[k] = None
@@ -63,12 +67,12 @@ def report(key, corp_code, year, code):
     return out
 
 
-def collect(key, corp_code, years):
+def collect(key, corp_code, years, accounts=ACCOUNTS):
     annual, quarterly = [], []
     for year in years:
         got = {}
         for code, q in REPORTS:
-            r = report(key, corp_code, year, code)
+            r = report(key, corp_code, year, code, accounts)
             if r:
                 got[q] = r
         if 4 in got:
@@ -108,6 +112,25 @@ def overview(key, corp_code):
     }
 
 
+def corp_codes(key):
+    """종목코드 → DART 고유번호 표. 한 달에 한 번만 새로 받아 data/fetched에 보관해요."""
+    cache_path = os.path.join(FETCHED_DIR, '_dart_corp_codes.json')
+    cache = read_json(cache_path) or {}
+    fresh = cache.get('saved', '') >= (datetime.date.today() - datetime.timedelta(days=30)).isoformat()
+    if cache.get('codes') and fresh:
+        return cache['codes']
+    raw = get_bytes(BASE + 'corpCode.xml', {'crtfc_key': key})
+    with zipfile.ZipFile(io.BytesIO(raw)) as z:
+        xml = z.read(z.namelist()[0])
+    codes = {}
+    for item in ET.fromstring(xml).iter('list'):
+        stock = (item.findtext('stock_code') or '').strip()
+        if stock:
+            codes[stock] = item.findtext('corp_code').strip()
+    write_json(cache_path, {'saved': datetime.date.today().isoformat(), 'codes': codes})
+    return codes
+
+
 def trillion(v):
     """원을 조 원으로 (소수 첫째 자리까지, 반올림)."""
     return None if v is None else math.floor(v / 1e11 + 0.5) / 10
@@ -121,18 +144,34 @@ def main():
     this_year = int(os.environ.get('ATLAS_YEAR') or datetime.date.today().year)
     years = list(range(this_year - 5, this_year + 1))
     ok = True
+    codes = None
     for c in load_companies():
-        corp = (c.get('sources_ids') or {}).get('dart_corp_code')
+        ids = c.get('sources_ids') or {}
+        corp = ids.get('dart_corp_code')
+        if not corp and ids.get('krx_stock_code'):
+            try:
+                codes = codes or corp_codes(key)
+            except Exception as e:
+                print('[실패] DART 고유번호 목록을 받지 못했어요: %s' % e)
+                return False
+            corp = codes.get(ids['krx_stock_code'])
+            if not corp:
+                print('[실패] %s: 종목코드 %s를 DART에서 찾지 못했어요' % (c['name'], ids['krx_stock_code']))
+                ok = False
+                continue
         if not corp:
             continue
+        accounts = dict(ACCOUNTS)
+        for k, names in (ids.get('dart_accounts') or {}).items():
+            accounts[k] = tuple(names)
         try:
-            annual, quarterly = collect(key, corp, years)
+            annual, quarterly = collect(key, corp, years, accounts)
             info = overview(key, corp)
         except Exception as e:  # 한 기업이 실패해도 나머지는 계속해요
             print('[실패] %s: %s' % (c['name'], e))
             ok = False
             continue
-        conv = lambda rows: [[r[0]] + [trillion(v) for v in r[1:]] for r in rows if all(v is not None for v in r[1:])]
+        conv = lambda rows: [[r[0]] + [trillion(v) for v in r[1:]] for r in rows if r[3] is not None]
         write_json(os.path.join(FETCHED_DIR, c['id'] + '.json'), {
             'source': 'Open DART',
             'fetched_at': datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds'),

@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var countrySel = document.getElementById('country');
   var industrySel = document.getElementById('industry');
   Atlas.COUNTRIES.forEach(function (c) { countrySel.add(new Option(c, c)); });
-  Atlas.INDUSTRIES.forEach(function (i) { industrySel.add(new Option(i, i)); });
+  Atlas.ALL_INDUSTRIES.forEach(function (i) { industrySel.add(new Option(i, i)); });
 
   // 휴대폰에서는 국가·산업 선택 칸을 한 줄에 나란히 놓아요
   var selects = document.querySelector('.selects');
