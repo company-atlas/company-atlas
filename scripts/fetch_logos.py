@@ -11,6 +11,10 @@
   "logo_url": "https://…"  공식 로고 파일 주소를 직접 지정해요 (가장 우선)
                            여러 개를 목록으로 적으면 받아지는 첫 번째 것을 써요.
                            {"url": "…", "bg": "#14213D"}처럼 배경색을 같이 적을 수도 있어요.
+                           주소 대신 아래처럼 '찾는 방법'을 적을 수도 있어요.
+                             "commons:LG Energy Solution"  위키미디어 커먼즈에서 이름이 맞는 로고 파일 검색
+                             "wiki:ko:LG에너지솔루션"       위키백과 문서의 대표 그림(로고 파일일 때만)
+                             "page:https://…"              그 웹페이지 맨 위에 걸린 로고 그림 ("page:"만 쓰면 홈페이지)
                            모두 실패하면 아래의 자동 방법으로 찾아요.
   "logo_site": "https://…" 로고를 찾을 사이트를 바꿔요 (예: 알파벳 → 구글)
 
@@ -148,6 +152,97 @@ def overrides(c):
     return out
 
 
+def api_json(url):
+    _, data, _ = download(url)
+    return json.loads(data.decode('utf-8', 'ignore'))
+
+
+def words(text):
+    return [w for w in re.split(r'[^0-9a-z가-힣]+', text.lower()) if w]
+
+
+def commons_search(query):
+    """커먼즈에서 '회사 이름 + logo'로 파일을 찾아, 이름의 낱말이 모두 들어간 로고 파일만 골라요 (SVG 먼저)."""
+    url = ('https://commons.wikimedia.org/w/api.php?action=query&format=json&list=search&srnamespace=6&srlimit=20&srsearch='
+           + urllib.parse.quote(query + ' logo'))
+    need = words(query)
+    hits = []
+    for r in api_json(url).get('query', {}).get('search', []):
+        title = r['title'].split(':', 1)[1]
+        name = words(title)
+        joined = ''.join(name)
+        if ('logo' in name or 'ci' in name or '로고' in joined) and all(w in name or w in joined for w in need):
+            hits.append(title)
+    hits.sort(key=lambda t: (not t.lower().endswith('.svg'), len(t)))
+    return ['https://commons.wikimedia.org/wiki/Special:FilePath/' + urllib.parse.quote(t.replace(' ', '_')) for t in hits[:3]]
+
+
+def wiki_image(lang, title):
+    """위키백과 문서의 대표 그림. 파일 이름에 logo/로고/CI가 있거나 SVG일 때만 써요 (건물 사진 방지)."""
+    url = ('https://%s.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages&piprop=original|name'
+           '&pilicense=any&redirects=1&titles=%s' % (lang, urllib.parse.quote(title)))
+    out = []
+    for page in api_json(url).get('query', {}).get('pages', {}).values():
+        src, name = (page.get('original') or {}).get('source'), (page.get('pageimage') or '').lower()
+        if src and ('logo' in name or '로고' in name or 'ci' in words(name) or name.endswith('.svg')):
+            out.append(src)
+    return out
+
+
+class LogoImgFinder(html.parser.HTMLParser):
+    """웹페이지에서 로고 그림을 찾아요: 이름·설명에 logo가 들어간 그림, 또는 logo 상자 안의 첫 그림."""
+
+    def __init__(self):
+        super().__init__()
+        self.found, self.armed = [], 0
+
+    def handle_starttag(self, tag, attrs):
+        a = {k.lower(): (v or '') for k, v in attrs}
+        mark = ' '.join([a.get('class', ''), a.get('id', '')]).lower()
+        if tag == 'img':
+            src = a.get('src') or a.get('data-src') or ''
+            text = ' '.join([src, a.get('alt', ''), mark]).lower()
+            if src and not src.startswith('data:') and ('logo' in text or '로고' in text or self.armed):
+                self.found.append(src)
+            self.armed = 0
+        elif 'logo' in mark:
+            self.armed = 4  # 다음 몇 개 태그 안에 나오는 그림을 로고로 봐요
+        elif self.armed:
+            self.armed -= 1
+
+
+def page_logos(page):
+    """웹페이지 맨 위 로고: 그림 파일 주소 목록과, 페이지 안에 직접 그려진 SVG 로고."""
+    _, data, final = download(page)
+    text = data.decode('utf-8', 'ignore')
+    finder = LogoImgFinder()
+    finder.feed(text)
+    urls = [urllib.parse.urljoin(final, u) for u in finder.found[:4]]
+    inline = []
+    for m in re.finditer(r'<svg\b.*?</svg>', text, re.S | re.I):
+        before = text[max(0, m.start() - 300):m.start()].lower()
+        svg = m.group(0)
+        if ('logo' in before[-300:] or 'logo' in svg[:300].lower()) and len(svg) > 300:
+            if 'xmlns=' not in svg[:300]:
+                svg = svg.replace('<svg', '<svg xmlns="http://www.w3.org/2000/svg"', 1)
+            inline.append(svg.encode('utf-8'))
+        if len(inline) >= 2:
+            break
+    return urls, inline
+
+
+def resolve(entry, site):
+    """logo_url 한 칸을 실제 그림 후보(주소 또는 SVG 내용)로 바꿔요."""
+    if entry.startswith('commons:'):
+        return commons_search(entry[8:].strip()), []
+    if entry.startswith('wiki:'):
+        _, lang, title = entry.split(':', 2)
+        return wiki_image(lang, title), []
+    if entry.startswith('page:'):
+        return page_logos(entry[5:].strip() or site)
+    return [entry], []
+
+
 def candidates(site):
     """받아 볼 주소 목록."""
     out = []
@@ -200,14 +295,25 @@ def try_url(url):
 
 def fetch_one(c):
     # 1) 직접 지정한 공식 로고 파일: 받아지는 첫 번째 것을 그대로 써요
-    for url, bg in overrides(c):
-        got = try_url(url)
-        if got:
-            got['override'], got['bg'] = True, bg
-            return got
-        print('  지정한 로고를 받지 못했어요: %s' % url)
-    # 2) 자동: 회사 사이트 아이콘 중 가장 큰 것
     site = c.get('logo_site') or c['website']
+    for entry, bg in overrides(c):
+        try:
+            urls, inline = resolve(entry, site)
+        except Exception as e:
+            print('  로고 찾기 실패 (%s): %s' % (entry, e))
+            continue
+        for url in urls:
+            got = try_url(url)
+            if got:
+                got['override'], got['bg'] = True, bg
+                return got
+        for svg in inline:
+            got = {'ext': 'svg', 'data': svg, 'url': entry, 'px': 1024, 'ratio': ratio(svg, 'svg'),
+                   'override': True, 'bg': bg}
+            if got['ratio'] != 1 or b'viewbox' in svg[:400].lower():
+                return got
+        print('  지정한 로고를 받지 못했어요: %s' % entry)
+    # 2) 자동: 회사 사이트 아이콘 중 가장 큰 것
     urls, domain = candidates(site)
     found = []
     for url in urls:

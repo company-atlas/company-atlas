@@ -102,15 +102,13 @@ button, input, select { font: inherit; color: inherit; }
 .result .name { font-size: 18px; font-weight: 700; }
 .result .go { font-size: 14px; color: var(--accent); white-space: nowrap; }
 .logo-box {
-  width: 56px; height: 56px; flex: none; border-radius: 12px; background: var(--icon-bg); color: var(--accent);
+  width: 128px; height: 56px; flex: none; border-radius: 12px; background: var(--icon-bg); color: var(--accent);
   display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 20px;
 }
-.logo-box.has-logo { background: #FFFFFF; border: 1px solid var(--line); padding: 8px; }
+.logo-box.has-logo { background: #FFFFFF; border: 1px solid var(--line); padding: 8px 12px; }
 .logo-box img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .logo-box.small-logo img { width: 32px; height: 32px; margin: auto; }
-/* 가로로 긴 글자 로고는 상자를 넓혀서 글자가 작아지지 않게 해요 */
-.logo-box.wide-logo { width: 112px; padding: 8px 12px; }
-.co-head .logo-box.wide-logo { width: 168px; }
+/* 로고 상자는 모두 같은 가로로 긴 모양이고, 로고는 가운데에 놓여요 */
 .empty { border: 1px dashed var(--line-strong); border-radius: 12px; padding: 32px; text-align: center; color: var(--muted); }
 .grid-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
 .grid-item { display: flex; flex-direction: column; gap: 4px; border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; }
@@ -118,7 +116,8 @@ button, input, select { font: inherit; color: inherit; }
 /* 기업 페이지 */
 .crumb { font-size: 14px; color: var(--muted); }
 .co-head { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; }
-.co-head .logo-box { width: 80px; height: 80px; font-size: 30px; border-radius: 14px; }
+.co-head .logo-box { width: 200px; height: 80px; font-size: 30px; border-radius: 14px; }
+.co-head .logo-box.has-logo { padding: 12px 18px; }
 .co-head h1 { font-size: 32px; }
 .co-head .en { font-size: 18px; color: var(--muted); font-weight: 400; margin-left: 6px; }
 .co-head .meta { font-size: 15px; color: var(--muted); }
@@ -204,11 +203,11 @@ button, input, select { font: inherit; color: inherit; }
   .cat.more { grid-column: 1 / -1; justify-content: center; }
   .result { align-items: flex-start; padding: 14px; }
   .result .go { display: none; }
-  .logo-box { width: 48px; height: 48px; font-size: 17px; }
+  .logo-box { width: 96px; height: 48px; font-size: 17px; }
+  .logo-box.has-logo { padding: 6px 10px; }
   .grid-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
-  .co-head .logo-box { width: 60px; height: 60px; font-size: 24px; }
-  .logo-box.wide-logo { width: 88px; }
-  .co-head .logo-box.wide-logo { width: 128px; }
+  .co-head .logo-box { width: 150px; height: 60px; font-size: 24px; }
+  .co-head .logo-box.has-logo { padding: 8px 14px; }
   .co-head h1 { font-size: 26px; }
   .co-body { gap: 32px; }
   .about { font-size: 16px; }

@@ -112,7 +112,9 @@
     ]
   },
   "logo_url": [
-    "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Electro-Mechanics_logo.svg",
-    "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Electro-Mechanics_Logo.svg"
+    "commons:Samsung Electro-Mechanics",
+    "wiki:ko:삼성전기",
+    "wiki:en:Samsung Electro-Mechanics",
+    "page:"
   ]
 }
