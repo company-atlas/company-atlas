@@ -80,6 +80,15 @@ def merge(c, fetched):
         out['highlights'] = [{'value': ni, 'unit': fin['unit'], 'label': year_word + ' 순이익',
                               'note': '1년 동안 최종적으로 남긴 돈' if ni >= 0 else '1년 동안의 최종 손실'}] + cap
 
+    # 매출(첫 칸)이 전부 비어 있으면(금융회사 등) 그 칸을 빼고 영업이익·순이익만 보여줘요
+    rows_all = fin['annual'] + fin['quarterly']
+    if rows_all and all(r[1] is None for r in rows_all):
+        fin['annual'] = [[r[0]] + r[2:] for r in fin['annual']]
+        fin['quarterly'] = [[r[0]] + r[2:] for r in fin['quarterly']]
+        fin['labels'] = fin['labels'][1:]
+        if c['financials_text'].get('labelNoteNoRevenue'):
+            fin['labelNote'] = c['financials_text']['labelNoteNoRevenue']
+
     # 기업 개요: 손으로 쓴 값이 없을 때만 DART 값으로 채워요
     ov = (fetched or {}).get('overview') or {}
     info = dict(c['info'])

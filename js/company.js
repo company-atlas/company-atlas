@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }).join('');
     document.getElementById('chart-labels').innerHTML = data.map(function (r) { return '<div>' + e(r[0]) + '</div>'; }).join('');
     document.querySelector('#fin-table tbody').innerHTML = data.map(function (r) {
-      return '<tr><td>' + e(r[0]) + '</td><td>' + fmt(r[1]) + '</td><td>' + fmt(r[2]) + '</td><td>' + fmt(r[3]) + '</td></tr>';
+      return '<tr><td>' + e(r[0]) + '</td>' + r.slice(1).map(function (v) { return '<td>' + fmt(v) + '</td>'; }).join('') + '</tr>';
     }).join('');
 
     var wide = state.mode === 'quarterly' && mobile && data.length > 5;
