@@ -1,0 +1,22 @@
+<br>
+<br>
+<center>
+<h2>
+The request / response that are contrary to the Web firewall security policies have been blocked.
+</h2>
+<table>
+<tr>
+<td>Detect time</td>
+<td>2026-11-21 14:06:07</td>
+</tr>
+<tr>
+<td>Detect client IP</td>
+<td>10.233.17.5 (x-forward-for : 130.131.93.0 )</td>
+</tr>
+<tr>
+<td>Detect URL</td>
+<td>https://www.skhynix.com/favicon.ico</td>
+</tr>
+</table>
+</center>
+<br>

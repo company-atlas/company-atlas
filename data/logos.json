@@ -1,0 +1,97 @@
+{
+  "alphabet": {
+    "path": "data/logos/alphabet.png",
+    "from": "https://s206.q4cdn.com/479360582/files/favicon-16.png",
+    "saved": "2026-11-21"
+  },
+  "amazon": {
+    "path": "data/logos/amazon.ico",
+    "from": "https://www.amazon.com/favicon.ico",
+    "saved": "2026-11-21"
+  },
+  "anthropic": {
+    "path": "data/logos/anthropic.png",
+    "from": "https://www.anthropic.com/images/icons/apple-touch-icon.png",
+    "saved": "2026-11-21"
+  },
+  "apple": {
+    "path": "data/logos/apple.ico",
+    "from": "https://www.apple.com/favicon.ico",
+    "saved": "2026-11-21"
+  },
+  "broadcom": {
+    "path": "data/logos/broadcom.png",
+    "from": "https://www.broadcom.com/favicon-96x96.png",
+    "saved": "2026-11-21"
+  },
+  "celltrion": {
+    "path": "data/logos/celltrion.ico",
+    "from": "https://www.celltrion.com/front/assets/common/images/common/favicon.ico",
+    "saved": "2026-11-21"
+  },
+  "hyundai": {
+    "path": "data/logos/hyundai.svg",
+    "from": "https://www.hyundaiusa.com/content/dam/hyundai/us/com/image/general/icon/favicon-2023.svg",
+    "saved": "2026-11-21"
+  },
+  "kbfg": {
+    "path": "data/logos/kbfg.ico",
+    "from": "https://www.kbfg.com/favicon.ico",
+    "saved": "2026-11-21"
+  },
+  "lgensol": {
+    "path": "data/logos/lgensol.ico",
+    "from": "https://www.lgensol.com/favicon.ico",
+    "saved": "2026-11-21"
+  },
+  "meta": {
+    "path": "data/logos/meta.webp",
+    "from": "https://static.xx.fbcdn.net/rsrc.php/yQ/r/0eWKxz9kEoF.webp",
+    "saved": "2026-11-21"
+  },
+  "microsoft": {
+    "path": "data/logos/microsoft.ico",
+    "from": "https://www.microsoft.com/favicon.ico?v2",
+    "saved": "2026-11-21"
+  },
+  "nvidia": {
+    "path": "data/logos/nvidia.ico",
+    "from": "https://www.nvidia.com/favicon.ico",
+    "saved": "2026-11-21"
+  },
+  "samsung": {
+    "path": "data/logos/samsung.png",
+    "from": "https://resources.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-common/resources/images/app_ico.png",
+    "saved": "2026-11-21"
+  },
+  "samsungbio": {
+    "path": "data/logos/samsungbio.ico",
+    "from": "https://samsungbiologics.com/resources/front/common/samsungbio.ico",
+    "saved": "2026-11-21"
+  },
+  "samsunglife": {
+    "path": "data/logos/samsunglife.png",
+    "from": "https://www.samsunglife.com/samsunglife_ci.png",
+    "saved": "2026-11-21"
+  },
+  "semco": {
+    "path": "data/logos/semco.ico",
+    "from": "https://www.samsungsem.com/resources/images/common/favicon.ico",
+    "saved": "2026-11-21"
+  },
+  "skhynix": {
+    "path": "data/logos/skhynix.ico",
+    "from": "https://www.skhynix.com/favicon.ico",
+    "saved": "2026-11-21"
+  },
+  "sksquare": {
+    "path": "data/logos/sksquare.ico",
+    "from": "https://www.sksquare.com/assets/images/seo/favicon.ico",
+    "saved": "2026-11-21"
+  },
+  "spacex": {
+    "path": "data/logos/spacex.ico",
+    "from": "https://www.spacex.com/assets/favicon-spacex.ico",
+    "saved": "2026-11-21"
+  }
+}

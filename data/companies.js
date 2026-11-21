@@ -241,7 +241,8 @@ window.ATLAS_COMPANIES = [
     ]
    ],
    "source": "SEC EDGAR"
-  }
+  },
+  "logo": "data/logos/alphabet.png"
  },
  {
   "id": "amazon",
@@ -467,7 +468,8 @@ window.ATLAS_COMPANIES = [
     ]
    ],
    "source": "SEC EDGAR"
-  }
+  },
+  "logo": "data/logos/amazon.ico"
  },
  {
   "id": "anthropic",
@@ -626,7 +628,8 @@ window.ATLAS_COMPANIES = [
     ]
    ],
    "source": "직접 정리"
-  }
+  },
+  "logo": "data/logos/anthropic.png"
  },
  {
   "id": "apple",
@@ -891,7 +894,8 @@ window.ATLAS_COMPANIES = [
     ]
    ],
    "source": "SEC EDGAR"
-  }
+  },
+  "logo": "data/logos/apple.ico"
  },
  {
   "id": "broadcom",
@@ -1104,7 +1108,8 @@ window.ATLAS_COMPANIES = [
     ]
    ],
    "source": "SEC EDGAR"
-  }
+  },
+  "logo": "data/logos/broadcom.png"
  },
  {
   "id": "celltrion",
@@ -1300,7 +1305,8 @@ window.ATLAS_COMPANIES = [
     ]
    ],
    "source": "Open DART"
-  }
+  },
+  "logo": "data/logos/celltrion.ico"
  },
  {
   "id": "hyundai",
@@ -1497,7 +1503,8 @@ window.ATLAS_COMPANIES = [
     ]
    ],
    "source": "Open DART"
-  }
+  },
+  "logo": "data/logos/hyundai.svg"
  },
  {
   "id": "kbfg",
@@ -1665,7 +1672,8 @@ window.ATLAS_COMPANIES = [
     ]
    ],
    "source": "Open DART"
-  }
+  },
+  "logo": "data/logos/kbfg.ico"
  },
  {
   "id": "lgensol",
@@ -1865,7 +1873,8 @@ window.ATLAS_COMPANIES = [
     ]
    ],
    "source": "Open DART"
-  }
+  },
+  "logo": "data/logos/lgensol.ico"
  },
  {
   "id": "meta",
@@ -2092,7 +2101,8 @@ window.ATLAS_COMPANIES = [
     ]
    ],
    "source": "SEC EDGAR"
-  }
+  },
+  "logo": "data/logos/meta.webp"
  },
  {
   "id": "microsoft",
@@ -2333,7 +2343,8 @@ window.ATLAS_COMPANIES = [
     ]
    ],
    "source": "SEC EDGAR"
-  }
+  },
+  "logo": "data/logos/microsoft.ico"
  },
  {
   "id": "nvidia",
@@ -2567,7 +2578,8 @@ window.ATLAS_COMPANIES = [
     ]
    ],
    "source": "SEC EDGAR"
-  }
+  },
+  "logo": "data/logos/nvidia.ico"
  },
  {
   "id": "samsung",
@@ -2834,7 +2846,8 @@ window.ATLAS_COMPANIES = [
     ]
    ],
    "source": "Open DART"
-  }
+  },
+  "logo": "data/logos/samsung.png"
  },
  {
   "id": "samsungbio",
@@ -3030,7 +3043,8 @@ window.ATLAS_COMPANIES = [
     ]
    ],
    "source": "Open DART"
-  }
+  },
+  "logo": "data/logos/samsungbio.ico"
  },
  {
   "id": "samsunglife",
@@ -3198,7 +3212,8 @@ window.ATLAS_COMPANIES = [
     ]
    ],
    "source": "Open DART"
-  }
+  },
+  "logo": "data/logos/samsunglife.png"
  },
  {
   "id": "semco",
@@ -3417,7 +3432,8 @@ window.ATLAS_COMPANIES = [
     ]
    ],
    "source": "Open DART"
-  }
+  },
+  "logo": "data/logos/semco.ico"
  },
  {
   "id": "skhynix",
@@ -3624,7 +3640,8 @@ window.ATLAS_COMPANIES = [
     ]
    ],
    "source": "Open DART"
-  }
+  },
+  "logo": "data/logos/skhynix.ico"
  },
  {
   "id": "sksquare",
@@ -3802,7 +3819,8 @@ window.ATLAS_COMPANIES = [
     ]
    ],
    "source": "Open DART"
-  }
+  },
+  "logo": "data/logos/sksquare.ico"
  },
  {
   "id": "spacex",
@@ -3987,7 +4005,8 @@ window.ATLAS_COMPANIES = [
     ]
    ],
    "source": "SEC EDGAR"
-  }
+  },
+  "logo": "data/logos/spacex.ico"
  },
  {
   "id": "tesla",
