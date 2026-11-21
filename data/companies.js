@@ -149,6 +149,9 @@ window.ATLAS_COMPANIES = [
    ]
   },
   "logo_site": "https://www.google.com",
+  "logo_url": [
+   "https://commons.wikimedia.org/wiki/Special:FilePath/Alphabet_Inc_Logo_2015.svg"
+  ],
   "financials": {
    "unit": "억 달러",
    "annualTitle": "회계연도별 (최근 5년)",
@@ -243,8 +246,9 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "SEC EDGAR"
   },
-  "logo": "data/logos/alphabet.png",
-  "logoSmall": false
+  "logo": "data/logos/alphabet.svg",
+  "logoSmall": false,
+  "logoWide": true
  },
  {
   "id": "amazon",
@@ -377,6 +381,9 @@ window.ATLAS_COMPANIES = [
     ]
    ]
   },
+  "logo_url": [
+   "https://commons.wikimedia.org/wiki/Special:FilePath/Amazon_logo.svg"
+  ],
   "financials": {
    "unit": "억 달러",
    "annualTitle": "회계연도별 (최근 5년)",
@@ -471,8 +478,9 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "SEC EDGAR"
   },
-  "logo": "data/logos/amazon.ico",
-  "logoSmall": true
+  "logo": "data/logos/amazon.svg",
+  "logoSmall": false,
+  "logoWide": true
  },
  {
   "id": "anthropic",
@@ -586,6 +594,9 @@ window.ATLAS_COMPANIES = [
     ]
    ]
   },
+  "logo_url": [
+   "https://commons.wikimedia.org/wiki/Special:FilePath/Anthropic_logo.svg"
+  ],
   "financials": {
    "unit": "억 달러",
    "annualTitle": "회계연도별 (최근 5년)",
@@ -632,8 +643,9 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "직접 정리"
   },
-  "logo": "data/logos/anthropic.png",
-  "logoSmall": false
+  "logo": "data/logos/anthropic.svg",
+  "logoSmall": false,
+  "logoWide": true
  },
  {
   "id": "apple",
@@ -805,6 +817,9 @@ window.ATLAS_COMPANIES = [
    ]
   ],
   "sources": "애플 분기·연간 실적 발표 및 10-Q·10-K 공시(회계연도 2022~2026), 2026년 CEO 교체 발표, 시가총액은 2026년 11월 19일 시세",
+  "logo_url": [
+   "https://commons.wikimedia.org/wiki/Special:FilePath/Apple_logo_black.svg"
+  ],
   "financials": {
    "unit": "억 달러",
    "annualTitle": "회계연도별 (최근 5년)",
@@ -899,7 +914,7 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "SEC EDGAR"
   },
-  "logo": "data/logos/apple.png",
+  "logo": "data/logos/apple.svg",
   "logoSmall": false
  },
  {
@@ -1026,6 +1041,11 @@ window.ATLAS_COMPANIES = [
    ]
   },
   "fiscalNote": "브로드컴의 회계연도는 매년 11월 초에 끝나요.",
+  "logo_url": [
+   "https://commons.wikimedia.org/wiki/Special:FilePath/Broadcom_Inc._logo.svg",
+   "https://commons.wikimedia.org/wiki/Special:FilePath/Broadcom_Ltd_Logo.svg",
+   "https://commons.wikimedia.org/wiki/Special:FilePath/Broadcom_logo.svg"
+  ],
   "financials": {
    "unit": "억 달러",
    "annualTitle": "회계연도별 (최근 5년)",
@@ -1120,8 +1140,9 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "SEC EDGAR"
   },
-  "logo": "data/logos/broadcom.png",
-  "logoSmall": false
+  "logo": "data/logos/broadcom.svg",
+  "logoSmall": false,
+  "logoWide": true
  },
  {
   "id": "celltrion",
@@ -1224,6 +1245,10 @@ window.ATLAS_COMPANIES = [
    ]
   ],
   "sources": "셀트리온 공시, 시가총액은 2026년 11월 20일 시세",
+  "logo_url": [
+   "https://commons.wikimedia.org/wiki/Special:FilePath/Celltrion_logo.svg",
+   "https://commons.wikimedia.org/wiki/Special:FilePath/Celltrion_Logo.svg"
+  ],
   "financials": {
    "unit": "조 원",
    "annualTitle": "연도별 (최근 5년)",
@@ -1423,6 +1448,9 @@ window.ATLAS_COMPANIES = [
    ]
   ],
   "sources": "현대자동차 2025년 연간 경영실적 발표, 시가총액은 2026년 11월 20일 시세",
+  "logo_url": [
+   "https://commons.wikimedia.org/wiki/Special:FilePath/Hyundai_Motor_Company_logo.svg"
+  ],
   "financials": {
    "unit": "조 원",
    "annualTitle": "연도별 (최근 5년)",
@@ -1518,7 +1546,8 @@ window.ATLAS_COMPANIES = [
    "source": "Open DART"
   },
   "logo": "data/logos/hyundai.svg",
-  "logoSmall": false
+  "logoSmall": false,
+  "logoWide": true
  },
  {
   "id": "kbfg",
@@ -1615,6 +1644,10 @@ window.ATLAS_COMPANIES = [
    ]
   ],
   "sources": "KB금융 2025년 실적 보도, 시가총액은 2026년 11월 20일 시세",
+  "logo_url": [
+   "https://commons.wikimedia.org/wiki/Special:FilePath/KB_Financial_Group_logo.svg",
+   "https://commons.wikimedia.org/wiki/Special:FilePath/KB_Financial_Group_Logo.svg"
+  ],
   "financials": {
    "unit": "조 원",
    "annualTitle": "연도별 (최근 5년)",
@@ -1795,6 +1828,10 @@ window.ATLAS_COMPANIES = [
    ]
   ],
   "sources": "LG에너지솔루션 공시, 시가총액은 2026년 11월 20일 시세",
+  "logo_url": [
+   "https://commons.wikimedia.org/wiki/Special:FilePath/LG_Energy_Solution_logo.svg",
+   "https://commons.wikimedia.org/wiki/Special:FilePath/LG_Energy_Solution_Logo.svg"
+  ],
   "financials": {
    "unit": "조 원",
    "annualTitle": "연도별 (최근 5년)",
@@ -2022,6 +2059,9 @@ window.ATLAS_COMPANIES = [
     ]
    ]
   },
+  "logo_url": [
+   "https://commons.wikimedia.org/wiki/Special:FilePath/Meta_Platforms_Inc._logo.svg"
+  ],
   "financials": {
    "unit": "억 달러",
    "annualTitle": "회계연도별 (최근 5년)",
@@ -2116,8 +2156,9 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "SEC EDGAR"
   },
-  "logo": "data/logos/meta.jpg",
-  "logoSmall": false
+  "logo": "data/logos/meta.svg",
+  "logoSmall": false,
+  "logoWide": true
  },
  {
   "id": "microsoft",
@@ -2265,6 +2306,10 @@ window.ATLAS_COMPANIES = [
    ]
   },
   "fiscalNote": "마이크로소프트의 회계연도는 매년 6월 말에 끝나요. 예를 들어 2026 회계연도는 2025년 7월~2026년 6월이에요.",
+  "logo_url": [
+   "https://commons.wikimedia.org/wiki/Special:FilePath/Microsoft_logo.svg",
+   "https://commons.wikimedia.org/wiki/Special:FilePath/Microsoft_logo_(2012).svg"
+  ],
   "financials": {
    "unit": "억 달러",
    "annualTitle": "회계연도별 (최근 5년)",
@@ -2359,7 +2404,7 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "SEC EDGAR"
   },
-  "logo": "data/logos/microsoft.ico",
+  "logo": "data/logos/microsoft.svg",
   "logoSmall": false
  },
  {
@@ -2501,6 +2546,9 @@ window.ATLAS_COMPANIES = [
    ]
   },
   "fiscalNote": "엔비디아의 회계연도는 매년 1월 말에 끝나요. 그래서 2026 회계연도는 대부분 2025년이에요.",
+  "logo_url": [
+   "https://commons.wikimedia.org/wiki/Special:FilePath/Nvidia_logo.svg"
+  ],
   "financials": {
    "unit": "억 달러",
    "annualTitle": "회계연도별 (최근 5년)",
@@ -2595,8 +2643,9 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "SEC EDGAR"
   },
-  "logo": "data/logos/nvidia.ico",
-  "logoSmall": true
+  "logo": "data/logos/nvidia.svg",
+  "logoSmall": false,
+  "logoWide": true
  },
  {
   "id": "samsung",
@@ -2770,6 +2819,10 @@ window.ATLAS_COMPANIES = [
    ]
   ],
   "sources": "삼성전자 연결 실적 발표·경영설명회 자료(2021~2026년 3분기, 2026년 분기 수치는 감사 전 기준), 삼성전자 지속가능경영보고서 2025, 2026년 사장단 인사 보도, 시가총액은 2026년 11월 20일 시세",
+  "logo_url": [
+   "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Logo.svg",
+   "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_wordmark.svg"
+  ],
   "financials": {
    "unit": "조 원",
    "annualTitle": "연도별 (최근 5년)",
@@ -2864,8 +2917,9 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "Open DART"
   },
-  "logo": "data/logos/samsung.png",
-  "logoSmall": false
+  "logo": "data/logos/samsung.svg",
+  "logoSmall": false,
+  "logoWide": true
  },
  {
   "id": "samsungbio",
@@ -2968,6 +3022,10 @@ window.ATLAS_COMPANIES = [
    ]
   ],
   "sources": "삼성바이오로직스 공시, 시가총액은 2026년 11월 20일 시세",
+  "logo_url": [
+   "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Biologics_logo.svg",
+   "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Biologics_Logo.svg"
+  ],
   "financials": {
    "unit": "조 원",
    "annualTitle": "연도별 (최근 5년)",
@@ -3062,8 +3120,9 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "Open DART"
   },
-  "logo": "data/logos/samsungbio.ico",
-  "logoSmall": true
+  "logo": "data/logos/samsungbio.svg",
+  "logoSmall": false,
+  "logoWide": true
  },
  {
   "id": "samsunglife",
@@ -3160,6 +3219,10 @@ window.ATLAS_COMPANIES = [
    ]
   ],
   "sources": "삼성생명 공시, 시가총액은 2026년 11월 20일 시세",
+  "logo_url": [
+   "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Life_Insurance_logo.svg",
+   "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Life_Insurance_Logo.svg"
+  ],
   "financials": {
    "unit": "조 원",
    "annualTitle": "연도별 (최근 5년)",
@@ -3232,8 +3295,9 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "Open DART"
   },
-  "logo": "data/logos/samsunglife.png",
-  "logoSmall": false
+  "logo": "data/logos/samsunglife.svg",
+  "logoSmall": false,
+  "logoWide": true
  },
  {
   "id": "semco",
@@ -3359,6 +3423,10 @@ window.ATLAS_COMPANIES = [
     ]
    ]
   },
+  "logo_url": [
+   "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Electro-Mechanics_logo.svg",
+   "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Electro-Mechanics_Logo.svg"
+  ],
   "financials": {
    "unit": "조 원",
    "annualTitle": "연도별 (최근 5년)",
@@ -3566,6 +3634,11 @@ window.ATLAS_COMPANIES = [
    ]
   ],
   "sources": "SK하이닉스 2025년 경영실적 발표, 시가총액은 2026년 11월 20일 시세",
+  "logo_url": [
+   "https://commons.wikimedia.org/wiki/Special:FilePath/SK_Hynix.svg",
+   "https://commons.wikimedia.org/wiki/Special:FilePath/SK_hynix_logo.svg",
+   "https://commons.wikimedia.org/wiki/Special:FilePath/SK_Hynix_logo.svg"
+  ],
   "financials": {
    "unit": "조 원",
    "annualTitle": "연도별 (최근 5년)",
@@ -3659,7 +3732,10 @@ window.ATLAS_COMPANIES = [
     ]
    ],
    "source": "Open DART"
-  }
+  },
+  "logo": "data/logos/skhynix.svg",
+  "logoSmall": false,
+  "logoWide": true
  },
  {
   "id": "sksquare",
@@ -3754,6 +3830,10 @@ window.ATLAS_COMPANIES = [
    ]
   ],
   "sources": "SK스퀘어 공시, 포트폴리오 관련 보도(2026년 3월), 시가총액은 2026년 11월 20일 시세",
+  "logo_url": [
+   "https://commons.wikimedia.org/wiki/Special:FilePath/SK_Square_logo.svg",
+   "https://commons.wikimedia.org/wiki/Special:FilePath/SK_square_logo.svg"
+  ],
   "financials": {
    "unit": "조 원",
    "annualTitle": "연도별 (최근 5년)",
@@ -3978,6 +4058,10 @@ window.ATLAS_COMPANIES = [
    ]
   },
   "logo_bg": "#14213D",
+  "logo_url": [
+   "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX_logo_black.svg",
+   "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX-Logo.svg"
+  ],
   "financials": {
    "unit": "억 달러",
    "annualTitle": "회계연도별 (최근 5년)",
@@ -4024,9 +4108,9 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "SEC EDGAR"
   },
-  "logo": "data/logos/spacex.ico",
-  "logoSmall": true,
-  "logoBg": "#14213D"
+  "logo": "data/logos/spacex.svg",
+  "logoSmall": false,
+  "logoWide": true
  },
  {
   "id": "tesla",
@@ -4162,6 +4246,11 @@ window.ATLAS_COMPANIES = [
     ]
    ]
   },
+  "logo_url": [
+   "https://commons.wikimedia.org/wiki/Special:FilePath/Tesla_T_symbol.svg",
+   "https://commons.wikimedia.org/wiki/Special:FilePath/Tesla_logo.svg",
+   "https://commons.wikimedia.org/wiki/Special:FilePath/Tesla_Motors.svg"
+  ],
   "financials": {
    "unit": "억 달러",
    "annualTitle": "회계연도별 (최근 5년)",
@@ -4256,7 +4345,7 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "SEC EDGAR"
   },
-  "logo": "data/logos/tesla.png",
+  "logo": "data/logos/tesla.svg",
   "logoSmall": false
  }
 ];

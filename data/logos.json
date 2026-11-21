@@ -1,162 +1,278 @@
 {
   "alphabet": {
-    "path": "data/logos/alphabet.png",
-    "from": "https://www.google.com/s2/favicons?domain=www.google.com&sz=256",
-    "px": 144,
+    "path": "data/logos/alphabet.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Alphabet_Inc_Logo_2015.svg",
+    "px": 1024,
     "saved": "2026-11-21",
-    "logo_url": null,
-    "logo_site": "https://www.google.com"
+    "logo_url": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Alphabet_Inc_Logo_2015.svg"
+    ],
+    "logo_site": "https://www.google.com",
+    "ratio": 4.12,
+    "override": true,
+    "bg": null
   },
   "amazon": {
-    "path": "data/logos/amazon.ico",
-    "from": "https://www.amazon.com/favicon.ico",
-    "px": 48,
+    "path": "data/logos/amazon.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Amazon_logo.svg",
+    "px": 1024,
     "saved": "2026-11-21",
-    "logo_url": null,
-    "logo_site": null
+    "logo_url": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Amazon_logo.svg"
+    ],
+    "logo_site": null,
+    "ratio": 3.31,
+    "override": true,
+    "bg": null
   },
   "anthropic": {
-    "path": "data/logos/anthropic.png",
-    "from": "https://www.anthropic.com/images/icons/apple-touch-icon.png",
-    "px": 180,
+    "path": "data/logos/anthropic.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthropic_logo.svg",
+    "px": 1024,
     "saved": "2026-11-21",
-    "logo_url": null,
-    "logo_site": null
+    "logo_url": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Anthropic_logo.svg"
+    ],
+    "logo_site": null,
+    "ratio": 8.91,
+    "override": true,
+    "bg": null
   },
   "apple": {
-    "path": "data/logos/apple.png",
-    "from": "https://www.apple.com/apple-touch-icon.png",
-    "px": 152,
+    "path": "data/logos/apple.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Apple_logo_black.svg",
+    "px": 1024,
     "saved": "2026-11-21",
-    "logo_url": null,
-    "logo_site": null
+    "logo_url": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Apple_logo_black.svg"
+    ],
+    "logo_site": null,
+    "ratio": 0.81,
+    "override": true,
+    "bg": null
   },
   "broadcom": {
-    "path": "data/logos/broadcom.png",
-    "from": "https://www.broadcom.com/favicon-96x96.png",
-    "px": 96,
+    "path": "data/logos/broadcom.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Broadcom_Ltd_Logo.svg",
+    "px": 1024,
     "saved": "2026-11-21",
-    "logo_url": null,
-    "logo_site": null
+    "logo_url": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Broadcom_Inc._logo.svg",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Broadcom_Ltd_Logo.svg",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Broadcom_logo.svg"
+    ],
+    "logo_site": null,
+    "ratio": 7.27,
+    "override": true,
+    "bg": null
   },
   "celltrion": {
     "path": "data/logos/celltrion.ico",
     "from": "https://www.celltrion.com/front/assets/common/images/common/favicon.ico",
     "px": 180,
     "saved": "2026-11-21",
-    "logo_url": null,
-    "logo_site": null
+    "logo_url": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Celltrion_logo.svg",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Celltrion_Logo.svg"
+    ],
+    "logo_site": null,
+    "ratio": 1.0,
+    "override": false,
+    "bg": null
   },
   "hyundai": {
     "path": "data/logos/hyundai.svg",
-    "from": "https://www.hyundaiusa.com/content/dam/hyundai/us/com/image/general/icon/favicon-2023.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Hyundai_Motor_Company_logo.svg",
     "px": 1024,
     "saved": "2026-11-21",
-    "logo_url": null,
-    "logo_site": null
+    "logo_url": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Hyundai_Motor_Company_logo.svg"
+    ],
+    "logo_site": null,
+    "ratio": 7.77,
+    "override": true,
+    "bg": null
   },
   "kbfg": {
     "path": "data/logos/kbfg.png",
     "from": "https://www.google.com/s2/favicons?domain=www.kbfg.com&sz=256",
     "px": 192,
     "saved": "2026-11-21",
-    "logo_url": null,
-    "logo_site": null
+    "logo_url": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/KB_Financial_Group_logo.svg",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/KB_Financial_Group_Logo.svg"
+    ],
+    "logo_site": null,
+    "ratio": 1.0,
+    "override": false,
+    "bg": null
   },
   "lgensol": {
     "path": "data/logos/lgensol.ico",
     "from": "https://www.lgensol.com/favicon.ico",
     "px": 16,
     "saved": "2026-11-21",
-    "logo_url": null,
-    "logo_site": null
+    "logo_url": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/LG_Energy_Solution_logo.svg",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/LG_Energy_Solution_Logo.svg"
+    ],
+    "logo_site": null,
+    "ratio": 1,
+    "override": false,
+    "bg": null
   },
   "meta": {
-    "path": "data/logos/meta.jpg",
-    "from": "https://www.google.com/s2/favicons?domain=about.meta.com&sz=256",
-    "px": 180,
+    "path": "data/logos/meta.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Meta_Platforms_Inc._logo.svg",
+    "px": 1024,
     "saved": "2026-11-21",
-    "logo_url": null,
-    "logo_site": null
+    "logo_url": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Meta_Platforms_Inc._logo.svg"
+    ],
+    "logo_site": null,
+    "ratio": 4.96,
+    "override": true,
+    "bg": null
   },
   "microsoft": {
-    "path": "data/logos/microsoft.ico",
-    "from": "https://www.microsoft.com/favicon.ico?v2",
-    "px": 128,
+    "path": "data/logos/microsoft.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Microsoft_logo.svg",
+    "px": 1024,
     "saved": "2026-11-21",
-    "logo_url": null,
-    "logo_site": null
+    "logo_url": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Microsoft_logo.svg",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Microsoft_logo_(2012).svg"
+    ],
+    "logo_site": null,
+    "ratio": 1.0,
+    "override": true,
+    "bg": null
   },
   "nvidia": {
-    "path": "data/logos/nvidia.ico",
-    "from": "https://www.nvidia.com/favicon.ico",
-    "px": 48,
+    "path": "data/logos/nvidia.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Nvidia_logo.svg",
+    "px": 1024,
     "saved": "2026-11-21",
-    "logo_url": null,
-    "logo_site": null
+    "logo_url": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Nvidia_logo.svg"
+    ],
+    "logo_site": null,
+    "ratio": 5.33,
+    "override": true,
+    "bg": null
   },
   "samsung": {
-    "path": "data/logos/samsung.png",
-    "from": "https://resources.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-common/resources/images/app_ico.png",
-    "px": 144,
+    "path": "data/logos/samsung.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Logo.svg",
+    "px": 1024,
     "saved": "2026-11-21",
-    "logo_url": null,
-    "logo_site": null
+    "logo_url": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Logo.svg",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_wordmark.svg"
+    ],
+    "logo_site": null,
+    "ratio": 3.01,
+    "override": true,
+    "bg": null
   },
   "samsungbio": {
-    "path": "data/logos/samsungbio.ico",
-    "from": "https://samsungbiologics.com/resources/front/common/samsungbio.ico",
-    "px": 32,
+    "path": "data/logos/samsungbio.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Biologics_Logo.svg",
+    "px": 1024,
     "saved": "2026-11-21",
-    "logo_url": null,
-    "logo_site": null
+    "logo_url": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Biologics_logo.svg",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Biologics_Logo.svg"
+    ],
+    "logo_site": null,
+    "ratio": 2.65,
+    "override": true,
+    "bg": null
   },
   "samsunglife": {
-    "path": "data/logos/samsunglife.png",
-    "from": "https://www.samsunglife.com/samsunglife_ci.png",
-    "px": 200,
+    "path": "data/logos/samsunglife.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Life_Insurance_logo.svg",
+    "px": 1024,
     "saved": "2026-11-21",
-    "logo_url": null,
-    "logo_site": null
+    "logo_url": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Life_Insurance_logo.svg",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Life_Insurance_Logo.svg"
+    ],
+    "logo_site": null,
+    "ratio": 6.91,
+    "override": true,
+    "bg": null
   },
   "semco": {
     "path": "data/logos/semco.ico",
     "from": "https://www.samsungsem.com/resources/images/common/favicon.ico",
     "px": 16,
     "saved": "2026-11-21",
-    "logo_url": null,
-    "logo_site": null
+    "logo_url": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Electro-Mechanics_logo.svg",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Electro-Mechanics_Logo.svg"
+    ],
+    "logo_site": null,
+    "ratio": 1,
+    "override": false,
+    "bg": null
   },
   "skhynix": {
-    "path": "data/logos/skhynix.ico",
-    "from": "https://mis-prod-koce-skhynixhomepage-cdn-01-ep.azureedge.net/img/favicon.ico",
-    "px": 16,
+    "path": "data/logos/skhynix.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/SK_Hynix.svg",
+    "px": 1024,
     "saved": "2026-11-21",
-    "logo_url": null,
-    "logo_site": null
+    "logo_url": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/SK_Hynix.svg",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/SK_hynix_logo.svg",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/SK_Hynix_logo.svg"
+    ],
+    "logo_site": null,
+    "ratio": 1.89,
+    "override": true,
+    "bg": null
   },
   "sksquare": {
     "path": "data/logos/sksquare.ico",
     "from": "https://www.sksquare.com/assets/images/seo/favicon.ico",
     "px": 16,
     "saved": "2026-11-21",
-    "logo_url": null,
-    "logo_site": null
+    "logo_url": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/SK_Square_logo.svg",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/SK_square_logo.svg"
+    ],
+    "logo_site": null,
+    "ratio": 1,
+    "override": false,
+    "bg": null
   },
   "spacex": {
-    "path": "data/logos/spacex.ico",
-    "from": "https://www.spacex.com/assets/favicon-spacex.ico",
-    "px": 48,
+    "path": "data/logos/spacex.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX_logo_black.svg",
+    "px": 1024,
     "saved": "2026-11-21",
-    "logo_url": null,
-    "logo_site": null
+    "logo_url": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX_logo_black.svg",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX-Logo.svg"
+    ],
+    "logo_site": null,
+    "ratio": 8.0,
+    "override": true,
+    "bg": null
   },
   "tesla": {
-    "path": "data/logos/tesla.png",
-    "from": "https://www.google.com/s2/favicons?domain=www.tesla.com&sz=256",
-    "px": 152,
+    "path": "data/logos/tesla.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Tesla_T_symbol.svg",
+    "px": 1024,
     "saved": "2026-11-21",
-    "logo_url": null,
-    "logo_site": null
+    "logo_url": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Tesla_T_symbol.svg",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Tesla_logo.svg",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Tesla_Motors.svg"
+    ],
+    "logo_site": null,
+    "ratio": 1.0,
+    "override": true,
+    "bg": null
   }
 }
