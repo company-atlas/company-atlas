@@ -105,6 +105,8 @@ button, input, select { font: inherit; color: inherit; }
   width: 56px; height: 56px; flex: none; border-radius: 12px; background: var(--icon-bg); color: var(--accent);
   display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 20px;
 }
+.logo-box.has-logo { background: #FFFFFF; border: 1px solid var(--line); padding: 8px; }
+.logo-box img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .empty { border: 1px dashed var(--line-strong); border-radius: 12px; padding: 32px; text-align: center; color: var(--muted); }
 .grid-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
 .grid-item { display: flex; flex-direction: column; gap: 4px; border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; }

@@ -81,10 +81,18 @@ var Atlas = (function () {
     el.className = 'site-footer';
     el.innerHTML =
       'Company Atlas · 정보는 각 기업의 공시와 공개 자료를 바탕으로 정리했으며, 투자 판단의 책임은 이용자에게 있어요.' +
+      '<br>기업 로고는 각 회사의 상표이며, 기업을 알아보기 쉽도록 보여드리는 것이에요.' +
       '<br>마지막 업데이트: ' + esc(window.ATLAS_META.updated);
   }
 
   function initials(c) { return esc(c.name.slice(0, 1)); }
+
+  // 로고가 있으면 그림, 없으면(또는 못 불러오면) 첫 글자 상자
+  function logoBox(c) {
+    if (!c.logo) return '<div class="logo-box" aria-hidden="true">' + initials(c) + '</div>';
+    return '<div class="logo-box has-logo"><img src="' + ROOT + esc(c.logo) + '" alt="' + esc(c.name) + ' 로고" loading="lazy" ' +
+      'onerror="this.parentNode.classList.remove(\'has-logo\');this.parentNode.textContent=\'' + initials(c) + '\'"></div>';
+  }
 
   // 기업 페이지 주소. 내 컴퓨터에서 파일로 열 때는 폴더 주소가 안 열려서 index.html을 붙여요
   function companyUrl(id) {
@@ -104,7 +112,7 @@ var Atlas = (function () {
 
   return {
     COUNTRIES: COUNTRIES, INDUSTRIES: INDUSTRIES, ALL_INDUSTRIES: ALL_INDUSTRIES, icon: icon, esc: esc, companies: companies,
-    find: find, param: param, count: count, num: num, toKrwTrillion: toKrwTrillion, initials: initials,
+    find: find, param: param, count: count, num: num, toKrwTrillion: toKrwTrillion, initials: initials, logoBox: logoBox,
     companyUrl: companyUrl, ROOT: ROOT
   };
 })();

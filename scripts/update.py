@@ -7,6 +7,7 @@ import sys
 
 import build
 import fetch_dart
+import fetch_logos
 import fetch_sec
 
 
@@ -16,6 +17,11 @@ def main():
     ok = fetch_dart.main() and ok
     print('== 미국 기업 (SEC EDGAR) ==')
     ok = fetch_sec.main() and ok
+    print('== 기업 로고 ==')
+    try:
+        fetch_logos.main()
+    except Exception as e:  # 로고는 없어도 사이트는 만들어요
+        print('[로고 실패] %s' % e)
     print('== 사이트 만들기 ==')
     build.main()
     if not ok:

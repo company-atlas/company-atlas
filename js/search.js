@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   out.innerHTML = list.map(function (c) {
     return '<a class="result" href="' + Atlas.companyUrl(c.id) + '">' +
-      '<div class="logo-box" aria-hidden="true">' + Atlas.initials(c) + '</div>' +
+      Atlas.logoBox(c) +
       '<div class="info"><span class="name">' + Atlas.esc(c.name) + '</span>' +
       '<span class="small muted">' + Atlas.esc(c.country) + ' · ' + Atlas.esc(c.industry) + '</span>' +
       '<span style="font-size: 15px">' + Atlas.esc(c.tagline) + '</span></div>' +

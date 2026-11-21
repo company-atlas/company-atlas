@@ -114,6 +114,15 @@ def merge(c, fetched):
     return out
 
 
+def logo_box(c, root):
+    """로고가 있으면 그림을, 없으면 첫 글자 상자를 보여줘요."""
+    if c.get('logo'):
+        return ('<div class="logo-box has-logo"><img src="%s%s" alt="%s 로고" loading="lazy" '
+                'onerror="this.parentNode.classList.remove(\'has-logo\');this.parentNode.textContent=\'%s\'"></div>' % (
+                    root, e(c['logo']), e(c['name']), e(c['name'][0])))
+    return '<div class="logo-box" aria-hidden="true">%s</div>' % e(c['name'][0])
+
+
 def render_company(c, companies, meta):
     by_id = {x['id']: x for x in companies}
     root = '../../'
@@ -123,10 +132,10 @@ def render_company(c, companies, meta):
     h.append('<div class="crumb"><a href="%sindex.html">홈</a> &gt; <a href="%ssearch.html?country=%s">%s</a> &gt; '
              '<a href="%ssearch.html?industry=%s">%s</a> &gt; %s</div>' % (
                  root, root, e(c['country']), e(c['country']), root, e(c['industry']), e(c['industry']), e(c['name'])))
-    h.append('<div class="co-head"><div class="logo-box" aria-hidden="true">%s</div>'
+    h.append('<div class="co-head">%s'
              '<div style="display: flex; flex-direction: column; gap: 4px"><h1>%s<span class="en">%s</span></h1>'
              '<span class="meta">%s · %s</span><span class="tagline">%s</span></div></div>' % (
-                 e(c['name'][0]), e(c['name']), e(c['nameEn']), e(c['country']), e(c['industry']), e(c['tagline'])))
+                 logo_box(c, root), e(c['name']), e(c['nameEn']), e(c['country']), e(c['industry']), e(c['tagline'])))
     h.append('<nav class="in-nav" aria-label="페이지 안 이동">%s</nav>' % ''.join(
         '<a href="#%s">%s</a>' % n for n in NAV))
     h.append('<div class="co-body">')
@@ -271,10 +280,15 @@ def main():
     now = datetime.datetime.now(KST)
     meta = {'fx': site['fx'], 'updated': '%d년 %d월 %d일' % (now.year, now.month, now.day)}
 
+    logos = read_json(os.path.join(ROOT, 'data', 'logos.json')) or {}
     companies = []
     for c in load_companies():
         fetched = read_json(os.path.join(FETCHED_DIR, c['id'] + '.json'))
-        companies.append(merge(c, fetched))
+        m = merge(c, fetched)
+        lg = logos.get(c['id'])
+        if lg and c.get('logo') is not False and os.path.exists(os.path.join(ROOT, lg['path'])):
+            m['logo'] = lg['path']
+        companies.append(m)
 
     with open(os.path.join(ROOT, 'data', 'companies.js'), 'w', encoding='utf-8') as f:
         f.write('// 이 파일은 scripts/build.py가 자동으로 만들어요. 직접 고치지 말고 content/ 폴더를 고쳐 주세요.\n')
