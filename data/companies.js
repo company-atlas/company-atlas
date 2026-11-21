@@ -1,5 +1,5 @@
 // 이 파일은 scripts/build.py가 자동으로 만들어요. 직접 고치지 말고 content/ 폴더를 고쳐 주세요.
-window.ATLAS_META = {"fx": {"usdKrw": 1345.7, "asOf": "2026년 11월 20일 종가"}, "updated": "2026년 11월 21일"};
+window.ATLAS_META = {"fx": {"usdKrw": 1345.7, "asOf": "2026년 11월 20일 종가"}, "updated": "2026년 11월 22일"};
 window.ATLAS_COMPANIES = [
  {
   "id": "alphabet",
