@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://company-atlas.github.io/company-atlas/sitemap.xml

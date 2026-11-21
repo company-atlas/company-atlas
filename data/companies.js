@@ -258,7 +258,7 @@ window.ATLAS_COMPANIES = [
      307
     ]
    ],
-   "source": "직접 정리"
+   "source": "SEC EDGAR"
   }
  },
  {
@@ -519,7 +519,7 @@ window.ATLAS_COMPANIES = [
      75.1
     ]
    ],
-   "source": "직접 정리"
+   "source": "Open DART"
   }
  }
 ];
