@@ -137,5 +137,8 @@
       ]
     ]
   },
-  "fiscalNote": "엔비디아의 회계연도는 매년 1월 말에 끝나요. 그래서 2026 회계연도는 대부분 2025년이에요."
+  "fiscalNote": "엔비디아의 회계연도는 매년 1월 말에 끝나요. 그래서 2026 회계연도는 대부분 2025년이에요.",
+  "logo_url": [
+    "https://commons.wikimedia.org/wiki/Special:FilePath/Nvidia_logo.svg"
+  ]
 }

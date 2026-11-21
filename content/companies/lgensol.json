@@ -91,5 +91,9 @@
   "financials_fallback": {
     "annual": [],
     "quarterly": []
-  }
+  },
+  "logo_url": [
+    "https://commons.wikimedia.org/wiki/Special:FilePath/LG_Energy_Solution_logo.svg",
+    "https://commons.wikimedia.org/wiki/Special:FilePath/LG_Energy_Solution_Logo.svg"
+  ]
 }

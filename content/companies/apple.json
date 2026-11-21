@@ -264,5 +264,8 @@
     "annualTitle": "회계연도별 (최근 5년)",
     "annualNote": "매출은 2023~2024 회계연도에 제자리였다가, 2026 회계연도에 처음으로 4,500억 달러를 넘었어요.",
     "quarterlyNote": "새 아이폰이 나오고 연말 쇼핑철이 겹치는 10~12월 분기(4Q)에 매출이 가장 커요. 분기는 달력 기준으로 표시했어요."
-  }
+  },
+  "logo_url": [
+    "https://commons.wikimedia.org/wiki/Special:FilePath/Apple_logo_black.svg"
+  ]
 }

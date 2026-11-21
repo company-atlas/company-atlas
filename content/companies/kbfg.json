@@ -94,5 +94,9 @@
   "financials_fallback": {
     "annual": [],
     "quarterly": []
-  }
+  },
+  "logo_url": [
+    "https://commons.wikimedia.org/wiki/Special:FilePath/KB_Financial_Group_logo.svg",
+    "https://commons.wikimedia.org/wiki/Special:FilePath/KB_Financial_Group_Logo.svg"
+  ]
 }

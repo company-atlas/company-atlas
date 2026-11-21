@@ -122,5 +122,10 @@
       ]
     ]
   },
-  "fiscalNote": "브로드컴의 회계연도는 매년 11월 초에 끝나요."
+  "fiscalNote": "브로드컴의 회계연도는 매년 11월 초에 끝나요.",
+  "logo_url": [
+    "https://commons.wikimedia.org/wiki/Special:FilePath/Broadcom_Inc._logo.svg",
+    "https://commons.wikimedia.org/wiki/Special:FilePath/Broadcom_Ltd_Logo.svg",
+    "https://commons.wikimedia.org/wiki/Special:FilePath/Broadcom_logo.svg"
+  ]
 }

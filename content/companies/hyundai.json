@@ -88,5 +88,8 @@
   "financials_fallback": {
     "annual": [],
     "quarterly": []
-  }
+  },
+  "logo_url": [
+    "https://commons.wikimedia.org/wiki/Special:FilePath/Hyundai_Motor_Company_logo.svg"
+  ]
 }

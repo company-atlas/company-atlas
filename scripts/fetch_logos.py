@@ -8,7 +8,10 @@
 
 기업 파일(content/companies/<id>.json)에서 바꿀 수 있는 것
   "logo": false            로고를 쓰지 않아요 (첫 글자 상자)
-  "logo_url": "https://…"  회사가 공개한 로고 파일 주소를 직접 지정해요 (가장 우선)
+  "logo_url": "https://…"  공식 로고 파일 주소를 직접 지정해요 (가장 우선)
+                           여러 개를 목록으로 적으면 받아지는 첫 번째 것을 써요.
+                           {"url": "…", "bg": "#14213D"}처럼 배경색을 같이 적을 수도 있어요.
+                           모두 실패하면 아래의 자동 방법으로 찾아요.
   "logo_site": "https://…" 로고를 찾을 사이트를 바꿔요 (예: 알파벳 → 구글)
 
 크기가 64px보다 작은 로고는 7일마다, 나머지는 90일마다 다시 확인해요.
@@ -18,6 +21,7 @@ import datetime
 import html.parser
 import json
 import os
+import re
 import struct
 import urllib.parse
 import urllib.request
@@ -30,6 +34,8 @@ UA = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.3
       'Accept-Language': 'ko,en;q=0.8'}
 TYPES = {'image/png': 'png', 'image/jpeg': 'jpg', 'image/svg+xml': 'svg', 'image/x-icon': 'ico',
          'image/vnd.microsoft.icon': 'ico', 'image/webp': 'webp', 'image/gif': 'gif'}
+# 위키미디어는 연락처가 있는 이름(User-Agent)을 쓰라고 해요
+WIKI_UA = {'User-Agent': 'CompanyAtlas/1.0 (https://company-atlas.github.io/company-atlas/; logo fetch) python-urllib'}
 MAX_BYTES = 800 * 1024
 GOOD_PX = 64
 
@@ -55,7 +61,7 @@ class HeadFinder(html.parser.HTMLParser):
 
 
 def download(url):
-    req = urllib.request.Request(url, headers=UA)
+    req = urllib.request.Request(url, headers=WIKI_UA if 'wikimedia.org' in url or 'wikipedia.org' in url else UA)
     with urllib.request.urlopen(req, timeout=30) as res:
         ctype = res.headers.get('Content-Type', '').split(';')[0].strip().lower()
         data = res.read(MAX_BYTES + 1)
@@ -106,9 +112,45 @@ def pixel_size(data, ext):
     return 0
 
 
-def candidates(site, override=None):
+def ratio(data, ext):
+    """가로 ÷ 세로. 글자로 된 가로로 긴 로고는 상자를 넓게 보여주려고 재요. 모르면 1."""
+    try:
+        if ext == 'svg':
+            head = data[:4000].decode('utf-8', 'ignore')
+            tag = re.search(r'<svg[^>]*>', head, re.S | re.I)
+            tag = tag.group(0) if tag else ''
+            vb = re.search(r'viewBox\s*=\s*["\']\s*([-\d.e]+)[\s,]+([-\d.e]+)[\s,]+([\d.e]+)[\s,]+([\d.e]+)', tag, re.I)
+            if vb and float(vb.group(4)) > 0:
+                return round(float(vb.group(3)) / float(vb.group(4)), 2)
+            w = re.search(r'\swidth\s*=\s*["\']([\d.]+)', tag)
+            h = re.search(r'\sheight\s*=\s*["\']([\d.]+)', tag)
+            if w and h and float(h.group(1)) > 0:
+                return round(float(w.group(1)) / float(h.group(1)), 2)
+        elif data[:8] == b'\x89PNG\r\n\x1a\n':
+            w, h = struct.unpack('>II', data[16:24])
+            return round(w / h, 2) if h else 1
+    except Exception:
+        pass
+    return 1
+
+
+def overrides(c):
+    """기업 파일의 logo_url을 [(주소, 배경색), …] 목록으로 바꿔요."""
+    v = c.get('logo_url')
+    if not v:
+        return []
+    out = []
+    for item in (v if isinstance(v, list) else [v]):
+        if isinstance(item, dict) and item.get('url'):
+            out.append((item['url'], item.get('bg')))
+        elif isinstance(item, str):
+            out.append((item, None))
+    return out
+
+
+def candidates(site):
     """받아 볼 주소 목록."""
-    out = [override] if override else []
+    out = []
     parts = urllib.parse.urlparse(site)
     origin = '%s://%s' % (parts.scheme or 'https', parts.netloc)
     try:
@@ -153,18 +195,24 @@ def try_url(url):
         return None
     if ext != 'svg' and data[:1] == b'<':  # 그림 대신 웹페이지가 온 경우
         return None
-    return {'ext': ext, 'data': data, 'url': url, 'px': pixel_size(data, ext)}
+    return {'ext': ext, 'data': data, 'url': url, 'px': pixel_size(data, ext), 'ratio': ratio(data, ext)}
 
 
 def fetch_one(c):
+    # 1) 직접 지정한 공식 로고 파일: 받아지는 첫 번째 것을 그대로 써요
+    for url, bg in overrides(c):
+        got = try_url(url)
+        if got:
+            got['override'], got['bg'] = True, bg
+            return got
+        print('  지정한 로고를 받지 못했어요: %s' % url)
+    # 2) 자동: 회사 사이트 아이콘 중 가장 큰 것
     site = c.get('logo_site') or c['website']
-    urls, domain = candidates(site, c.get('logo_url'))
+    urls, domain = candidates(site)
     found = []
     for url in urls:
         got = try_url(url)
         if got:
-            if url == c.get('logo_url'):
-                return got  # 직접 지정한 로고는 그대로 써요
             found.append(got)
     best = max(found, key=lambda g: g['px'], default=None)
     if not best or best['px'] < 128:
@@ -183,7 +231,7 @@ def main():
             index.pop(c['id'], None)
             continue
         old = index.get(c['id'])
-        if old and os.path.exists(os.path.join(ROOT, old['path'])) and old.get('px') is not None \
+        if old and os.path.exists(os.path.join(ROOT, old['path'])) and old.get('px') is not None and 'ratio' in old \
                 and old.get('logo_url') == c.get('logo_url') and old.get('logo_site') == c.get('logo_site'):
             days = 90 if old['px'] >= GOOD_PX else 7
             if old.get('saved', '') >= (today - datetime.timedelta(days=days)).isoformat():
@@ -192,7 +240,7 @@ def main():
         if not got:
             print('[로고 없음] %s: 첫 글자 상자로 보여줘요' % c['name'])
             continue
-        if old and old.get('px', 0) > got['px'] and os.path.exists(os.path.join(ROOT, old['path'])):
+        if old and not got.get('override') and old.get('px', 0) > got['px'] and os.path.exists(os.path.join(ROOT, old['path'])):
             old['saved'] = today.isoformat()  # 예전 것이 더 크면 그대로 둬요
             continue
         for name in os.listdir(LOGO_DIR):
@@ -202,8 +250,9 @@ def main():
         with open(os.path.join(ROOT, rel), 'wb') as f:
             f.write(got['data'])
         index[c['id']] = {'path': rel, 'from': got['url'], 'px': got['px'], 'saved': today.isoformat(),
-                          'logo_url': c.get('logo_url'), 'logo_site': c.get('logo_site')}
-        print('[로고] %s %dpx ← %s%s' % (c['name'], got['px'], got['url'], '' if got['px'] >= GOOD_PX else '  (작은 로고)'))
+                          'logo_url': c.get('logo_url'), 'logo_site': c.get('logo_site'),
+                          'ratio': got['ratio'], 'override': bool(got.get('override')), 'bg': got.get('bg')}
+        print('[로고] %s %s ← %s%s' % (c['name'], '공식 파일' if got.get('override') else '%dpx' % got['px'], got['url'], '' if got['px'] >= GOOD_PX else '  (작은 로고)'))
     write_json(INDEX, index)
     return True
 

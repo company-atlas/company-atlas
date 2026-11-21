@@ -144,5 +144,9 @@
       ]
     ]
   },
-  "fiscalNote": "마이크로소프트의 회계연도는 매년 6월 말에 끝나요. 예를 들어 2026 회계연도는 2025년 7월~2026년 6월이에요."
+  "fiscalNote": "마이크로소프트의 회계연도는 매년 6월 말에 끝나요. 예를 들어 2026 회계연도는 2025년 7월~2026년 6월이에요.",
+  "logo_url": [
+    "https://commons.wikimedia.org/wiki/Special:FilePath/Microsoft_logo.svg",
+    "https://commons.wikimedia.org/wiki/Special:FilePath/Microsoft_logo_(2012).svg"
+  ]
 }

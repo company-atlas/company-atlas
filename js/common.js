@@ -90,9 +90,9 @@ var Atlas = (function () {
   // 로고가 있으면 그림, 없으면(또는 못 불러오면) 첫 글자 상자
   function logoBox(c) {
     if (!c.logo) return '<div class="logo-box" aria-hidden="true">' + initials(c) + '</div>';
-    return '<div class="logo-box has-logo' + (c.logoSmall ? ' small-logo' : '') + '"' +
+    return '<div class="logo-box has-logo' + (c.logoSmall ? ' small-logo' : '') + (c.logoWide ? ' wide-logo' : '') + '"' +
       (c.logoBg ? ' style="background: ' + esc(c.logoBg) + '"' : '') + '><img src="' + ROOT + esc(c.logo) + '" alt="' + esc(c.name) + ' 로고" loading="lazy" ' +
-      'onerror="this.parentNode.classList.remove(\'has-logo\');this.parentNode.textContent=\'' + initials(c) + '\'"></div>';
+      'onerror="this.parentNode.classList.remove(\'has-logo\',\'wide-logo\');this.parentNode.textContent=\'' + initials(c) + '\'"></div>';
   }
 
   // 기업 페이지 주소. 내 컴퓨터에서 파일로 열 때는 폴더 주소가 안 열려서 index.html을 붙여요

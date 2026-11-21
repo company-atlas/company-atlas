@@ -150,5 +150,9 @@
       ]
     ]
   },
-  "logo_bg": "#14213D"
+  "logo_bg": "#14213D",
+  "logo_url": [
+    "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX_logo_black.svg",
+    "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX-Logo.svg"
+  ]
 }

@@ -94,5 +94,9 @@
   "financials_fallback": {
     "annual": [],
     "quarterly": []
-  }
+  },
+  "logo_url": [
+    "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Life_Insurance_logo.svg",
+    "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Life_Insurance_Logo.svg"
+  ]
 }

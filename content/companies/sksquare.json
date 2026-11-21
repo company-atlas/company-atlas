@@ -86,5 +86,9 @@
   "financials_fallback": {
     "annual": [],
     "quarterly": []
-  }
+  },
+  "logo_url": [
+    "https://commons.wikimedia.org/wiki/Special:FilePath/SK_Square_logo.svg",
+    "https://commons.wikimedia.org/wiki/Special:FilePath/SK_square_logo.svg"
+  ]
 }

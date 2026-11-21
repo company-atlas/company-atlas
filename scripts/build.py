@@ -119,9 +119,9 @@ def merge(c, fetched):
 def logo_box(c, root):
     """로고가 있으면 그림을, 없으면 첫 글자 상자를 보여줘요."""
     if c.get('logo'):
-        return ('<div class="logo-box has-logo%s"%s><img src="%s%s" alt="%s 로고" loading="lazy" '
-                'onerror="this.parentNode.classList.remove(\'has-logo\');this.parentNode.textContent=\'%s\'"></div>' % (
-                    ' small-logo' if c.get('logoSmall') else '',
+        return ('<div class="logo-box has-logo%s%s"%s><img src="%s%s" alt="%s 로고" loading="lazy" '
+                'onerror="this.parentNode.classList.remove(\'has-logo\',\'wide-logo\');this.parentNode.textContent=\'%s\'"></div>' % (
+                    ' small-logo' if c.get('logoSmall') else '', ' wide-logo' if c.get('logoWide') else '',
                     (' style="background: %s"' % e(c['logoBg'])) if c.get('logoBg') else '', root, e(c['logo']), e(c['name']), e(c['name'][0])))
     return '<div class="logo-box" aria-hidden="true">%s</div>' % e(c['name'][0])
 
@@ -293,8 +293,13 @@ def main():
         if lg and c.get('logo') is not False and os.path.exists(os.path.join(ROOT, lg['path'])) and lg.get('px', 64) >= 32:
             m['logo'] = lg['path']
             m['logoSmall'] = lg.get('px', 64) < 64
-            if c.get('logo_bg'):
-                m['logoBg'] = c['logo_bg']
+            # 가로로 긴 글자 로고(가로가 세로의 1.6배 이상)는 상자를 넓게 보여줘요
+            if lg.get('ratio', 1) >= 1.6:
+                m['logoWide'] = True
+            # 배경색: 공식 파일에 함께 적은 색 → (자동으로 찾은 로고일 때만) 기업 파일의 logo_bg
+            bg = lg.get('bg') if lg.get('override') else c.get('logo_bg')
+            if bg:
+                m['logoBg'] = bg
         companies.append(m)
 
     with open(os.path.join(ROOT, 'data', 'companies.js'), 'w', encoding='utf-8') as f:

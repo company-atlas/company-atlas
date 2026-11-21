@@ -266,5 +266,9 @@
     "annualTitle": "연도별 (최근 5년)",
     "annualNote": "2023년에는 반도체 경기가 나빠져 영업이익이 6.6조 원까지 줄었다가, 2024~2025년에 다시 회복했어요.",
     "quarterlyNote": "2026년 들어 반도체 호황으로 이익이 크게 늘어, 2026년 3분기 영업이익(107.4조 원)이 2025년 한 해 영업이익의 두 배를 넘었어요."
-  }
+  },
+  "logo_url": [
+    "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Logo.svg",
+    "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_wordmark.svg"
+  ]
 }

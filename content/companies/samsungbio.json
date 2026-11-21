@@ -87,5 +87,9 @@
   "financials_fallback": {
     "annual": [],
     "quarterly": []
-  }
+  },
+  "logo_url": [
+    "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Biologics_logo.svg",
+    "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Biologics_Logo.svg"
+  ]
 }

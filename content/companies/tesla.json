@@ -132,5 +132,10 @@
         12.53
       ]
     ]
-  }
+  },
+  "logo_url": [
+    "https://commons.wikimedia.org/wiki/Special:FilePath/Tesla_T_symbol.svg",
+    "https://commons.wikimedia.org/wiki/Special:FilePath/Tesla_logo.svg",
+    "https://commons.wikimedia.org/wiki/Special:FilePath/Tesla_Motors.svg"
+  ]
 }
