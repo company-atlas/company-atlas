@@ -3,20 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>기업 정보 · Company Atlas</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<title>Company Atlas</title>
+<meta name="robots" content="noindex">
+<script>
+  // 예전 주소(company.html?id=samsung)로 들어오면 새 주소(company/samsung/)로 옮겨 줘요
+  var id = new URLSearchParams(location.search).get('id') || '';
+  var file = location.protocol === 'file:' ? 'index.html' : '';
+  location.replace(id ? 'company/' + encodeURIComponent(id) + '/' + file : 'index.html');
+</script>
 </head>
-<body>
-<div class="page-shell">
-  <header id="site-header"></header>
-  <main class="wrap page" id="company"></main>
-  <footer id="site-footer"></footer>
-</div>
-
-<script src="data/companies.js"></script>
-<script src="js/common.js"></script>
-<script src="js/company.js"></script>
-</body>
+<body></body>
 </html>

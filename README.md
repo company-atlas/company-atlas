@@ -1,40 +1,39 @@
 # Company Atlas
 
-한국·미국 상장사 정보를 쉽게 보여주는 웹사이트예요. 지금은 예시로 삼성전자와 애플 두 기업이 들어 있어요.
+한국·미국 상장사 정보를 쉽게 보여주는 웹사이트예요. 지금은 예시로 삼성전자와 애플이 들어 있어요.
 
 ## 내 컴퓨터에서 열어 보기
 
-1. 압축 파일을 풀어요.
-2. `company-atlas` 폴더 안의 `index.html`을 더블클릭해요.
-3. 웹 브라우저(크롬, 엣지, 사파리 등)에서 홈 화면이 열려요.
-
-따로 설치할 프로그램은 없어요.
+압축을 풀고 `company-atlas` 폴더 안의 `index.html`을 더블클릭하면 브라우저에서 열려요.
 
 ## 폴더 구성
 
-| 파일·폴더 | 하는 일 |
-| --- | --- |
-| `index.html` | 홈 화면 |
-| `search.html` | 검색 결과 화면 |
-| `browse.html` | 전체 보기 (국가별·산업별) |
-| `company.html` | 기업 페이지 (주소 끝의 `?id=samsung` 같은 값으로 기업을 골라요) |
-| `about.html` | 사이트 소개 |
-| `css/style.css` | 색, 글꼴, 배치 같은 디자인 |
-| `js/` | 화면을 움직이게 하는 코드 |
-| `data/companies.js` | 기업 정보와 숫자 (나중에 자동으로 갱신할 파일) |
+| 파일·폴더 | 하는 일 | 직접 고치나요? |
+| --- | --- | --- |
+| `index.html`, `search.html`, `browse.html`, `about.html` | 홈·검색 결과·전체 보기·소개 화면 | 가끔 |
+| `content/companies/*.json` | 기업마다 손으로 쓴 내용 (쉬운 설명, 사업, 경쟁사, 연혁, 시가총액) | **예, 여기를 고쳐요** |
+| `content/site.json` | 환율 | 예 |
+| `company/<기업>/index.html` | 기업 페이지 | 아니요, 자동으로 만들어져요 |
+| `data/companies.js` | 검색·그래프용 데이터 | 아니요, 자동으로 만들어져요 |
+| `data/fetched/` | DART·SEC에서 받은 숫자 | 아니요, 자동으로 만들어져요 |
+| `scripts/` | 자료를 받고 페이지를 만드는 프로그램 | 아니요 |
+| `.github/workflows/update.yml` | 매일 아침 자동 실행 설정 | 아니요 |
+| `css/`, `js/` | 디자인과 화면 동작 | 가끔 |
 
-## 인터넷에 공개하기 (GitHub Pages, 무료)
+## 자동 업데이트 켜기 (한 번만)
 
-1. [github.com](https://github.com)에서 계정을 만들어요.
-2. 오른쪽 위 `+` → `New repository`를 눌러 저장소를 만들어요. 이름은 `company-atlas`, 공개 범위는 `Public`으로 해요.
-3. 만든 저장소 화면에서 `uploading an existing file` 링크를 눌러요.
-4. `company-atlas` 폴더 **안의 파일과 폴더 전부**를 끌어다 놓고, 아래 `Commit changes`를 눌러요.
-5. 저장소의 `Settings` → 왼쪽 `Pages`로 가요.
-6. `Branch`를 `main`, 폴더를 `/ (root)`로 고르고 `Save`를 눌러요.
-7. 1~2분 뒤 같은 화면 위쪽에 사이트 주소(`https://내아이디.github.io/company-atlas/`)가 나타나요.
+1. GitHub 저장소 → `Settings` → 왼쪽 `Secrets and variables` → `Actions` → `New repository secret`
+2. 두 가지를 등록해요.
+   - 이름 `DART_API_KEY`, 값: Open DART 인증키
+   - 이름 `SEC_CONTACT_EMAIL`, 값: 연락받을 이메일 주소 (SEC가 요청마다 연락처를 남기라고 해요)
+3. 저장소 위쪽 `Actions` 탭 → 왼쪽 `기업 자료 업데이트` → `Run workflow`를 누르면 바로 한 번 실행돼요.
+4. 그 뒤로는 매일 한국 시간 오전 6시쯤 자동으로 실행돼요.
 
-## 다음 단계
+인증키가 없어도 사이트는 손으로 넣은 예비 숫자로 계속 만들어져요.
 
-- DART·SEC에서 데이터를 받아 `data/companies.js`를 자동으로 다시 만드는 부분
-- 매일·매 분기 자동 갱신
-- 기업 수 늘리기
+## 기업 추가하기
+
+`content/companies/` 안의 파일 하나를 복사해서 이름과 내용을 바꾸면 돼요.
+
+- 한국 기업: `sources_ids`에 `dart_corp_code`(DART 고유번호 8자리)
+- 미국 기업: `sources_ids`에 `sec_cik`(SEC 고유번호)

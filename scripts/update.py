@@ -1,0 +1,27 @@
+"""한 번에 실행: 한국(DART)·미국(SEC) 실적을 받고, 사이트 페이지를 다시 만들어요.
+
+자료 받기가 실패해도 이전에 받아 둔 값(또는 손으로 넣은 예비 값)으로 사이트는 계속 만들어요.
+"""
+
+import sys
+
+import build
+import fetch_dart
+import fetch_sec
+
+
+def main():
+    ok = True
+    print('== 한국 기업 (Open DART) ==')
+    ok = fetch_dart.main() and ok
+    print('== 미국 기업 (SEC EDGAR) ==')
+    ok = fetch_sec.main() and ok
+    print('== 사이트 만들기 ==')
+    build.main()
+    if not ok:
+        print('일부 기업의 자료를 받지 못했어요. 위의 [실패] 줄을 확인해 주세요.')
+        sys.exit(1)
+
+
+if __name__ == '__main__':
+    main()

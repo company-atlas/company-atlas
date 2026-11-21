@@ -1,6 +1,8 @@
 // 여러 화면이 같이 쓰는 부분: 상단 메뉴, 하단 안내, 아이콘, 숫자 표시 도우미
 
 var Atlas = (function () {
+  // 이 페이지가 사이트 맨 위 폴더에서 얼마나 깊이 있는지 ('' 또는 '../../')
+  var ROOT = window.ATLAS_ROOT || '';
   var COUNTRIES = ['한국', '미국'];
   var INDUSTRIES = ['반도체·전자', '자동차', 'IT·소프트웨어', '금융·은행', '바이오·제약', '에너지·화학', '유통·소비재', '통신·미디어'];
 
@@ -51,11 +53,11 @@ var Atlas = (function () {
     el.className = 'site-header';
     el.innerHTML =
       '<div class="wrap">' +
-        '<a class="logo" href="index.html">Company Atlas</a>' +
+        '<a class="logo" href="' + ROOT + 'index.html">Company Atlas</a>' +
         '<nav class="site-nav" id="site-nav" aria-label="주 메뉴">' +
-          '<a href="browse.html?tab=country">국가별</a>' +
-          '<a href="browse.html?tab=industry">산업별</a>' +
-          '<a href="about.html">소개</a>' +
+          '<a href="' + ROOT + 'browse.html?tab=country">국가별</a>' +
+          '<a href="' + ROOT + 'browse.html?tab=industry">산업별</a>' +
+          '<a href="' + ROOT + 'about.html">소개</a>' +
         '</nav>' +
         '<button type="button" class="menu-btn" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-nav">' +
           '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>' +
@@ -80,10 +82,25 @@ var Atlas = (function () {
 
   function initials(c) { return esc(c.name.slice(0, 1)); }
 
-  document.addEventListener('DOMContentLoaded', function () { header(); footer(); });
+  // 기업 페이지 주소. 내 컴퓨터에서 파일로 열 때는 폴더 주소가 안 열려서 index.html을 붙여요
+  function companyUrl(id) {
+    return ROOT + 'company/' + encodeURIComponent(id) + '/' + (location.protocol === 'file:' ? 'index.html' : '');
+  }
+
+  // 내 컴퓨터에서 열었을 때 폴더 주소(…/)로 끝나는 링크에 index.html을 붙여 줘요
+  function fixLocalLinks() {
+    if (location.protocol !== 'file:') return;
+    document.querySelectorAll('a[href$="/"]').forEach(function (a) {
+      var h = a.getAttribute('href');
+      if (!/^https?:/.test(h)) a.setAttribute('href', h + 'index.html');
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () { header(); footer(); fixLocalLinks(); });
 
   return {
     COUNTRIES: COUNTRIES, INDUSTRIES: INDUSTRIES, icon: icon, esc: esc, companies: companies,
-    find: find, param: param, count: count, num: num, toKrwTrillion: toKrwTrillion, initials: initials
+    find: find, param: param, count: count, num: num, toKrwTrillion: toKrwTrillion, initials: initials,
+    companyUrl: companyUrl, ROOT: ROOT
   };
 })();
