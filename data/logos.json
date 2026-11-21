@@ -1,97 +1,162 @@
 {
   "alphabet": {
     "path": "data/logos/alphabet.png",
-    "from": "https://s206.q4cdn.com/479360582/files/favicon-16.png",
-    "saved": "2026-11-21"
+    "from": "https://www.google.com/s2/favicons?domain=www.google.com&sz=256",
+    "px": 144,
+    "saved": "2026-11-21",
+    "logo_url": null,
+    "logo_site": "https://www.google.com"
   },
   "amazon": {
     "path": "data/logos/amazon.ico",
     "from": "https://www.amazon.com/favicon.ico",
-    "saved": "2026-11-21"
+    "px": 48,
+    "saved": "2026-11-21",
+    "logo_url": null,
+    "logo_site": null
   },
   "anthropic": {
     "path": "data/logos/anthropic.png",
     "from": "https://www.anthropic.com/images/icons/apple-touch-icon.png",
-    "saved": "2026-11-21"
+    "px": 180,
+    "saved": "2026-11-21",
+    "logo_url": null,
+    "logo_site": null
   },
   "apple": {
-    "path": "data/logos/apple.ico",
-    "from": "https://www.apple.com/favicon.ico",
-    "saved": "2026-11-21"
+    "path": "data/logos/apple.png",
+    "from": "https://www.apple.com/apple-touch-icon.png",
+    "px": 152,
+    "saved": "2026-11-21",
+    "logo_url": null,
+    "logo_site": null
   },
   "broadcom": {
     "path": "data/logos/broadcom.png",
     "from": "https://www.broadcom.com/favicon-96x96.png",
-    "saved": "2026-11-21"
+    "px": 96,
+    "saved": "2026-11-21",
+    "logo_url": null,
+    "logo_site": null
   },
   "celltrion": {
     "path": "data/logos/celltrion.ico",
     "from": "https://www.celltrion.com/front/assets/common/images/common/favicon.ico",
-    "saved": "2026-11-21"
+    "px": 180,
+    "saved": "2026-11-21",
+    "logo_url": null,
+    "logo_site": null
   },
   "hyundai": {
     "path": "data/logos/hyundai.svg",
     "from": "https://www.hyundaiusa.com/content/dam/hyundai/us/com/image/general/icon/favicon-2023.svg",
-    "saved": "2026-11-21"
+    "px": 1024,
+    "saved": "2026-11-21",
+    "logo_url": null,
+    "logo_site": null
   },
   "kbfg": {
-    "path": "data/logos/kbfg.ico",
-    "from": "https://www.kbfg.com/favicon.ico",
-    "saved": "2026-11-21"
+    "path": "data/logos/kbfg.png",
+    "from": "https://www.google.com/s2/favicons?domain=www.kbfg.com&sz=256",
+    "px": 192,
+    "saved": "2026-11-21",
+    "logo_url": null,
+    "logo_site": null
   },
   "lgensol": {
     "path": "data/logos/lgensol.ico",
     "from": "https://www.lgensol.com/favicon.ico",
-    "saved": "2026-11-21"
+    "px": 16,
+    "saved": "2026-11-21",
+    "logo_url": null,
+    "logo_site": null
   },
   "meta": {
-    "path": "data/logos/meta.webp",
-    "from": "https://static.xx.fbcdn.net/rsrc.php/yQ/r/0eWKxz9kEoF.webp",
-    "saved": "2026-11-21"
+    "path": "data/logos/meta.jpg",
+    "from": "https://www.google.com/s2/favicons?domain=about.meta.com&sz=256",
+    "px": 180,
+    "saved": "2026-11-21",
+    "logo_url": null,
+    "logo_site": null
   },
   "microsoft": {
     "path": "data/logos/microsoft.ico",
     "from": "https://www.microsoft.com/favicon.ico?v2",
-    "saved": "2026-11-21"
+    "px": 128,
+    "saved": "2026-11-21",
+    "logo_url": null,
+    "logo_site": null
   },
   "nvidia": {
     "path": "data/logos/nvidia.ico",
     "from": "https://www.nvidia.com/favicon.ico",
-    "saved": "2026-11-21"
+    "px": 48,
+    "saved": "2026-11-21",
+    "logo_url": null,
+    "logo_site": null
   },
   "samsung": {
     "path": "data/logos/samsung.png",
     "from": "https://resources.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-common/resources/images/app_ico.png",
-    "saved": "2026-11-21"
+    "px": 144,
+    "saved": "2026-11-21",
+    "logo_url": null,
+    "logo_site": null
   },
   "samsungbio": {
     "path": "data/logos/samsungbio.ico",
     "from": "https://samsungbiologics.com/resources/front/common/samsungbio.ico",
-    "saved": "2026-11-21"
+    "px": 32,
+    "saved": "2026-11-21",
+    "logo_url": null,
+    "logo_site": null
   },
   "samsunglife": {
     "path": "data/logos/samsunglife.png",
     "from": "https://www.samsunglife.com/samsunglife_ci.png",
-    "saved": "2026-11-21"
+    "px": 200,
+    "saved": "2026-11-21",
+    "logo_url": null,
+    "logo_site": null
   },
   "semco": {
     "path": "data/logos/semco.ico",
     "from": "https://www.samsungsem.com/resources/images/common/favicon.ico",
-    "saved": "2026-11-21"
+    "px": 16,
+    "saved": "2026-11-21",
+    "logo_url": null,
+    "logo_site": null
   },
   "skhynix": {
     "path": "data/logos/skhynix.ico",
-    "from": "https://www.skhynix.com/favicon.ico",
-    "saved": "2026-11-21"
+    "from": "https://mis-prod-koce-skhynixhomepage-cdn-01-ep.azureedge.net/img/favicon.ico",
+    "px": 16,
+    "saved": "2026-11-21",
+    "logo_url": null,
+    "logo_site": null
   },
   "sksquare": {
     "path": "data/logos/sksquare.ico",
     "from": "https://www.sksquare.com/assets/images/seo/favicon.ico",
-    "saved": "2026-11-21"
+    "px": 16,
+    "saved": "2026-11-21",
+    "logo_url": null,
+    "logo_site": null
   },
   "spacex": {
     "path": "data/logos/spacex.ico",
     "from": "https://www.spacex.com/assets/favicon-spacex.ico",
-    "saved": "2026-11-21"
+    "px": 48,
+    "saved": "2026-11-21",
+    "logo_url": null,
+    "logo_site": null
+  },
+  "tesla": {
+    "path": "data/logos/tesla.png",
+    "from": "https://www.google.com/s2/favicons?domain=www.tesla.com&sz=256",
+    "px": 152,
+    "saved": "2026-11-21",
+    "logo_url": null,
+    "logo_site": null
   }
 }

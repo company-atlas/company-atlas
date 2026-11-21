@@ -148,6 +148,7 @@ window.ATLAS_COMPANIES = [
     ]
    ]
   },
+  "logo_site": "https://www.google.com",
   "financials": {
    "unit": "억 달러",
    "annualTitle": "회계연도별 (최근 5년)",
@@ -160,16 +161,16 @@ window.ATLAS_COMPANIES = [
    ],
    "annual": [
     [
-     "FY2020",
-     1825,
-     412,
-     403
-    ],
-    [
      "FY2021",
      2576,
      787,
      760
+    ],
+    [
+     "FY2022",
+     2828,
+     748,
+     600
     ],
     [
      "FY2023",
@@ -192,10 +193,10 @@ window.ATLAS_COMPANIES = [
    ],
    "quarterly": [
     [
-     "24.3Q",
-     883,
-     285,
-     263
+     "24.4Q",
+     965,
+     310,
+     265
     ],
     [
      "25.1Q",
@@ -242,7 +243,8 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "SEC EDGAR"
   },
-  "logo": "data/logos/alphabet.png"
+  "logo": "data/logos/alphabet.png",
+  "logoSmall": false
  },
  {
   "id": "amazon",
@@ -469,7 +471,8 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "SEC EDGAR"
   },
-  "logo": "data/logos/amazon.ico"
+  "logo": "data/logos/amazon.ico",
+  "logoSmall": true
  },
  {
   "id": "anthropic",
@@ -629,7 +632,8 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "직접 정리"
   },
-  "logo": "data/logos/anthropic.png"
+  "logo": "data/logos/anthropic.png",
+  "logoSmall": false
  },
  {
   "id": "apple",
@@ -895,7 +899,8 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "SEC EDGAR"
   },
-  "logo": "data/logos/apple.ico"
+  "logo": "data/logos/apple.png",
+  "logoSmall": false
  },
  {
   "id": "broadcom",
@@ -1065,6 +1070,12 @@ window.ATLAS_COMPANIES = [
    ],
    "quarterly": [
     [
+     "17.3Q",
+     48,
+     8,
+     5
+    ],
+    [
      "17.4Q",
      53,
      9,
@@ -1109,7 +1120,8 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "SEC EDGAR"
   },
-  "logo": "data/logos/broadcom.png"
+  "logo": "data/logos/broadcom.png",
+  "logoSmall": false
  },
  {
   "id": "celltrion",
@@ -1122,7 +1134,7 @@ window.ATLAS_COMPANIES = [
   "info": [
    [
     "설립연도",
-    "1991년"
+    "2002년"
    ],
    [
     "본사 위치",
@@ -1306,7 +1318,8 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "Open DART"
   },
-  "logo": "data/logos/celltrion.ico"
+  "logo": "data/logos/celltrion.ico",
+  "logoSmall": false
  },
  {
   "id": "hyundai",
@@ -1327,7 +1340,7 @@ window.ATLAS_COMPANIES = [
    ],
    [
     "대표",
-    "정의선 · 무뇨스 바르셀로 호세 안토니오 · 최영일(각자 대표이사)"
+    "정의선 · 무뇨스 바르셀로 호세 안토니오 · 최영일"
    ],
    [
     "상장 여부",
@@ -1504,7 +1517,8 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "Open DART"
   },
-  "logo": "data/logos/hyundai.svg"
+  "logo": "data/logos/hyundai.svg",
+  "logoSmall": false
  },
  {
   "id": "kbfg",
@@ -1673,7 +1687,8 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "Open DART"
   },
-  "logo": "data/logos/kbfg.ico"
+  "logo": "data/logos/kbfg.png",
+  "logoSmall": false
  },
  {
   "id": "lgensol",
@@ -1873,8 +1888,7 @@ window.ATLAS_COMPANIES = [
     ]
    ],
    "source": "Open DART"
-  },
-  "logo": "data/logos/lgensol.ico"
+  }
  },
  {
   "id": "meta",
@@ -2102,7 +2116,8 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "SEC EDGAR"
   },
-  "logo": "data/logos/meta.webp"
+  "logo": "data/logos/meta.jpg",
+  "logoSmall": false
  },
  {
   "id": "microsoft",
@@ -2344,7 +2359,8 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "SEC EDGAR"
   },
-  "logo": "data/logos/microsoft.ico"
+  "logo": "data/logos/microsoft.ico",
+  "logoSmall": false
  },
  {
   "id": "nvidia",
@@ -2579,7 +2595,8 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "SEC EDGAR"
   },
-  "logo": "data/logos/nvidia.ico"
+  "logo": "data/logos/nvidia.ico",
+  "logoSmall": true
  },
  {
   "id": "samsung",
@@ -2847,7 +2864,8 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "Open DART"
   },
-  "logo": "data/logos/samsung.png"
+  "logo": "data/logos/samsung.png",
+  "logoSmall": false
  },
  {
   "id": "samsungbio",
@@ -3044,7 +3062,8 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "Open DART"
   },
-  "logo": "data/logos/samsungbio.ico"
+  "logo": "data/logos/samsungbio.ico",
+  "logoSmall": true
  },
  {
   "id": "samsunglife",
@@ -3213,7 +3232,8 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "Open DART"
   },
-  "logo": "data/logos/samsunglife.png"
+  "logo": "data/logos/samsunglife.png",
+  "logoSmall": false
  },
  {
   "id": "semco",
@@ -3432,8 +3452,7 @@ window.ATLAS_COMPANIES = [
     ]
    ],
    "source": "Open DART"
-  },
-  "logo": "data/logos/semco.ico"
+  }
  },
  {
   "id": "skhynix",
@@ -3446,7 +3465,7 @@ window.ATLAS_COMPANIES = [
   "info": [
    [
     "설립연도",
-    "1949년"
+    "1983년 (현대전자 반도체 사업 시작)"
    ],
    [
     "본사 위치",
@@ -3640,8 +3659,7 @@ window.ATLAS_COMPANIES = [
     ]
    ],
    "source": "Open DART"
-  },
-  "logo": "data/logos/skhynix.ico"
+  }
  },
  {
   "id": "sksquare",
@@ -3819,8 +3837,7 @@ window.ATLAS_COMPANIES = [
     ]
    ],
    "source": "Open DART"
-  },
-  "logo": "data/logos/sksquare.ico"
+  }
  },
  {
   "id": "spacex",
@@ -3960,6 +3977,7 @@ window.ATLAS_COMPANIES = [
     ]
    ]
   },
+  "logo_bg": "#14213D",
   "financials": {
    "unit": "억 달러",
    "annualTitle": "회계연도별 (최근 5년)",
@@ -4006,7 +4024,9 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "SEC EDGAR"
   },
-  "logo": "data/logos/spacex.ico"
+  "logo": "data/logos/spacex.ico",
+  "logoSmall": true,
+  "logoBg": "#14213D"
  },
  {
   "id": "tesla",
@@ -4235,6 +4255,8 @@ window.ATLAS_COMPANIES = [
     ]
    ],
    "source": "SEC EDGAR"
-  }
+  },
+  "logo": "data/logos/tesla.png",
+  "logoSmall": false
  }
 ];
