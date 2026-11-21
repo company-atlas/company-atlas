@@ -1829,8 +1829,10 @@ window.ATLAS_COMPANIES = [
   ],
   "sources": "LG에너지솔루션 공시, 시가총액은 2026년 11월 20일 시세",
   "logo_url": [
-   "https://commons.wikimedia.org/wiki/Special:FilePath/LG_Energy_Solution_logo.svg",
-   "https://commons.wikimedia.org/wiki/Special:FilePath/LG_Energy_Solution_Logo.svg"
+   "commons:LG Energy Solution",
+   "wiki:ko:LG에너지솔루션",
+   "wiki:en:LG Energy Solution",
+   "page:"
   ],
   "financials": {
    "unit": "조 원",
@@ -1925,7 +1927,10 @@ window.ATLAS_COMPANIES = [
     ]
    ],
    "source": "Open DART"
-  }
+  },
+  "logo": "data/logos/lgensol.svg",
+  "logoSmall": false,
+  "logoWide": true
  },
  {
   "id": "meta",
@@ -3424,8 +3429,10 @@ window.ATLAS_COMPANIES = [
    ]
   },
   "logo_url": [
-   "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Electro-Mechanics_logo.svg",
-   "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Electro-Mechanics_Logo.svg"
+   "commons:Samsung Electro-Mechanics",
+   "wiki:ko:삼성전기",
+   "wiki:en:Samsung Electro-Mechanics",
+   "page:"
   ],
   "financials": {
    "unit": "조 원",
@@ -3520,7 +3527,10 @@ window.ATLAS_COMPANIES = [
     ]
    ],
    "source": "Open DART"
-  }
+  },
+  "logo": "data/logos/semco.svg",
+  "logoSmall": false,
+  "logoWide": true
  },
  {
   "id": "skhynix",
@@ -3831,8 +3841,10 @@ window.ATLAS_COMPANIES = [
   ],
   "sources": "SK스퀘어 공시, 포트폴리오 관련 보도(2026년 3월), 시가총액은 2026년 11월 20일 시세",
   "logo_url": [
-   "https://commons.wikimedia.org/wiki/Special:FilePath/SK_Square_logo.svg",
-   "https://commons.wikimedia.org/wiki/Special:FilePath/SK_square_logo.svg"
+   "commons:SK Square",
+   "wiki:ko:SK스퀘어",
+   "wiki:en:SK Square",
+   "page:"
   ],
   "financials": {
    "unit": "조 원",
@@ -3917,7 +3929,9 @@ window.ATLAS_COMPANIES = [
     ]
    ],
    "source": "Open DART"
-  }
+  },
+  "logo": "data/logos/sksquare.png",
+  "logoSmall": false
  },
  {
   "id": "spacex",

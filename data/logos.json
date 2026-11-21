@@ -108,17 +108,19 @@
     "bg": null
   },
   "lgensol": {
-    "path": "data/logos/lgensol.ico",
-    "from": "https://www.lgensol.com/favicon.ico",
-    "px": 16,
+    "path": "data/logos/lgensol.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/LG_Energy_Solution_logo_EN.svg",
+    "px": 1024,
     "saved": "2026-11-21",
     "logo_url": [
-      "https://commons.wikimedia.org/wiki/Special:FilePath/LG_Energy_Solution_logo.svg",
-      "https://commons.wikimedia.org/wiki/Special:FilePath/LG_Energy_Solution_Logo.svg"
+      "commons:LG Energy Solution",
+      "wiki:ko:LG에너지솔루션",
+      "wiki:en:LG Energy Solution",
+      "page:"
     ],
     "logo_site": null,
-    "ratio": 1,
-    "override": false,
+    "ratio": 8.08,
+    "override": true,
     "bg": null
   },
   "meta": {
@@ -204,17 +206,19 @@
     "bg": null
   },
   "semco": {
-    "path": "data/logos/semco.ico",
-    "from": "https://www.samsungsem.com/resources/images/common/favicon.ico",
-    "px": 16,
+    "path": "data/logos/semco.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Electro-Mechanics_logo_%28korean%29.svg",
+    "px": 1024,
     "saved": "2026-11-21",
     "logo_url": [
-      "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Electro-Mechanics_logo.svg",
-      "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Electro-Mechanics_Logo.svg"
+      "commons:Samsung Electro-Mechanics",
+      "wiki:ko:삼성전기",
+      "wiki:en:Samsung Electro-Mechanics",
+      "page:"
     ],
     "logo_site": null,
-    "ratio": 1,
-    "override": false,
+    "ratio": 4.75,
+    "override": true,
     "bg": null
   },
   "skhynix": {
@@ -233,17 +237,19 @@
     "bg": null
   },
   "sksquare": {
-    "path": "data/logos/sksquare.ico",
-    "from": "https://www.sksquare.com/assets/images/seo/favicon.ico",
-    "px": 16,
+    "path": "data/logos/sksquare.png",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Aktuality.sk-logo-square.png",
+    "px": 512,
     "saved": "2026-11-21",
     "logo_url": [
-      "https://commons.wikimedia.org/wiki/Special:FilePath/SK_Square_logo.svg",
-      "https://commons.wikimedia.org/wiki/Special:FilePath/SK_square_logo.svg"
+      "commons:SK Square",
+      "wiki:ko:SK스퀘어",
+      "wiki:en:SK Square",
+      "page:"
     ],
     "logo_site": null,
-    "ratio": 1,
-    "override": false,
+    "ratio": 1.0,
+    "override": true,
     "bg": null
   },
   "spacex": {
