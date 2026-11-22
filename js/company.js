@@ -55,6 +55,42 @@ document.addEventListener('DOMContentLoaded', function () {
     return korean(v, f.exactUnit);
   }
 
+  // 비교할 기간 이름: 연도별은 1년 전(2025 → 2024, FY2025 → FY2024), 분기별은 1년 전 같은 분기(26.3Q → 25.3Q)
+  function prevLabel(label) {
+    var m = /^(FY)?(\d{4})$/.exec(label);
+    if (m) return (m[1] || '') + (Number(m[2]) - 1);
+    m = /^(\d{2})\.(\d)Q$/.exec(label);
+    if (m) return ('0' + (Number(m[1]) + 99) % 100).slice(-2) + '.' + m[2] + 'Q';
+    return null;
+  }
+  // 기간의 값 (정확한 금액이 있으면 그것, 없으면 그래프 숫자). 비율 계산에만 써서 통화는 상관없어요
+  function valueOf(label, k) {
+    if (f.exact && f.exact[label] && f.exact[label][k] != null) return f.exact[label][k];
+    var src = state.mode === 'annual' ? f.annual : f.quarterly;
+    var row = src.filter(function (r) { return r[0] === label; })[0];
+    return row ? row[k + 1] : null;
+  }
+  // 전년(동기) 대비 변화: 증가는 빨간 ▲, 감소는 파란 ▼ (주식 시세 표시와 같은 색)
+  function change(label, k) {
+    var pl = prevLabel(label);
+    if (!pl) return '';
+    var cur = valueOf(label, k), prev = valueOf(pl, k);
+    if (cur == null || prev == null) return '';
+    var what = state.mode === 'annual' ? '전년 대비' : '전년 동기 대비';
+    var text, cls = '';
+    if (prev > 0 && cur >= 0) {
+      var pct = (cur - prev) / prev * 100;
+      if (Math.abs(pct) < 0.05) text = '변동 없음';
+      else { cls = pct > 0 ? 'up' : 'down'; text = (pct > 0 ? '▲ ' : '▼ ') + Atlas.num(Math.abs(pct), 1) + '% ' + (pct > 0 ? '증가' : '감소'); }
+    } else if (prev < 0 && cur >= 0) { cls = 'up'; text = '흑자 전환'; }
+    else if (prev >= 0 && cur < 0) { cls = 'down'; text = '적자 전환'; }
+    else if (prev < 0 && cur < 0) {
+      cls = cur > prev ? 'up' : 'down';
+      text = '적자 지속 (손실 ' + (cur > prev ? '축소' : '확대') + ')';
+    } else return '';
+    return '<span class="cd-chg ' + cls + '" title="' + what + ' (' + e(pl) + '과 비교)">' + what + ' ' + text + '</span>';
+  }
+
   function showDetail(i) {
     var data = rows();
     if (i == null || !data[i]) i = data.length - 1;
@@ -67,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
       '<div class="cd-rows">' + r.slice(1).map(function (v, k) {
         return '<div><span class="sw" style="background: ' + SERIES[k] + '"></span><span class="n">' + e(names[k] || '') + '</span>' +
           '<strong class="' + (v < 0 ? 'loss' : '') + '">' + exactText(r[0], k, v) + '</strong>' +
-          (v < 0 ? '<span class="cd-loss">손실</span>' : '') + '</div>';
+          (v < 0 ? '<span class="cd-loss">손실</span>' : '') + change(r[0], k) + '</div>';
       }).join('') + '</div>' +
       '<p class="cd-hint">' + (window.matchMedia('(hover: hover)').matches ? '막대에 마우스를 올리면' : '막대를 누르면') +
       ' 그 기간의 정확한 금액을 볼 수 있어요.</p>';
