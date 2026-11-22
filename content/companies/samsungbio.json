@@ -47,12 +47,32 @@
       "삼성그룹 바이오 의약품 생산 회사로 설립"
     ],
     [
+      "2012",
+      "미국 바이오젠과 바이오시밀러 회사 삼성바이오에피스 설립"
+    ],
+    [
       "2016",
       "코스피 상장"
     ],
     [
+      "2018",
+      "3공장 가동 (당시 단일 공장 세계 최대 규모)"
+    ],
+    [
+      "2022",
+      "삼성바이오에피스 지분 100% 확보"
+    ],
+    [
+      "2023",
+      "4공장 전체 가동"
+    ],
+    [
       "2025",
-      "바이오시밀러 사업을 분리해 위탁개발생산에 집중"
+      "5공장 가동, 전체 생산능력 78만 4천 리터"
+    ],
+    [
+      "2025",
+      "바이오시밀러 사업(삼성에피스홀딩스)을 떼어 내 위탁개발생산에 집중"
     ]
   ],
   "rivals": [
@@ -92,5 +112,27 @@
     "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Biologics_logo.svg",
     "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Biologics_Logo.svg"
   ],
-  "group_head": "이재용 (삼성그룹)"
+  "group_head": "이재용 (삼성그룹)",
+  "business_details": [
+    {
+      "detail": "제약회사가 개발한 바이오 의약품을 대형 탱크에서 세포를 키워 대량으로 만들어 줘요. 인천 송도에 세계 최대급 공장들을 두고 있어요.",
+      "examples": "항체 의약품 대량 생산, 송도 1~5공장",
+      "photo": "Bioreactor biopharmaceutical manufacturing"
+    },
+    {
+      "detail": "신약 후보 물질을 실제로 대량 생산할 수 있도록 세포를 고르고 생산 방법을 개발해 줘요. 개발 단계부터 맡은 고객이 나중에 생산도 맡기는 경우가 많아요.",
+      "examples": "세포주 개발, 생산 공정 개발",
+      "photo": "Cell culture laboratory"
+    },
+    {
+      "detail": "만든 의약품이 기준에 맞는지, 안전한지를 시험·분석해 주는 서비스예요.",
+      "examples": "품질·안전성 시험, 분석",
+      "photo": "Laboratory pipette analysis"
+    },
+    {
+      "detail": "암세포만 골라 공격하는 항체·약물 결합체(ADC) 같은 새 의약품 기술을 생산할 수 있는 시설을 늘리고 있어요.",
+      "examples": "ADC 전용 생산 시설",
+      "photo": null
+    }
+  ]
 }

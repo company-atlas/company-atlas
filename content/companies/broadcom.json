@@ -56,12 +56,36 @@
   ],
   "history": [
     [
+      "1961",
+      "HP의 반도체 사업부로 출발"
+    ],
+    [
+      "1999",
+      "HP에서 애질런트로 분리"
+    ],
+    [
+      "2005",
+      "애질런트 반도체 부문이 아바고 테크놀로지스로 독립"
+    ],
+    [
+      "2009",
+      "나스닥 상장"
+    ],
+    [
       "2016",
       "아바고가 브로드컴을 인수해 지금의 브로드컴 탄생"
     ],
     [
+      "2018",
+      "소프트웨어 회사 CA 테크놀로지스 인수"
+    ],
+    [
       "2023",
-      "VMware 인수 완료"
+      "서버 가상화 소프트웨어 회사 VMware 인수"
+    ],
+    [
+      "2024",
+      "AI 칩 수요로 시가총액 1조 달러 돌파"
     ]
   ],
   "rivals": [
@@ -127,5 +151,27 @@
     "https://commons.wikimedia.org/wiki/Special:FilePath/Broadcom_Inc._logo.svg",
     "https://commons.wikimedia.org/wiki/Special:FilePath/Broadcom_Ltd_Logo.svg",
     "https://commons.wikimedia.org/wiki/Special:FilePath/Broadcom_logo.svg"
+  ],
+  "business_details": [
+    {
+      "detail": "구글, 메타 같은 빅테크가 자기 AI에 맞춰 설계한 칩을 함께 개발하고 생산까지 맡아 줘요. 엔비디아 GPU의 대안으로 주목받으며 가장 빠르게 크는 사업이에요.",
+      "examples": "구글 TPU 등 맞춤형 AI 칩(XPU)",
+      "photo": "Google TPU"
+    },
+    {
+      "detail": "데이터센터 안에서 수많은 서버를 연결하는 스위치 칩과 통신 칩이에요. AI 서버가 늘수록 필요한 양도 늘어나요.",
+      "examples": "토마호크 스위치 칩, 네트워크 칩",
+      "photo": "Network switch data center"
+    },
+    {
+      "detail": "2023년 인수한 VMware의 서버 가상화 소프트웨어 등 기업용 소프트웨어예요. 한 대의 서버를 여러 대처럼 나눠 쓰게 해 줘요.",
+      "examples": "VMware, 메인프레임·보안 소프트웨어",
+      "photo": null
+    },
+    {
+      "detail": "스마트폰 속 와이파이·블루투스·신호 처리 칩과 저장장치용 칩이에요. 애플이 큰 고객이에요.",
+      "examples": "와이파이·블루투스 칩, RF 필터, 저장장치 칩",
+      "photo": "Printed circuit board chips"
+    }
   ]
 }

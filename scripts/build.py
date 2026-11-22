@@ -164,8 +164,10 @@ def render_company(c, companies, meta):
               'rel="noopener" style="color: var(--accent)">%s</a></div></div>' % (e(c['website']), e(site)))
     h.append('<section class="sec" id="info"><h2>핵심 정보</h2><div class="cards info">%s</div></section>' % cells)
 
-    h.append('<section class="sec" id="biz"><h2>무엇을 하는 기업인가요?</h2><div class="cards">%s</div></section>' % ''.join(
-        '<div class="card"><strong>%s</strong><span class="lbl">%s</span></div>' % (e(b[0]), e(b[1])) for b in c['businesses']))
+    h.append('<section class="sec" id="biz"><h2>무엇을 하는 기업인가요?</h2>'
+             '<p class="note biz-hint">칸에 마우스를 올리거나 누르면 자세한 설명을 볼 수 있어요.</p>'
+             '<div class="cards biz-cards">%s</div></section>' % ''.join(
+                 biz_card(c, i, b, root) for i, b in enumerate(c['businesses'])))
 
     # 숫자로 보기
     parts = []
@@ -212,6 +214,26 @@ def render_share(c, items):
         COLORS[i % 6], e(n), pcts[i]) for i, (n, _) in enumerate(items))
     return ('<section class="sec" id="share"><h2>어디서 돈을 버나요?</h2><div class="share-bar" role="img" aria-label="%s">%s</div>'
             '<div class="share-legend">%s</div><p class="note">%s</p></section>' % (e(c['share']['title']), bar, legend, e(c['share']['note'])))
+
+
+def biz_card(c, i, b, root):
+    """사업 칸 하나. 마우스를 올리거나 누르면 자세한 설명(사진 포함)이 칸 아래에 떠요."""
+    details = c.get('business_details') or []
+    d = details[i] if i < len(details) and details[i] else None
+    if not d:
+        return '<div class="card"><strong>%s</strong><span class="lbl">%s</span></div>' % (e(b[0]), e(b[1]))
+    ph = (c.get('bizPhotos') or [None] * 4)[i]
+    photo = ''
+    if ph:
+        photo = ('<figure><img src="%s%s" alt="%s 관련 사진" loading="lazy">'
+                 '<figcaption>사진: %s · %s · <a href="%s" target="_blank" rel="noopener">위키미디어 커먼즈</a></figcaption></figure>'
+                 % (root, e(ph['path']), e(b[0]), e(ph['artist']), e(ph['license']), e(ph['page'] or '')))
+    pid = 'bizpop-%d' % (i + 1)
+    return ('<div class="card biz-card" tabindex="0" role="button" aria-expanded="false" aria-controls="%s">'
+            '<strong>%s</strong><span class="lbl">%s</span><span class="more">자세히 보기</span>'
+            '<div class="biz-pop" id="%s"><div class="biz-pop-in">%s<div class="biz-text"><strong>%s</strong><p>%s</p>%s</div></div></div></div>'
+            % (pid, e(b[0]), e(b[1]), pid, photo, e(b[0]), e(d['detail']),
+               ('<p class="ex"><span>대표 예</span>%s</p>' % e(d['examples'])) if d.get('examples') else ''))
 
 
 def render_perf(c, f, is_usd):
@@ -298,6 +320,7 @@ def main():
     meta = {'fx': site['fx'], 'updated': '%d년 %d월 %d일' % (now.year, now.month, now.day)}
 
     logos = read_json(os.path.join(ROOT, 'data', 'logos.json')) or {}
+    photos = read_json(os.path.join(ROOT, 'data', 'photos.json')) or {}
     companies = []
     for c in load_companies():
         fetched = read_json(os.path.join(FETCHED_DIR, c['id'] + '.json'))
@@ -314,12 +337,18 @@ def main():
             bg = lg.get('bg') if lg.get('override') else c.get('logo_bg')
             if bg:
                 m['logoBg'] = bg
+        # 사업 설명 사진 (위키미디어 커먼즈, 자유 이용 사진)
+        m['bizPhotos'] = []
+        for i in range(len(c['businesses'])):
+            ph = photos.get('%s-%d' % (c['id'], i + 1))
+            m['bizPhotos'].append(ph if ph and os.path.exists(os.path.join(ROOT, ph['path'])) else None)
         companies.append(m)
 
     with open(os.path.join(ROOT, 'data', 'companies.js'), 'w', encoding='utf-8') as f:
         f.write('// 이 파일은 scripts/build.py가 자동으로 만들어요. 직접 고치지 말고 content/ 폴더를 고쳐 주세요.\n')
         f.write('window.ATLAS_META = %s;\n' % json.dumps(meta, ensure_ascii=False))
-        f.write('window.ATLAS_COMPANIES = %s;\n' % json.dumps(companies, ensure_ascii=False, indent=1))
+        slim = [{k: v for k, v in c.items() if k not in ('business_details', 'bizPhotos')} for c in companies]
+        f.write('window.ATLAS_COMPANIES = %s;\n' % json.dumps(slim, ensure_ascii=False, indent=1))
 
     out_dir = os.path.join(ROOT, 'company')
     if os.path.isdir(out_dir):

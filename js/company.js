@@ -3,6 +3,40 @@
 //  - 이익은 가운데 0 선 위로, 손실(적자)은 0 선 아래로 그려요.
 //  - 기간에 마우스를 올리거나(컴퓨터) 누르면(휴대폰) 그래프 밑에 정확한 금액이 나와요.
 
+// 무엇을 하는 기업인가요? — 칸을 누르면 자세한 설명을 열고 닫아요 (컴퓨터는 마우스만 올려도 떠요)
+document.addEventListener('DOMContentLoaded', function () {
+  var cards = document.querySelectorAll('.biz-card');
+  function place(card) {
+    // 화면 오른쪽 끝을 넘으면 설명 칸을 오른쪽에 맞춰요
+    var pop = card.querySelector('.biz-pop');
+    pop.classList.remove('pop-right');
+    if (card.getBoundingClientRect().left + 380 > document.documentElement.clientWidth - 16) pop.classList.add('pop-right');
+  }
+  function setOpen(card, open) {
+    card.classList.toggle('open', open);
+    card.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  cards.forEach(function (card) {
+    card.addEventListener('mouseenter', function () { place(card); });
+    card.addEventListener('focus', function () { place(card); });
+    card.addEventListener('click', function (ev) {
+      if (ev.target.closest('.biz-pop a')) return;  // 사진 출처 링크는 그대로 열려요
+      if (ev.target.closest('.biz-pop') && !card.classList.contains('open')) return;
+      var open = !card.classList.contains('open');
+      cards.forEach(function (o) { if (o !== card) setOpen(o, false); });
+      place(card);
+      setOpen(card, open);
+    });
+    card.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); card.click(); }
+      if (ev.key === 'Escape') { setOpen(card, false); card.blur(); }
+    });
+  });
+  document.addEventListener('click', function (ev) {
+    if (!ev.target.closest('.biz-card')) cards.forEach(function (o) { setOpen(o, false); });
+  });
+});
+
 document.addEventListener('DOMContentLoaded', function () {
   var c = Atlas.find(window.ATLAS_COMPANY_ID);
   var root = document.getElementById('company');

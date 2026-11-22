@@ -51,12 +51,36 @@
       "현대전자로 반도체 사업 시작"
     ],
     [
+      "1999",
+      "LG반도체와 합쳐짐 (정부 주도 '빅딜')"
+    ],
+    [
+      "2001",
+      "하이닉스반도체로 이름을 바꾸고 현대그룹에서 분리"
+    ],
+    [
       "2012",
-      "SK그룹에 편입되며 SK하이닉스로 이름 변경"
+      "SK그룹에 편입되며 SK하이닉스로 새 출발"
+    ],
+    [
+      "2013",
+      "세계 최초로 HBM(고대역폭 메모리) 개발"
+    ],
+    [
+      "2021",
+      "인텔 낸드 사업 인수, 자회사 솔리다임 출범"
+    ],
+    [
+      "2024",
+      "AI 칩용 HBM3E 양산, 엔비디아에 공급"
     ],
     [
       "2025",
-      "연 매출 97.1조 원, 영업이익 47.2조 원으로 역대 최대"
+      "연 매출 97.1조 원·영업이익 47.2조 원으로 역대 최대"
+    ],
+    [
+      "2026",
+      "3분기 매출이 처음으로 한 분기 100조 원 돌파"
     ]
   ],
   "rivals": [
@@ -108,5 +132,27 @@
     "https://commons.wikimedia.org/wiki/Special:FilePath/SK_hynix_logo.svg",
     "https://commons.wikimedia.org/wiki/Special:FilePath/SK_Hynix_logo.svg"
   ],
-  "group_head": "최태원 (SK그룹)"
+  "group_head": "최태원 (SK그룹)",
+  "business_details": [
+    {
+      "detail": "컴퓨터가 일하는 동안 데이터를 잠깐 기억하는 칩이에요. PC, 스마트폰, 서버에 모두 들어가고, SK하이닉스 매출에서 가장 큰 비중을 차지해요.",
+      "examples": "서버용 DDR5, 모바일 LPDDR",
+      "photo": "DDR5 memory module"
+    },
+    {
+      "detail": "D램 칩을 아파트처럼 여러 층 쌓아 한꺼번에 많은 데이터를 주고받게 만든 메모리예요. 엔비디아 AI 칩 바로 옆에 붙어 쓰이고, SK하이닉스가 2013년 세계 처음 개발해 지금도 앞서가고 있어요.",
+      "examples": "HBM3E, HBM4",
+      "photo": "High Bandwidth Memory"
+    },
+    {
+      "detail": "전원이 꺼져도 데이터가 남는 저장용 칩이에요. 스마트폰 저장 공간과 SSD에 들어가요.",
+      "examples": "낸드플래시, 소비자용 SSD",
+      "photo": "NAND flash memory chip"
+    },
+    {
+      "detail": "데이터센터에서 쓰는 대용량·고속 저장장치예요. 2021년 인텔에서 인수한 자회사 솔리다임과 함께 만들어요. AI 데이터가 늘면서 수요가 커지고 있어요.",
+      "examples": "기업용 SSD (eSSD), 솔리다임",
+      "photo": "Solid-state drive enterprise"
+    }
+  ]
 }

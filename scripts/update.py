@@ -8,6 +8,7 @@ import sys
 import build
 import fetch_dart
 import fetch_logos
+import fetch_photos
 import fetch_sec
 
 
@@ -22,6 +23,11 @@ def main():
         fetch_logos.main()
     except Exception as e:  # 로고는 없어도 사이트는 만들어요
         print('[로고 실패] %s' % e)
+    print('== 사업 설명 사진 ==')
+    try:
+        fetch_photos.main()
+    except Exception as e:  # 사진은 없어도 사이트는 만들어요
+        print('[사진 실패] %s' % e)
     print('== 사이트 만들기 ==')
     build.main()
     if not ok:

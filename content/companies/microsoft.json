@@ -60,12 +60,40 @@
       "빌 게이츠와 폴 앨런이 설립"
     ],
     [
+      "1981",
+      "IBM PC용 운영체제 MS-DOS 공급"
+    ],
+    [
       "1985",
       "첫 윈도우 출시"
     ],
     [
+      "1986",
+      "나스닥 상장"
+    ],
+    [
+      "1995",
+      "윈도우 95 출시로 PC 대중화"
+    ],
+    [
+      "2001",
+      "게임기 엑스박스 출시"
+    ],
+    [
       "2010",
       "클라우드 서비스 애저 정식 출시"
+    ],
+    [
+      "2014",
+      "사티아 나델라가 CEO 취임"
+    ],
+    [
+      "2019",
+      "오픈AI에 처음 투자"
+    ],
+    [
+      "2023",
+      "게임사 액티비전 블리자드 인수"
     ]
   ],
   "rivals": [
@@ -148,5 +176,27 @@
   "logo_url": [
     "https://commons.wikimedia.org/wiki/Special:FilePath/Microsoft_logo.svg",
     "https://commons.wikimedia.org/wiki/Special:FilePath/Microsoft_logo_(2012).svg"
+  ],
+  "business_details": [
+    {
+      "detail": "기업이 서버와 AI 계산 자원을 인터넷으로 빌려 쓰는 클라우드예요. 오픈AI의 모델을 기업에 제공하는 통로이기도 해서 AI 시대에 가장 빠르게 커요.",
+      "examples": "애저, 애저 AI",
+      "photo": "Microsoft data center"
+    },
+    {
+      "detail": "워드·엑셀·파워포인트가 들어 있는 마이크로소프트 365를 매달 구독료로 팔고, AI 비서 코파일럿을 더해 팔아요. 업무용 SNS 링크드인도 있어요.",
+      "examples": "마이크로소프트 365, 팀즈, 코파일럿, 링크드인",
+      "photo": null
+    },
+    {
+      "detail": "전 세계 PC 대부분에 깔린 운영체제 윈도우와 서피스 노트북·태블릿이에요. 윈도우는 PC 제조사에 사용료를 받고 팔아요.",
+      "examples": "윈도우 11, 서피스",
+      "photo": "Microsoft Surface"
+    },
+    {
+      "detail": "엑스박스 게임기와 게임 구독 서비스, 2023년 인수한 액티비전 블리자드의 게임들이에요.",
+      "examples": "엑스박스, 게임 패스, 콜 오브 듀티",
+      "photo": "Xbox Series X"
+    }
   ]
 }

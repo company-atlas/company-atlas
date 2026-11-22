@@ -61,11 +61,31 @@
     ],
     [
       "2008",
-      "팰컨 1로 처음 궤도 도달"
+      "팰컨 1로 민간 기업 처음 궤도 도달"
+    ],
+    [
+      "2012",
+      "드래곤 우주선이 민간 최초로 우주정거장에 도킹"
+    ],
+    [
+      "2015",
+      "팰컨 9 로켓 1단 첫 착륙 성공"
+    ],
+    [
+      "2019",
+      "스타링크 위성 첫 대량 발사"
+    ],
+    [
+      "2020",
+      "크루 드래곤으로 NASA 우주인 수송, 민간 우주선 첫 유인 비행"
+    ],
+    [
+      "2024",
+      "스타십 로켓 1단을 발사대 팔로 잡아 회수"
     ],
     [
       "2026",
-      "xAI와 합병하고 6월 상장"
+      "xAI와 합병하고 6월 나스닥 상장"
     ]
   ],
   "rivals": [
@@ -154,5 +174,27 @@
   "logo_url": [
     "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX_logo_black.svg",
     "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX-Logo.svg"
+  ],
+  "business_details": [
+    {
+      "detail": "수천 개의 저궤도 위성으로 인터넷이 닿지 않는 곳까지 인터넷을 제공해요. 가정, 선박, 비행기, 군대 등에서 쓰고, 스페이스X 매출에서 가장 큰 부분이에요.",
+      "examples": "스타링크 가정용·기업용, 위성-휴대폰 직접 연결",
+      "photo": "Starlink satellite dish"
+    },
+    {
+      "detail": "발사한 로켓을 다시 착륙시켜 재사용하는 방식으로 발사 비용을 크게 낮췄어요. 세계 위성 발사의 대부분을 맡고 있어요.",
+      "examples": "팰컨 9, 팰컨 헤비, 스타십",
+      "photo": "Falcon 9 launch"
+    },
+    {
+      "detail": "2026년 합병한 xAI의 AI 모델 그록과 소셜미디어 X를 운영해요. 대규모 AI 데이터센터를 짓고 있어요.",
+      "examples": "그록, X(옛 트위터)",
+      "photo": null
+    },
+    {
+      "detail": "NASA의 우주정거장 화물·우주인 수송을 맡고, 달·화성에 갈 초대형 우주선 스타십을 개발 중이에요.",
+      "examples": "드래곤 우주선, 스타십",
+      "photo": "SpaceX Dragon spacecraft"
+    }
   ]
 }
