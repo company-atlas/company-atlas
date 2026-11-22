@@ -89,10 +89,11 @@
     "quarterly": []
   },
   "logo_url": [
+    "page:https://www.sksquare.com",
+    "page:https://www.sksquare.com/ko/",
+    "commons:SK Square",
     "wiki:ko:SK스퀘어",
-    "wiki:en:SK Square",
-    "page:",
-    "commons:SK Square"
+    "wiki:en:SK Square"
   ],
   "group_head": "최태원 (SK그룹)",
   "business_details": [
@@ -124,5 +125,8 @@
       "examples": "반도체 소재·장비, AI 스타트업 투자",
       "photo": null
     }
+  ],
+  "logo_reject": [
+    "SK_logo"
   ]
 }

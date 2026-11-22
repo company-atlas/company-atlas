@@ -8,6 +8,7 @@
 
 기업 파일(content/companies/<id>.json)에서 바꿀 수 있는 것
   "logo": false            로고를 쓰지 않아요 (첫 글자 상자)
+  "logo_reject": ["SK_logo"]  주소에 이 글자가 들어간 그림은 쓰지 않아요 (예: 계열사가 그룹 로고를 받아오는 것 막기)
   "logo_url": "https://…"  공식 로고 파일 주소를 직접 지정해요 (가장 우선)
                            여러 개를 목록으로 적으면 받아지는 첫 번째 것을 써요.
                            {"url": "…", "bg": "#14213D"}처럼 배경색을 같이 적을 수도 있어요.
@@ -307,6 +308,9 @@ def fetch_one(c):
             print('  로고 찾기 실패 (%s): %s' % (entry, e))
             continue
         for url in urls:
+            if any(r.lower() in url.lower() for r in (c.get('logo_reject') or [])):
+                print('  제외한 로고: %s' % url)
+                continue
             got = try_url(url)
             if got:
                 got['override'], got['bg'] = True, bg
@@ -347,10 +351,16 @@ def main():
             if old.get('saved', '') >= (today - datetime.timedelta(days=days)).isoformat():
                 continue
         got = fetch_one(c)
+        same_setting = bool(old) and old.get('logo_url') == c.get('logo_url') and old.get('logo_site') == c.get('logo_site')
         if not got:
+            if old and not same_setting:  # 설정을 바꿨는데 새 로고를 못 찾으면, 예전(잘못된) 로고는 지워요
+                path = os.path.join(ROOT, old['path'])
+                if os.path.exists(path):
+                    os.remove(path)
+                index.pop(c['id'], None)
             print('[로고 없음] %s: 첫 글자 상자로 보여줘요' % c['name'])
             continue
-        if old and not got.get('override') and old.get('px', 0) > got['px'] and os.path.exists(os.path.join(ROOT, old['path'])):
+        if same_setting and not got.get('override') and old.get('px', 0) > got['px'] and os.path.exists(os.path.join(ROOT, old['path'])):
             old['saved'] = today.isoformat()  # 예전 것이 더 크면 그대로 둬요
             continue
         for name in os.listdir(LOGO_DIR):

@@ -187,7 +187,9 @@ button, input, select { font: inherit; color: inherit; }
 .chart-detail .cd-hint { font-size: 13px; color: var(--muted); }
 .chart-labels { display: flex; gap: 8px; margin-top: 6px; }
 .chart-labels div { flex: 1 1 0; min-width: 84px; text-align: center; font-size: 14px; color: var(--muted); }
-.fin-table { width: 100%; border-collapse: collapse; font-size: 14px; display: none; }
+.fin-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+/* 숫자 표는 화면에는 보이지 않고, 화면 읽기 프로그램(시각장애인용)에만 읽혀요. 숫자는 그래프를 눌러 확인해요 */
+.fin-table { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .fin-table th { text-align: right; padding: 8px 0; color: var(--muted); font-weight: 400; border-bottom: 1px solid var(--line); }
 .fin-table th:first-child, .fin-table td:first-child { text-align: left; }
 .fin-table td { text-align: right; padding: 8px 0; border-bottom: 1px solid #EEF1F6; }
@@ -264,7 +266,6 @@ button, input, select { font: inherit; color: inherit; }
   .chart-detail .cd-chg { flex-basis: 100%; padding-left: 20px; }
   .chart-labels { gap: 6px; }
   .chart-labels div { min-width: 52px; font-size: 12px; }
-  .fin-table { display: table; }
   .rival-row { flex-direction: column; align-items: flex-start; padding: 14px; }
   .rival-row strong { min-width: 0; }
   .site-footer { padding: 20px 16px; }
