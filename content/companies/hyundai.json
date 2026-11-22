@@ -99,9 +99,14 @@
       ]
     ]
   ],
-  "sources": "현대자동차 2025년 연간 경영실적 발표, 시가총액은 2026년 11월 20일 시세",
+  "sources": "현대자동차 2025년 연간 경영실적 발표",
   "sources_ids": {
-    "krx_stock_code": "005380"
+    "krx_stock_code": "005380",
+    "krx_pref_codes": [
+      "005385",
+      "005387",
+      "005389"
+    ]
   },
   "financials_text": {
     "unit": "조 원",

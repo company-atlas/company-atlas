@@ -8,6 +8,7 @@ import sys
 import build
 import fetch_dart
 import fetch_logos
+import fetch_market
 import fetch_photos
 import fetch_sec
 
@@ -18,6 +19,11 @@ def main():
     ok = fetch_dart.main() and ok
     print('== 미국 기업 (SEC EDGAR) ==')
     ok = fetch_sec.main() and ok
+    print('== 환율·시가총액 ==')
+    try:
+        fetch_market.main()
+    except Exception as e:  # 받지 못하면 이전 값을 써요
+        print('[환율·시가총액 실패] %s' % e)
     print('== 기업 로고 ==')
     try:
         fetch_logos.main()

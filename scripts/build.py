@@ -280,6 +280,8 @@ def rest_of_page(h, c, by_id, root, fx, meta, is_usd, f):
     if f.get('source') and f['source'] != '직접 정리':
         src = '실적 %s 자동 수집, %s' % (f['source'], src)
     fx_src = ' · 환율 1달러 = %s원(%s)' % (num(fx['usdKrw'], 1), e(fx['asOf'])) if is_usd else ''
+    if c.get('capSource'):
+        fx_src += ' · 시가총액: %s' % e(c['capSource'])
     h.append('<div class="sources">출처: %s%s · 마지막 업데이트: %s</div>' % (e(src), fx_src, e(meta['updated'])))
     h.append('</div>')
 
@@ -317,7 +319,10 @@ def main():
     site_url = (os.environ.get('SITE_URL') or '').rstrip('/') + '/' if os.environ.get('SITE_URL') else ''
     site = read_json(os.path.join(ROOT, 'content', 'site.json'))
     now = datetime.datetime.now(KST)
-    meta = {'fx': site['fx'], 'updated': '%d년 %d월 %d일' % (now.year, now.month, now.day)}
+    # 매일 자동으로 받은 환율·시가총액 (없으면 content/site.json과 기업 파일의 값을 써요)
+    market = read_json(os.path.join(FETCHED_DIR, '_market.json')) or {}
+    fx = market.get('fx') or site['fx']
+    meta = {'fx': {'usdKrw': fx['usdKrw'], 'asOf': fx['asOf']}, 'updated': '%d년 %d월 %d일' % (now.year, now.month, now.day)}
 
     logos = read_json(os.path.join(ROOT, 'data', 'logos.json')) or {}
     photos = read_json(os.path.join(ROOT, 'data', 'photos.json')) or {}
@@ -325,6 +330,12 @@ def main():
     for c in load_companies():
         fetched = read_json(os.path.join(FETCHED_DIR, c['id'] + '.json'))
         m = merge(c, fetched)
+        mc = (market.get('caps') or {}).get(c['id'])
+        if mc:
+            for hl in m['highlights']:
+                if hl['label'] == '시가총액':
+                    hl.update(value=mc['value'], unit=mc['unit'], note=mc['note'])
+            m['capSource'] = mc.get('source')
         lg = logos.get(c['id'])
         # 32px보다 작은 로고는 흐릿해서 첫 글자 상자를 써요
         if lg and c.get('logo') is not False and os.path.exists(os.path.join(ROOT, lg['path'])) and lg.get('px', 64) >= 32:
