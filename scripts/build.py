@@ -92,16 +92,20 @@ def merge(c, fetched):
         out['highlights'] = [{'value': ni, 'unit': fin['unit'], 'label': year_word + ' 순이익',
                               'note': '1년 동안 최종적으로 남긴 돈' if ni >= 0 else '1년 동안의 최종 손실'}] + cap
 
-    # 매출(첫 칸)이 전부 비어 있으면(금융회사 등) 그 칸을 빼고 영업이익·순이익만 보여줘요
+    # 어떤 칸(매출·영업이익·순이익)이 전부 비어 있으면 그 칸을 빼요
+    # (금융회사는 매출, 은행·버크셔처럼 영업이익을 공시하지 않는 회사는 영업이익)
     rows_all = fin['annual'] + fin['quarterly']
-    if rows_all and all(r[1] is None for r in rows_all):
-        fin['annual'] = [[r[0]] + r[2:] for r in fin['annual']]
-        fin['quarterly'] = [[r[0]] + r[2:] for r in fin['quarterly']]
-        fin['labels'] = fin['labels'][1:]
-        if fin.get('exact'):
-            fin['exact'] = {k: v[1:] for k, v in fin['exact'].items()}
-        if c['financials_text'].get('labelNoteNoRevenue'):
-            fin['labelNote'] = c['financials_text']['labelNoteNoRevenue']
+    if rows_all:
+        empty = [j for j in range(1, len(rows_all[0])) if all(r[j] is None for r in rows_all)]
+        if empty:
+            keep = [j for j in range(1, len(rows_all[0])) if j not in empty]
+            fin['annual'] = [[r[0]] + [r[j] for j in keep] for r in fin['annual']]
+            fin['quarterly'] = [[r[0]] + [r[j] for j in keep] for r in fin['quarterly']]
+            fin['labels'] = [fin['labels'][j - 1] for j in keep]
+            if fin.get('exact'):
+                fin['exact'] = {k: [v[j - 1] for j in keep] for k, v in fin['exact'].items()}
+            if 1 in empty and c['financials_text'].get('labelNoteNoRevenue'):
+                fin['labelNote'] = c['financials_text']['labelNoteNoRevenue']
 
     # 기업 개요: 손으로 쓴 값이 없을 때만 DART 값으로 채워요
     ov = (fetched or {}).get('overview') or {}
@@ -192,7 +196,7 @@ def render_company(c, companies, meta):
             e(big), krw_line, e(hl['label']), e(note)))
     if c.get('capLink'):
         parts.append('<a class="cell cap-link" href="%s" target="_blank" rel="noopener"><div class="lbl">시가총액 · 주가</div>'
-                     '<div class="go">지금 시세 보러 가기 →</div><div class="lbl">%s에서 실시간으로 확인할 수 있어요</div></a>'
+                     '<div class="go">지금 시세 보러 가기 →</div><div class="lbl">%s 시세 페이지에서 확인할 수 있어요</div></a>'
                      % (e(c['capLink'][0]), e(c['capLink'][1])))
     fx_note = ('<p class="note">원화 금액은 1달러 = %s원(%s)으로 환산한 대략적인 값이에요.</p>' % (num(fx['usdKrw'], 1), e(fx['asOf']))) if is_usd else ''
     h.append('<section class="sec" id="nums"><h2>숫자로 보기</h2>%s<div class="cards nums">%s</div></section>' % (fx_note, ''.join(parts)))
