@@ -238,17 +238,18 @@
   },
   "sksquare": {
     "path": "data/logos/sksquare.svg",
-    "from": "https://upload.wikimedia.org/wikipedia/commons/b/b4/SK_logo.svg?utm_source=ko.wikipedia.org&utm_campaign=api&utm_content=original",
+    "from": "https://www.sksquare.com/assets/images/common/logo_sm.svg",
     "px": 1024,
     "saved": "2026-11-22",
     "logo_url": [
+      "page:https://www.sksquare.com",
+      "page:https://www.sksquare.com/ko/",
+      "commons:SK Square",
       "wiki:ko:SK스퀘어",
-      "wiki:en:SK Square",
-      "page:",
-      "commons:SK Square"
+      "wiki:en:SK Square"
     ],
     "logo_site": null,
-    "ratio": 1.28,
+    "ratio": 2.06,
     "override": true,
     "bg": null
   },
