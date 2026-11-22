@@ -1,5 +1,5 @@
 // 이 파일은 scripts/build.py가 자동으로 만들어요. 직접 고치지 말고 content/ 폴더를 고쳐 주세요.
-window.ATLAS_META = {"fx": {"usdKrw": 1345.7, "asOf": "2026년 11월 20일 종가"}, "updated": "2026년 11월 22일"};
+window.ATLAS_META = {"fx": {"usdKrw": 1339.4, "asOf": "2026년 11월 20일 유럽중앙은행 기준환율"}, "updated": "2026년 11월 22일"};
 window.ATLAS_COMPANIES = [
  {
   "id": "alphabet",
@@ -61,12 +61,7 @@ window.ATLAS_COMPANIES = [
     "note": "본업으로 남긴 돈"
    },
    {
-    "value": 3.352,
-    "unit": "조 달러",
-    "label": "시가총액",
-    "note": "2026년 11월 19일 종가 기준",
-    "approx": true,
-    "compareTo": "samsung"
+    "label": "시가총액"
    }
   ],
   "history": [
@@ -153,7 +148,7 @@ window.ATLAS_COMPANIES = [
     ]
    ]
   ],
-  "sources": "알파벳 2025년 4분기 실적 보도, 시가총액은 2026년 11월 19일 시세",
+  "sources": "알파벳 2025년 4분기 실적 보도",
   "share": {
    "title": "부문별 매출 비중",
    "note": "2025년 4분기(10~12월) 부문별 매출 기준이에요. 검색·유튜브 광고가 대부분인 구글 서비스가 가장 커요.",
@@ -338,6 +333,10 @@ window.ATLAS_COMPANIES = [
     ]
    }
   },
+  "capLink": [
+   "https://www.nasdaq.com/market-activity/stocks/googl",
+   "나스닥"
+  ],
   "logo": "data/logos/alphabet.svg",
   "logoSmall": false,
   "logoWide": true
@@ -402,12 +401,7 @@ window.ATLAS_COMPANIES = [
     "note": "본업으로 남긴 돈"
    },
    {
-    "value": 2.782,
-    "unit": "조 달러",
-    "label": "시가총액",
-    "note": "2026년 11월 19일 종가 기준",
-    "approx": true,
-    "compareTo": "samsung"
+    "label": "시가총액"
    }
   ],
   "history": [
@@ -474,7 +468,7 @@ window.ATLAS_COMPANIES = [
     ]
    ]
   ],
-  "sources": "아마존 2025년 4분기·연간 실적 발표, 시가총액은 2026년 11월 19일 시세",
+  "sources": "아마존 2025년 4분기·연간 실적 발표",
   "share": {
    "title": "부문별 매출 비중",
    "note": "2025년 연간 부문별 매출 기준이에요. AWS는 매출의 약 18%지만 이익에서는 가장 큰 몫을 차지해요.",
@@ -658,6 +652,10 @@ window.ATLAS_COMPANIES = [
     ]
    }
   },
+  "capLink": [
+   "https://www.nasdaq.com/market-activity/stocks/amzn",
+   "나스닥"
+  ],
   "logo": "data/logos/amazon.svg",
   "logoSmall": false,
   "logoWide": true
@@ -716,12 +714,7 @@ window.ATLAS_COMPANIES = [
     "note": "하루 평균 약 1,300만 달러"
    },
    {
-    "value": 1.285,
-    "unit": "조 달러",
-    "label": "시가총액",
-    "note": "2026년 11월 19일 종가 기준",
-    "approx": true,
-    "compareTo": "samsung"
+    "label": "시가총액"
    }
   ],
   "history": [
@@ -771,7 +764,7 @@ window.ATLAS_COMPANIES = [
     ]
    ]
   ],
-  "sources": "앤트로픽 상장신고서(S-1) 설명 자료, 상장 공지(나스닥), 시가총액은 2026년 11월 19일 시세",
+  "sources": "앤트로픽 상장신고서(S-1) 설명 자료, 상장 공지(나스닥)",
   "share": {
    "title": "매출 방식별 비중",
    "note": "2026년 1~9월 매출 기준이에요. 이 기간 매출의 약 44%는 클라우드 마켓을 통해 팔렸어요.",
@@ -835,6 +828,10 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "직접 정리"
   },
+  "capLink": [
+   "https://www.nasdaq.com/market-activity/stocks/ant",
+   "나스닥"
+  ],
   "logo": "data/logos/anthropic.svg",
   "logoSmall": false,
   "logoWide": true
@@ -904,12 +901,7 @@ window.ATLAS_COMPANIES = [
     "note": "본업으로 남긴 돈"
    },
    {
-    "value": 5.1,
-    "unit": "조 달러",
-    "label": "시가총액",
-    "note": "2026년 11월 19일 종가 기준",
-    "approx": true,
-    "compareTo": "samsung"
+    "label": "시가총액"
    }
   ],
   "share": {
@@ -1036,7 +1028,7 @@ window.ATLAS_COMPANIES = [
     ]
    ]
   ],
-  "sources": "애플 분기·연간 실적 발표 및 10-Q·10-K 공시(회계연도 2022~2026), 2026년 CEO 교체 발표, 시가총액은 2026년 11월 19일 시세",
+  "sources": "애플 분기·연간 실적 발표 및 10-Q·10-K 공시(회계연도 2022~2026), 2026년 CEO 교체 발표",
   "logo_url": [
    "https://commons.wikimedia.org/wiki/Special:FilePath/Apple_logo_black.svg"
   ],
@@ -1202,6 +1194,10 @@ window.ATLAS_COMPANIES = [
     ]
    }
   },
+  "capLink": [
+   "https://www.nasdaq.com/market-activity/stocks/aapl",
+   "나스닥"
+  ],
   "logo": "data/logos/apple.svg",
   "logoSmall": false
  },
@@ -1265,12 +1261,7 @@ window.ATLAS_COMPANIES = [
     "note": "본업으로 남긴 돈"
    },
    {
-    "value": 1.655,
-    "unit": "조 달러",
-    "label": "시가총액",
-    "note": "2026년 11월 19일 종가 기준",
-    "approx": true,
-    "compareTo": "samsung"
+    "label": "시가총액"
    }
   ],
   "history": [
@@ -1337,7 +1328,7 @@ window.ATLAS_COMPANIES = [
     ]
    ]
   ],
-  "sources": "브로드컴 2025 회계연도 실적 발표, 시가총액은 2026년 11월 19일 시세",
+  "sources": "브로드컴 2025 회계연도 실적 발표",
   "share": {
    "title": "부문별 매출 비중",
    "note": "2025 회계연도(2024년 11월~2025년 11월) 부문별 매출 기준이에요.",
@@ -1520,6 +1511,10 @@ window.ATLAS_COMPANIES = [
     ]
    }
   },
+  "capLink": [
+   "https://www.nasdaq.com/market-activity/stocks/avgo",
+   "나스닥"
+  ],
   "logo": "data/logos/broadcom.svg",
   "logoSmall": false,
   "logoWide": true
@@ -1584,11 +1579,7 @@ window.ATLAS_COMPANIES = [
     "note": "본업으로 남긴 돈"
    },
    {
-    "value": 49.4,
-    "unit": "조 원",
-    "label": "시가총액",
-    "note": "2026년 11월 20일 기준, 보통주·우선주 합계",
-    "approx": true
+    "label": "시가총액"
    }
   ],
   "history": [
@@ -1644,7 +1635,7 @@ window.ATLAS_COMPANIES = [
     ]
    ]
   ],
-  "sources": "셀트리온 공시, 시가총액은 2026년 11월 20일 시세",
+  "sources": "셀트리온 공시",
   "logo_url": [
    "https://commons.wikimedia.org/wiki/Special:FilePath/Celltrion_logo.svg",
    "https://commons.wikimedia.org/wiki/Special:FilePath/Celltrion_Logo.svg"
@@ -1842,6 +1833,10 @@ window.ATLAS_COMPANIES = [
     ]
    }
   },
+  "capLink": [
+   "https://finance.naver.com/item/main.naver?code=068270",
+   "네이버 증권"
+  ],
   "logo": "data/logos/celltrion.ico",
   "logoSmall": false
  },
@@ -1905,11 +1900,7 @@ window.ATLAS_COMPANIES = [
     "note": "본업으로 남긴 돈"
    },
    {
-    "value": 60.1,
-    "unit": "조 원",
-    "label": "시가총액",
-    "note": "2026년 11월 20일 기준, 보통주·우선주 합계",
-    "approx": true
+    "label": "시가총액"
    }
   ],
   "history": [
@@ -1970,7 +1961,7 @@ window.ATLAS_COMPANIES = [
     ]
    ]
   ],
-  "sources": "현대자동차 2025년 연간 경영실적 발표, 시가총액은 2026년 11월 20일 시세",
+  "sources": "현대자동차 2025년 연간 경영실적 발표",
   "logo_url": [
    "https://commons.wikimedia.org/wiki/Special:FilePath/Hyundai_Motor_Company_logo.svg"
   ],
@@ -2136,6 +2127,10 @@ window.ATLAS_COMPANIES = [
     ]
    }
   },
+  "capLink": [
+   "https://finance.naver.com/item/main.naver?code=005380",
+   "네이버 증권"
+  ],
   "logo": "data/logos/hyundai.svg",
   "logoSmall": false,
   "logoWide": true
@@ -2194,11 +2189,7 @@ window.ATLAS_COMPANIES = [
     "note": "1년 동안 최종적으로 남긴 돈"
    },
    {
-    "value": 54.1,
-    "unit": "조 원",
-    "label": "시가총액",
-    "note": "2026년 11월 20일 기준, 보통주·우선주 합계",
-    "approx": true
+    "label": "시가총액"
    }
   ],
   "history": [
@@ -2258,7 +2249,7 @@ window.ATLAS_COMPANIES = [
     ]
    ]
   ],
-  "sources": "KB금융 2025년 실적 보도, 시가총액은 2026년 11월 20일 시세",
+  "sources": "KB금융 2025년 실적 보도",
   "logo_url": [
    "https://commons.wikimedia.org/wiki/Special:FilePath/KB_Financial_Group_logo.svg",
    "https://commons.wikimedia.org/wiki/Special:FilePath/KB_Financial_Group_Logo.svg"
@@ -2412,6 +2403,10 @@ window.ATLAS_COMPANIES = [
     ]
    }
   },
+  "capLink": [
+   "https://finance.naver.com/item/main.naver?code=105560",
+   "네이버 증권"
+  ],
   "logo": "data/logos/kbfg.png",
   "logoSmall": false
  },
@@ -2475,11 +2470,7 @@ window.ATLAS_COMPANIES = [
     "note": "본업으로 남긴 돈"
    },
    {
-    "value": 70.1,
-    "unit": "조 원",
-    "label": "시가총액",
-    "note": "2026년 11월 20일 기준, 보통주·우선주 합계",
-    "approx": true
+    "label": "시가총액"
    }
   ],
   "history": [
@@ -2535,7 +2526,7 @@ window.ATLAS_COMPANIES = [
     ]
    ]
   ],
-  "sources": "LG에너지솔루션 공시, 시가총액은 2026년 11월 20일 시세",
+  "sources": "LG에너지솔루션 공시",
   "logo_url": [
    "commons:LG Energy Solution",
    "wiki:ko:LG에너지솔루션",
@@ -2705,6 +2696,10 @@ window.ATLAS_COMPANIES = [
     ]
    }
   },
+  "capLink": [
+   "https://finance.naver.com/item/main.naver?code=373220",
+   "네이버 증권"
+  ],
   "logo": "data/logos/lgensol.svg",
   "logoSmall": false,
   "logoWide": true
@@ -2751,7 +2746,7 @@ window.ATLAS_COMPANIES = [
    ],
    [
     "AI",
-    "메타 AI, 라마 모델"
+    "메타 AI, 뮤즈, 라마 모델"
    ],
    [
     "리얼리티 랩스",
@@ -2773,12 +2768,7 @@ window.ATLAS_COMPANIES = [
     "note": "본업으로 남긴 돈"
    },
    {
-    "value": 1.524,
-    "unit": "조 달러",
-    "label": "시가총액",
-    "note": "2026년 11월 19일 종가 기준",
-    "approx": true,
-    "compareTo": "samsung"
+    "label": "시가총액"
    }
   ],
   "history": [
@@ -2805,6 +2795,10 @@ window.ATLAS_COMPANIES = [
    [
     "2023",
     "AI 모델 라마 공개, 스레드 출시"
+   ],
+   [
+    "2026",
+    "AI 모델 뮤즈 스파크 공개(4월), 개인 AI 비서 뮤즈 출시(9월)"
    ]
   ],
   "rivals": [
@@ -2838,7 +2832,7 @@ window.ATLAS_COMPANIES = [
     ]
    ]
   ],
-  "sources": "메타 2025년 4분기·연간 실적 발표, 시가총액은 2026년 11월 19일 시세",
+  "sources": "메타 2025년 4분기·연간 실적 발표",
   "share": {
    "title": "부문별 매출 비중",
    "note": "2025년 연간 기준이에요. 리얼리티 랩스는 매출이 약 22억 달러인 반면 영업손실이 약 192억 달러였어요.",
@@ -3018,6 +3012,10 @@ window.ATLAS_COMPANIES = [
     ]
    }
   },
+  "capLink": [
+   "https://www.nasdaq.com/market-activity/stocks/meta",
+   "나스닥"
+  ],
   "logo": "data/logos/meta.svg",
   "logoSmall": false,
   "logoWide": true
@@ -3082,12 +3080,7 @@ window.ATLAS_COMPANIES = [
     "note": "본업으로 남긴 돈"
    },
    {
-    "value": 3.701,
-    "unit": "조 달러",
-    "label": "시가총액",
-    "note": "2026년 11월 19일 종가 기준",
-    "approx": true,
-    "compareTo": "samsung"
+    "label": "시가총액"
    }
   ],
   "history": [
@@ -3176,7 +3169,7 @@ window.ATLAS_COMPANIES = [
     ]
    ]
   ],
-  "sources": "마이크로소프트 2026 회계연도 4분기 실적 발표, 시가총액은 2026년 11월 19일 시세",
+  "sources": "마이크로소프트 2026 회계연도 4분기 실적 발표",
   "share": {
    "title": "부문별 매출 비중",
    "note": "2026 회계연도 4분기(2026년 4~6월) 부문별 매출 기준이에요. 클라우드(인텔리전트 클라우드)가 가장 큰 부문이 됐어요.",
@@ -3362,6 +3355,10 @@ window.ATLAS_COMPANIES = [
     ]
    }
   },
+  "capLink": [
+   "https://www.nasdaq.com/market-activity/stocks/msft",
+   "나스닥"
+  ],
   "logo": "data/logos/microsoft.svg",
   "logoSmall": false
  },
@@ -3425,12 +3422,7 @@ window.ATLAS_COMPANIES = [
     "note": "본업으로 남긴 돈"
    },
    {
-    "value": 3.525,
-    "unit": "조 달러",
-    "label": "시가총액",
-    "note": "2026년 11월 19일 종가 기준",
-    "approx": true,
-    "compareTo": "samsung"
+    "label": "시가총액"
    }
   ],
   "history": [
@@ -3496,7 +3488,7 @@ window.ATLAS_COMPANIES = [
     ]
    ]
   ],
-  "sources": "엔비디아 2026 회계연도 실적 발표, 시가총액은 2026년 11월 19일 시세",
+  "sources": "엔비디아 2026 회계연도 실적 발표",
   "share": {
    "title": "사업별 매출 비중",
    "note": "2026 회계연도(2025년 2월~2026년 1월) 사업별 매출 기준이에요. AI용 데이터센터 매출이 90%에 가까워요.",
@@ -3689,6 +3681,10 @@ window.ATLAS_COMPANIES = [
     ]
    }
   },
+  "capLink": [
+   "https://www.nasdaq.com/market-activity/stocks/nvda",
+   "나스닥"
+  ],
   "logo": "data/logos/nvidia.svg",
   "logoSmall": false,
   "logoWide": true
@@ -3757,11 +3753,7 @@ window.ATLAS_COMPANIES = [
     "note": "본업으로 남긴 돈"
    },
    {
-    "value": 1186.2,
-    "unit": "조 원",
-    "label": "시가총액",
-    "note": "2026년 11월 20일 기준, 보통주·우선주 합계",
-    "approx": true
+    "label": "시가총액"
    }
   ],
   "share": {
@@ -3892,7 +3884,7 @@ window.ATLAS_COMPANIES = [
     ]
    ]
   ],
-  "sources": "삼성전자 연결 실적 발표·경영설명회 자료(2021~2026년 3분기, 2026년 분기 수치는 감사 전 기준), 삼성전자 지속가능경영보고서 2025, 2026년 사장단 인사 보도, 시가총액은 2026년 11월 20일 시세",
+  "sources": "삼성전자 연결 실적 발표·경영설명회 자료(2021~2026년 3분기, 2026년 분기 수치는 감사 전 기준), 삼성전자 지속가능경영보고서 2025, 2026년 사장단 인사 보도",
   "logo_url": [
    "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Logo.svg",
    "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_wordmark.svg"
@@ -4060,6 +4052,10 @@ window.ATLAS_COMPANIES = [
     ]
    }
   },
+  "capLink": [
+   "https://finance.naver.com/item/main.naver?code=005930",
+   "네이버 증권"
+  ],
   "logo": "data/logos/samsung.svg",
   "logoSmall": false,
   "logoWide": true
@@ -4124,11 +4120,7 @@ window.ATLAS_COMPANIES = [
     "note": "본업으로 남긴 돈"
    },
    {
-    "value": 62.7,
-    "unit": "조 원",
-    "label": "시가총액",
-    "note": "2026년 11월 20일 기준, 보통주·우선주 합계",
-    "approx": true
+    "label": "시가총액"
    }
   ],
   "history": [
@@ -4184,7 +4176,7 @@ window.ATLAS_COMPANIES = [
     ]
    ]
   ],
-  "sources": "삼성바이오로직스 공시, 시가총액은 2026년 11월 20일 시세",
+  "sources": "삼성바이오로직스 공시",
   "logo_url": [
    "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Biologics_logo.svg",
    "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Biologics_Logo.svg"
@@ -4352,6 +4344,10 @@ window.ATLAS_COMPANIES = [
     ]
    }
   },
+  "capLink": [
+   "https://finance.naver.com/item/main.naver?code=207940",
+   "네이버 증권"
+  ],
   "logo": "data/logos/samsungbio.svg",
   "logoSmall": false,
   "logoWide": true
@@ -4410,11 +4406,7 @@ window.ATLAS_COMPANIES = [
     "note": "1년 동안 최종적으로 남긴 돈"
    },
    {
-    "value": 47.8,
-    "unit": "조 원",
-    "label": "시가총액",
-    "note": "2026년 11월 20일 기준, 보통주·우선주 합계",
-    "approx": true
+    "label": "시가총액"
    }
   ],
   "history": [
@@ -4462,7 +4454,7 @@ window.ATLAS_COMPANIES = [
     ]
    ]
   ],
-  "sources": "삼성생명 공시, 시가총액은 2026년 11월 20일 시세",
+  "sources": "삼성생명 공시",
   "logo_url": [
    "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Life_Insurance_logo.svg",
    "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Life_Insurance_Logo.svg"
@@ -4601,6 +4593,10 @@ window.ATLAS_COMPANIES = [
     ]
    }
   },
+  "capLink": [
+   "https://finance.naver.com/item/main.naver?code=032830",
+   "네이버 증권"
+  ],
   "logo": "data/logos/samsunglife.svg",
   "logoSmall": false,
   "logoWide": true
@@ -4665,11 +4661,7 @@ window.ATLAS_COMPANIES = [
     "note": "본업으로 남긴 돈"
    },
    {
-    "value": 58.6,
-    "unit": "조 원",
-    "label": "시가총액",
-    "note": "2026년 11월 20일 기준, 보통주·우선주 합계",
-    "approx": true
+    "label": "시가총액"
    }
   ],
   "history": [
@@ -4734,7 +4726,7 @@ window.ATLAS_COMPANIES = [
     ]
    ]
   ],
-  "sources": "삼성전기 2025년 4분기 경영실적 발표, 시가총액은 2026년 11월 20일 시세",
+  "sources": "삼성전기 2025년 4분기 경영실적 발표",
   "share": {
    "title": "부문별 매출 비중",
    "note": "2025년 4분기(10~12월) 부문별 매출 기준이에요. 연간 부문별 매출은 아직 확인하지 못해 분기 기준으로 보여드려요.",
@@ -4922,6 +4914,10 @@ window.ATLAS_COMPANIES = [
     ]
    }
   },
+  "capLink": [
+   "https://finance.naver.com/item/main.naver?code=009150",
+   "네이버 증권"
+  ],
   "logo": "data/logos/semco.svg",
   "logoSmall": false,
   "logoWide": true
@@ -4986,11 +4982,7 @@ window.ATLAS_COMPANIES = [
     "note": "본업으로 남긴 돈"
    },
    {
-    "value": 786.7,
-    "unit": "조 원",
-    "label": "시가총액",
-    "note": "2026년 11월 20일 기준, 보통주·우선주 합계",
-    "approx": true
+    "label": "시가총액"
    }
   ],
   "history": [
@@ -5061,7 +5053,7 @@ window.ATLAS_COMPANIES = [
     ]
    ]
   ],
-  "sources": "SK하이닉스 2025년 경영실적 발표, 시가총액은 2026년 11월 20일 시세",
+  "sources": "SK하이닉스 2025년 경영실적 발표",
   "logo_url": [
    "https://commons.wikimedia.org/wiki/Special:FilePath/SK_Hynix.svg",
    "https://commons.wikimedia.org/wiki/Special:FilePath/SK_hynix_logo.svg",
@@ -5230,6 +5222,10 @@ window.ATLAS_COMPANIES = [
     ]
    }
   },
+  "capLink": [
+   "https://finance.naver.com/item/main.naver?code=000660",
+   "네이버 증권"
+  ],
   "logo": "data/logos/skhynix.svg",
   "logoSmall": false,
   "logoWide": true
@@ -5294,11 +5290,7 @@ window.ATLAS_COMPANIES = [
     "note": "본업으로 남긴 돈"
    },
    {
-    "value": 89.3,
-    "unit": "조 원",
-    "label": "시가총액",
-    "note": "2026년 11월 20일 기준, 보통주·우선주 합계",
-    "approx": true
+    "label": "시가총액"
    }
   ],
   "history": [
@@ -5330,7 +5322,7 @@ window.ATLAS_COMPANIES = [
     ]
    ]
   ],
-  "sources": "SK스퀘어 공시, 포트폴리오 관련 보도(2026년 3월), 시가총액은 2026년 11월 20일 시세",
+  "sources": "SK스퀘어 공시, 포트폴리오 관련 보도(2026년 3월)",
   "logo_url": [
    "wiki:ko:SK스퀘어",
    "wiki:en:SK Square",
@@ -5480,6 +5472,10 @@ window.ATLAS_COMPANIES = [
     ]
    }
   },
+  "capLink": [
+   "https://finance.naver.com/item/main.naver?code=402340",
+   "네이버 증권"
+  ],
   "logo": "data/logos/sksquare.svg",
   "logoSmall": false
  },
@@ -5537,12 +5533,7 @@ window.ATLAS_COMPANIES = [
     "note": "하루 평균 약 5,100만 달러"
    },
    {
-    "value": 1.88,
-    "unit": "조 달러",
-    "label": "시가총액",
-    "note": "2026년 11월 19일 종가 기준",
-    "approx": true,
-    "compareTo": "samsung"
+    "label": "시가총액"
    }
   ],
   "history": [
@@ -5622,7 +5613,7 @@ window.ATLAS_COMPANIES = [
     ]
    ]
   ],
-  "sources": "스페이스X 상장신고서(S-1) 분석 보도, 시가총액은 2026년 11월 19일 시세",
+  "sources": "스페이스X 상장신고서(S-1) 분석 보도",
   "share": {
    "title": "사업별 매출 비중",
    "note": "2025년 사업별 매출 기준이에요. AI 부문은 2026년 2월 합병한 xAI를 합쳐 다시 계산한 값이에요.",
@@ -5737,6 +5728,10 @@ window.ATLAS_COMPANIES = [
     ]
    }
   },
+  "capLink": [
+   "https://www.nasdaq.com/market-activity/stocks/spcx",
+   "나스닥"
+  ],
   "logo": "data/logos/spacex.svg",
   "logoSmall": false,
   "logoWide": true
@@ -5801,12 +5796,7 @@ window.ATLAS_COMPANIES = [
     "note": "본업으로 남긴 돈"
    },
    {
-    "value": 1.48,
-    "unit": "조 달러",
-    "label": "시가총액",
-    "note": "2026년 11월 19일 종가 기준",
-    "approx": true,
-    "compareTo": "samsung"
+    "label": "시가총액"
    }
   ],
   "history": [
@@ -5884,7 +5874,7 @@ window.ATLAS_COMPANIES = [
     ]
    ]
   ],
-  "sources": "테슬라 2025년 연간 실적 보도, 시가총액은 2026년 11월 19일 시세",
+  "sources": "테슬라 2025년 연간 실적 보도",
   "share": {
    "title": "사업별 매출 비중",
    "note": "2025년 연간 기준이에요. 자동차 매출은 10% 줄었고, 에너지 사업은 27% 늘었어요.",
@@ -6070,6 +6060,10 @@ window.ATLAS_COMPANIES = [
     ]
    }
   },
+  "capLink": [
+   "https://www.nasdaq.com/market-activity/stocks/tsla",
+   "나스닥"
+  ],
   "logo": "data/logos/tesla.svg",
   "logoSmall": false
  }
