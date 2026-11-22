@@ -322,5 +322,122 @@
     "artist": "Benjamin Ceci",
     "license": "Public domain",
     "saved": "2026-11-22"
+  },
+  "berkshire-1": {
+    "path": "data/photos/berkshire-1.jpg",
+    "query": "[{\"need\": [\"geico\"], \"q\": \"GEICO\"}]",
+    "title": "GEICO headquarters.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:GEICO_headquarters.jpg",
+    "artist": "Coolcaesar at en.wikipedia",
+    "license": "CC BY-SA 3.0",
+    "saved": "2026-11-22"
+  },
+  "berkshire-2": {
+    "path": "data/photos/berkshire-2.jpg",
+    "query": "[{\"need\": [\"bnsf\"], \"q\": \"BNSF locomotive\"}]",
+    "title": "19970427 05 BNSF Galesburg, Illinois (5800008026).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:19970427_05_BNSF_Galesburg,_Illinois_(5800008026).jpg",
+    "artist": "David Wilson from Oak Park, Illinois, USA",
+    "license": "CC BY 2.0",
+    "saved": "2026-11-22"
+  },
+  "jpmorgan-1": {
+    "path": "data/photos/jpmorgan-1.jpg",
+    "query": "[{\"need\": [\"chase\", \"branch\"], \"q\": \"Chase bank branch\"}]",
+    "title": "Chase Bank branch in Palatine, IL.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Chase_Bank_branch_in_Palatine,_IL.jpg",
+    "artist": "Mysterymanblue",
+    "license": "CC0",
+    "saved": "2026-11-22"
+  },
+  "kia-1": {
+    "path": "data/photos/kia-1.jpg",
+    "query": "[{\"need\": [\"kia\", \"sorento\"], \"q\": \"Kia Sorento\"}, {\"need\": [\"kia\", \"sportage\"], \"q\": \"Kia Sportage\"}]",
+    "title": "2024 Kia Sorento (MQ4) Ditzingen Mobil IMG 9803.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:2024_Kia_Sorento_(MQ4)_Ditzingen_Mobil_IMG_9803.jpg",
+    "artist": "Alexander-93",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "kia-2": {
+    "path": "data/photos/kia-2.jpg",
+    "query": "[{\"need\": [\"kia\", \"k5\"], \"q\": \"Kia K5\"}]",
+    "title": "KIA K5 TF China.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:KIA_K5_TF_China.jpg",
+    "artist": "Dinkun Chen",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "kia-3": {
+    "path": "data/photos/kia-3.jpg",
+    "query": "[{\"need\": [\"kia\", \"ev6\"], \"q\": \"Kia EV6\"}, {\"need\": [\"kia\", \"ev9\"], \"q\": \"Kia EV9\"}]",
+    "title": "Kia EV6 GT IMG 8171.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Kia_EV6_GT_IMG_8171.jpg",
+    "artist": "Alexander-93",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "kia-4": {
+    "path": "data/photos/kia-4.jpg",
+    "query": "[{\"need\": [\"kia\", \"pv5\"], \"q\": \"Kia PV5\"}]",
+    "title": "Kia PV5 Cargo IMG 7829.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Kia_PV5_Cargo_IMG_7829.jpg",
+    "artist": "Alexander Migl",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "lilly-1": {
+    "path": "data/photos/lilly-1.jpg",
+    "query": "[{\"need\": [\"mounjaro\"], \"q\": \"Mounjaro\"}, {\"need\": [\"zepbound\"], \"q\": \"Zepbound\"}]",
+    "title": "Lilly mounjaro KwikPen Tirzepatid 5 mg per dose rate-9442.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Lilly_mounjaro_KwikPen_Tirzepatid_5_mg_per_dose_rate-9442.jpg",
+    "artist": "Raimond Spekking",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "samsungcnt-1": {
+    "path": "data/photos/samsungcnt-1.jpg",
+    "query": "[{\"need\": [\"raemian\"], \"q\": \"Raemian apartment\"}]",
+    "title": "Hannam Bridge and and Raemian Caelitus.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Hannam_Bridge_and_and_Raemian_Caelitus.jpg",
+    "artist": "Ox1997cow",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "samsungcnt-3": {
+    "path": "data/photos/samsungcnt-3.jpg",
+    "query": "[{\"need\": [\"everland\"], \"q\": \"Everland theme park\"}]",
+    "title": "Korea-Yongin-Everland-04.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Korea-Yongin-Everland-04.jpg",
+    "artist": "by Nagyman",
+    "license": "CC BY-SA 2.0",
+    "saved": "2026-11-22"
+  },
+  "visa-1": {
+    "path": "data/photos/visa-1.png",
+    "query": "[{\"need\": [\"visa\", \"card\"], \"q\": \"Visa credit card\"}]",
+    "title": "Revolut Premium Visa Infinite Card Midnight Blue.png",
+    "page": "https://commons.wikimedia.org/wiki/File:Revolut_Premium_Visa_Infinite_Card_Midnight_Blue.png",
+    "artist": "MysticalEel07",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "walmart-1": {
+    "path": "data/photos/walmart-1.jpg",
+    "query": "[{\"need\": [\"walmart\", \"supercenter\"], \"q\": \"Walmart Supercenter\"}]",
+    "title": "Walmart Supercenter - Quincy, FL.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Walmart_Supercenter_-_Quincy,_FL.jpg",
+    "artist": "Winnebaggo",
+    "license": "CC0",
+    "saved": "2026-11-22"
+  },
+  "walmart-3": {
+    "path": "data/photos/walmart-3.jpg",
+    "query": "[{\"need\": [\"sam's club\"], \"q\": \"Sam's Club store\"}]",
+    "title": "Sam's Club Xiamen Free Trade Zone Store.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Sam%27s_Club_Xiamen_Free_Trade_Zone_Store.jpg",
+    "artist": "HualinXMN",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
   }
 }

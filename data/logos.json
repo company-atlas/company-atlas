@@ -280,5 +280,160 @@
     "ratio": 1.0,
     "override": true,
     "bg": null
+  },
+  "berkshire": {
+    "path": "data/logos/berkshire.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Berkshire-Hathaway-Logo.svg",
+    "px": 1024,
+    "saved": "2026-11-22",
+    "logo_url": [
+      "commons:Berkshire Hathaway",
+      "wiki:en:Berkshire Hathaway",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 13.11,
+    "override": true,
+    "bg": null
+  },
+  "jpmorgan": {
+    "path": "data/logos/jpmorgan.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Logo_of_JPMorganChase_2024.svg",
+    "px": 1024,
+    "saved": "2026-11-22",
+    "logo_url": [
+      "commons:JPMorgan Chase",
+      "wiki:en:JPMorgan Chase",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 7.05,
+    "override": true,
+    "bg": null
+  },
+  "kia": {
+    "path": "data/logos/kia.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/KIA_logo.svg",
+    "px": 1024,
+    "saved": "2026-11-22",
+    "logo_url": [
+      "commons:Kia logo",
+      "wiki:ko:기아",
+      "wiki:en:Kia",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 8.13,
+    "override": true,
+    "bg": null
+  },
+  "lilly": {
+    "path": "data/logos/lilly.svg",
+    "from": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Eli_Lilly_and_Company.svg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+    "px": 1024,
+    "saved": "2026-11-22",
+    "logo_url": [
+      "commons:Eli Lilly and Company",
+      "wiki:en:Eli Lilly and Company",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 1.83,
+    "override": true,
+    "bg": null
+  },
+  "samsungcnt": {
+    "path": "data/logos/samsungcnt.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_ct_logo.svg",
+    "px": 1024,
+    "saved": "2026-11-22",
+    "logo_url": [
+      "commons:Samsung C&T",
+      "wiki:ko:삼성물산",
+      "wiki:en:Samsung C&T",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 7.13,
+    "override": true,
+    "bg": null
+  },
+  "samsungsdi": {
+    "path": "data/logos/samsungsdi.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_SDI_logo_%28korean%29.svg",
+    "px": 1024,
+    "saved": "2026-11-22",
+    "logo_url": [
+      "commons:Samsung SDI",
+      "wiki:ko:삼성SDI",
+      "wiki:en:Samsung SDI",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 5.66,
+    "override": true,
+    "bg": null
+  },
+  "shinhan": {
+    "path": "data/logos/shinhan.png",
+    "from": "https://www.shinhangroup.com/resources/publish/kr/images/common/favicon_192_192.png",
+    "px": 192,
+    "saved": "2026-11-22",
+    "logo_url": [
+      "commons:Shinhan Financial Group",
+      "wiki:ko:신한금융지주",
+      "wiki:en:Shinhan Financial Group",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 1.0,
+    "override": false,
+    "bg": null
+  },
+  "sk": {
+    "path": "data/logos/sk.svg",
+    "from": "https://upload.wikimedia.org/wikipedia/commons/b/b4/SK_logo.svg?utm_source=ko.wikipedia.org&utm_campaign=api&utm_content=original",
+    "px": 1024,
+    "saved": "2026-11-22",
+    "logo_url": [
+      "commons:SK Inc",
+      "wiki:ko:SK (기업)",
+      "wiki:en:SK Inc.",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 1.28,
+    "override": true,
+    "bg": null
+  },
+  "visa": {
+    "path": "data/logos/visa.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Visa_Inc._logo_%282005%E2%80%932014%29.svg",
+    "px": 1024,
+    "saved": "2026-11-22",
+    "logo_url": [
+      "commons:Visa Inc. logo",
+      "wiki:en:Visa Inc.",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 3.09,
+    "override": true,
+    "bg": null
+  },
+  "walmart": {
+    "path": "data/logos/walmart.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Walmart_logo_%282008%29.svg",
+    "px": 1024,
+    "saved": "2026-11-22",
+    "logo_url": [
+      "commons:Walmart",
+      "wiki:en:Walmart",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 4.24,
+    "override": true,
+    "bg": null
   }
 }
