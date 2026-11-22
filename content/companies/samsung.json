@@ -301,22 +301,51 @@
     {
       "detail": "데이터를 저장하는 칩이에요. 잠깐 기억하는 D램과 전원이 꺼져도 남는 낸드플래시가 있고, 요즘은 AI 서버에 들어가는 고성능 메모리(HBM)가 가장 빠르게 커요. 삼성전자는 수십 년 동안 메모리 세계 1위 자리를 지켜 왔어요.",
       "examples": "D램, HBM, 낸드플래시, SSD",
-      "photo": "Samsung DDR4 RAM module"
+      "photo": [
+        {
+          "q": "Samsung HBM",
+          "need": [
+            "samsung",
+            "hbm"
+          ]
+        },
+        {
+          "q": "Samsung DDR5",
+          "need": [
+            "samsung",
+            "ddr5"
+          ]
+        },
+        {
+          "q": "Samsung memory chip",
+          "need": [
+            "samsung",
+            "memory"
+          ]
+        }
+      ]
     },
     {
       "detail": "스마트폰의 두뇌 역할을 하는 칩(엑시노스)과 카메라 센서를 설계하고, 다른 회사가 설계한 칩을 대신 만들어 주는 '파운드리' 사업을 해요. 파운드리에서는 대만 TSMC와 경쟁하고 있어요.",
       "examples": "엑시노스, 이미지센서, 파운드리(위탁생산)",
-      "photo": "Samsung Exynos chip"
+      "photo": [
+        {
+          "q": "Exynos",
+          "need": [
+            "exynos"
+          ]
+        }
+      ]
     },
     {
       "detail": "갤럭시 스마트폰과 태블릿, 스마트워치, 무선 이어폰을 만들어요. 애플과 함께 세계 스마트폰 시장을 이끄는 회사이고, 접는 스마트폰(폴더블)을 처음 대중화했어요.",
       "examples": "갤럭시 S·Z 폴드·Z 플립, 갤럭시 탭·워치·버즈",
-      "photo": "Samsung Galaxy S24 Ultra"
+      "photo": "file:Samsung Galaxy S24 (webtekno) 008.png"
     },
     {
       "detail": "TV는 2006년부터 세계 판매 1위를 지키고 있어요. 냉장고, 세탁기, 에어컨 같은 생활가전과 모니터도 만들고, 자회사 하만을 통해 자동차용 전자장비와 오디오도 팔아요.",
       "examples": "QLED·OLED TV, 비스포크 가전, 하만 오디오",
-      "photo": "Samsung QLED TV"
+      "photo": "file:Samsung QLED TV 8K - 75 inches - 2018-11-02.jpg"
     }
   ]
 }

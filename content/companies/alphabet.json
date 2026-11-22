@@ -173,22 +173,38 @@
     {
       "detail": "사람들이 검색할 때 결과 옆에 광고를 보여 주고, 광고를 누르면 광고주에게 돈을 받아요. 알파벳 매출의 절반 이상이 여기서 나와요.",
       "examples": "구글 검색, 구글 지도, 쇼핑 광고",
-      "photo": "Google search homepage laptop"
+      "photo": null
     },
     {
       "detail": "세계 최대 동영상 서비스예요. 영상 중간 광고로 돈을 벌고, 광고 없이 보는 프리미엄과 TV 채널 구독도 팔아요.",
       "examples": "유튜브 광고, 유튜브 프리미엄·뮤직, 유튜브 TV",
-      "photo": "YouTube app smartphone"
+      "photo": [
+        {
+          "q": "YouTube headquarters",
+          "need": [
+            "youtube"
+          ]
+        }
+      ]
     },
     {
       "detail": "기업에 서버와 AI 계산 자원을 빌려주는 구글 클라우드와, 지메일·문서 같은 업무 도구 워크스페이스를 팔아요. AI 모델 제미나이도 여기서 키워요.",
       "examples": "구글 클라우드, 워크스페이스, 제미나이, TPU",
-      "photo": "Google data center"
+      "photo": "file:Google data center.jpg"
     },
     {
       "detail": "아직 돈을 많이 벌지 못하지만 미래를 보고 투자하는 사업들이에요. 대표적으로 운전자 없이 달리는 로봇택시 웨이모가 미국 여러 도시에서 운행 중이에요.",
       "examples": "웨이모(자율주행), 베릴리(헬스케어)",
-      "photo": "Waymo self-driving car"
+      "photo": [
+        {
+          "q": "Waymo Jaguar I-Pace",
+          "need": [
+            "waymo",
+            "jaguar"
+          ]
+        },
+        "file:Waymo self-driving car front view.gk.jpg"
+      ]
     }
   ]
 }

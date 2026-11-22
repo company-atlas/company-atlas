@@ -113,17 +113,25 @@
     {
       "detail": "제약회사가 개발한 바이오 의약품을 대형 탱크에서 세포를 키워 대량으로 만들어 줘요. 인천 송도에 세계 최대급 공장들을 두고 있어요.",
       "examples": "항체 의약품 대량 생산, 송도 1~5공장",
-      "photo": "Bioreactor biopharmaceutical manufacturing"
+      "photo": [
+        {
+          "q": "Samsung Biologics",
+          "need": [
+            "samsung",
+            "biologics"
+          ]
+        }
+      ]
     },
     {
       "detail": "신약 후보 물질을 실제로 대량 생산할 수 있도록 세포를 고르고 생산 방법을 개발해 줘요. 개발 단계부터 맡은 고객이 나중에 생산도 맡기는 경우가 많아요.",
       "examples": "세포주 개발, 생산 공정 개발",
-      "photo": "Cell culture laboratory"
+      "photo": null
     },
     {
       "detail": "만든 의약품이 기준에 맞는지, 안전한지를 시험·분석해 주는 서비스예요.",
       "examples": "품질·안전성 시험, 분석",
-      "photo": "Laboratory pipette analysis"
+      "photo": null
     },
     {
       "detail": "암세포만 골라 공격하는 항체·약물 결합체(ADC) 같은 새 의약품 기술을 생산할 수 있는 시설을 늘리고 있어요.",

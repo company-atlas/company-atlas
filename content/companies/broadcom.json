@@ -151,12 +151,27 @@
     {
       "detail": "구글, 메타 같은 빅테크가 자기 AI에 맞춰 설계한 칩을 함께 개발하고 생산까지 맡아 줘요. 엔비디아 GPU의 대안으로 주목받으며 가장 빠르게 크는 사업이에요.",
       "examples": "구글 TPU 등 맞춤형 AI 칩(XPU)",
-      "photo": "Google TPU"
+      "photo": "file:Tensor Processing Unit 3.0.jpg"
     },
     {
       "detail": "데이터센터 안에서 수많은 서버를 연결하는 스위치 칩과 통신 칩이에요. AI 서버가 늘수록 필요한 양도 늘어나요.",
       "examples": "토마호크 스위치 칩, 네트워크 칩",
-      "photo": "Network switch data center"
+      "photo": [
+        {
+          "q": "Broadcom Tomahawk switch",
+          "need": [
+            "broadcom",
+            "tomahawk"
+          ]
+        },
+        {
+          "q": "Broadcom Trident switch chip",
+          "need": [
+            "broadcom",
+            "trident"
+          ]
+        }
+      ]
     },
     {
       "detail": "2023년 인수한 VMware의 서버 가상화 소프트웨어 등 기업용 소프트웨어예요. 한 대의 서버를 여러 대처럼 나눠 쓰게 해 줘요.",
@@ -166,7 +181,14 @@
     {
       "detail": "스마트폰 속 와이파이·블루투스·신호 처리 칩과 저장장치용 칩이에요. 애플이 큰 고객이에요.",
       "examples": "와이파이·블루투스 칩, RF 필터, 저장장치 칩",
-      "photo": "Printed circuit board chips"
+      "photo": [
+        {
+          "q": "Broadcom BCM chip",
+          "need": [
+            "broadcom"
+          ]
+        }
+      ]
     }
   ]
 }

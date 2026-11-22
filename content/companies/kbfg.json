@@ -158,22 +158,46 @@
     {
       "detail": "국민은행은 고객 수가 가장 많은 국내 은행 중 하나예요. 예금을 받아 개인과 기업에 대출해 주고 그 이자 차이로 돈을 벌어요. 그룹 순이익의 60% 넘게 벌어요.",
       "examples": "예금·적금, 주택담보대출, 기업대출",
-      "photo": "KB Kookmin Bank branch"
+      "photo": "file:Kookmin Bank Okcheon Branch 20240730.jpg"
     },
     {
       "detail": "KB증권은 주식·채권 매매를 중개하고, 기업이 돈을 모을 수 있도록 상장이나 채권 발행을 도와요.",
       "examples": "주식 거래, 투자은행(IB), 자산관리",
-      "photo": null
+      "photo": [
+        {
+          "q": "KB Securities",
+          "need": [
+            "kb",
+            "securities"
+          ]
+        }
+      ]
     },
     {
       "detail": "KB손해보험은 자동차·화재·건강보험을, KB라이프는 종신·연금보험을 팔아요. 2020년 푸르덴셜생명을 인수해 보험 사업을 키웠어요.",
       "examples": "KB손해보험, KB라이프",
-      "photo": null
+      "photo": [
+        {
+          "q": "KB Insurance",
+          "need": [
+            "kb",
+            "insurance"
+          ]
+        }
+      ]
     },
     {
       "detail": "KB국민카드는 신용카드와 체크카드를 발급하고 가맹점 수수료와 카드 대출로 돈을 벌어요.",
       "examples": "신용·체크카드, 카드론",
-      "photo": null
+      "photo": [
+        {
+          "q": "KB Kookmin Card",
+          "need": [
+            "kookmin",
+            "card"
+          ]
+        }
+      ]
     }
   ]
 }

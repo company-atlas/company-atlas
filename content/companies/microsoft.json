@@ -176,7 +176,7 @@
     {
       "detail": "기업이 서버와 AI 계산 자원을 인터넷으로 빌려 쓰는 클라우드예요. 오픈AI의 모델을 기업에 제공하는 통로이기도 해서 AI 시대에 가장 빠르게 커요.",
       "examples": "애저, 애저 AI",
-      "photo": "Microsoft data center"
+      "photo": "file:Microsoft Data Center Middenmeer, the Netherlands - 2.jpg"
     },
     {
       "detail": "워드·엑셀·파워포인트가 들어 있는 마이크로소프트 365를 매달 구독료로 팔고, AI 비서 코파일럿을 더해 팔아요. 업무용 SNS 링크드인도 있어요.",
@@ -186,12 +186,20 @@
     {
       "detail": "전 세계 PC 대부분에 깔린 운영체제 윈도우와 서피스 노트북·태블릿이에요. 윈도우는 PC 제조사에 사용료를 받고 팔아요.",
       "examples": "윈도우 11, 서피스",
-      "photo": "Microsoft Surface"
+      "photo": "file:Microsoft Surface Pro.jpeg"
     },
     {
       "detail": "엑스박스 게임기와 게임 구독 서비스, 2023년 인수한 액티비전 블리자드의 게임들이에요.",
       "examples": "엑스박스, 게임 패스, 콜 오브 듀티",
-      "photo": "Xbox Series X"
+      "photo": [
+        {
+          "q": "Xbox Series X console",
+          "need": [
+            "xbox",
+            "series x"
+          ]
+        }
+      ]
     }
   ]
 }

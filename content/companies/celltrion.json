@@ -147,17 +147,50 @@
     {
       "detail": "몸의 면역체계가 자기 몸을 공격하는 병(류머티즘 관절염, 크론병 등)을 치료하는 약이에요. 대표 제품 램시마는 세계 첫 항체 바이오시밀러로, 지금도 가장 많이 팔려요.",
       "examples": "램시마, 유플라이마, 스테키마",
-      "photo": "Infusion bag hospital"
+      "photo": [
+        {
+          "q": "Remsima",
+          "need": [
+            "remsima"
+          ]
+        },
+        {
+          "q": "Inflectra infliximab",
+          "need": [
+            "inflectra"
+          ]
+        }
+      ]
     },
     {
       "detail": "비싼 오리지널 항암제와 효과가 같으면서 값이 싼 바이오시밀러예요. 혈액암과 유방암, 대장암 치료에 쓰여요.",
       "examples": "트룩시마(혈액암), 허쥬마(유방암), 베그젤마(대장암)",
-      "photo": "Oncology infusion chemotherapy"
+      "photo": [
+        {
+          "q": "Truxima",
+          "need": [
+            "truxima"
+          ]
+        },
+        {
+          "q": "Herzuma",
+          "need": [
+            "herzuma"
+          ]
+        }
+      ]
     },
     {
       "detail": "병원에서 몇 시간씩 맞던 정맥 주사를, 환자가 집에서 스스로 놓을 수 있는 피하 주사로 바꾼 제품이에요. 미국에서는 신약으로 허가받아 '짐펜트라'라는 이름으로 팔아요.",
       "examples": "램시마SC, 짐펜트라",
-      "photo": "Prefilled syringe autoinjector"
+      "photo": [
+        {
+          "q": "Zymfentra",
+          "need": [
+            "zymfentra"
+          ]
+        }
+      ]
     },
     {
       "detail": "바이오시밀러를 넘어 직접 개발한 신약을 준비하고 있어요. 암세포만 골라 공격하는 항체·약물 결합체(ADC) 등이 대표적이에요.",

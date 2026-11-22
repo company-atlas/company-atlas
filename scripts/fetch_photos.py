@@ -1,9 +1,12 @@
 """사업 설명 사진: 위키미디어 커먼즈에서 자유 이용 사진을 찾아 data/photos/에 보관해요.
 
 기업 파일(content/companies/<id>.json)의 business_details[n].photo 에 적은 검색어로 찾아요.
-  "photo": "Samsung Galaxy S24 Ultra"     검색어 (이름에 logo, icon 등이 들어간 파일은 빼요)
-  "photo": "file:Exact_file_name.jpg"     정확한 파일 이름을 직접 지정
-  "photo": null                           사진 없이 설명만 보여줘요
+  "photo": "file:Exact_file_name.jpg"     정확한 파일 이름을 직접 지정 (가장 확실해요)
+  "photo": {"q": "Tesla Megapack", "need": ["megapack"]}
+                                          검색어로 찾되, 파일 이름에 need의 낱말이 모두 들어간 사진만 써요
+                                          (관련 없는 사진이 들어오지 않게 하려고 꼭 넣어요)
+  "photo": [위 형식 여러 개]              앞에서부터 차례로 찾아 처음 찾은 사진을 써요
+  "photo": null                           사진 없이 설명만 보여줘요 (대표성 있는 사진이 없을 때)
 
 자유 이용 라이선스(CC0, 퍼블릭 도메인, CC BY, CC BY-SA)인 사진만 쓰고,
 사진마다 만든 사람과 라이선스를 data/photos.json에 기록해 화면에 함께 표시해요.
@@ -52,9 +55,12 @@ def candidates(query):
     return pages
 
 
-def pick(query):
+def pick(query, need=()):
     for p in candidates(query):
         title = p.get('title', '')
+        low = title.lower().replace('_', ' ')
+        if need and not all(w.lower() in low for w in need):
+            continue
         info = (p.get('imageinfo') or [{}])[0]
         meta = info.get('extmetadata') or {}
         lic = strip_html((meta.get('LicenseShortName') or {}).get('value'))
@@ -85,17 +91,30 @@ def main():
     for c in load_companies():
         for i, d in enumerate(c.get('business_details') or []):
             key = '%s-%d' % (c['id'], i + 1)
-            query = (d or {}).get('photo')
-            if not query:
+            spec = (d or {}).get('photo')
+            if not spec:
                 continue
             keep.add(key)
+            query = json.dumps(spec, ensure_ascii=False, sort_keys=True)  # 설정이 바뀌면 다시 찾아요
             old = index.get(key)
             if old and old.get('query') == query and os.path.exists(os.path.join(ROOT, old['path'])):
                 continue
             try:
-                got = pick(query)
+                got = None
+                for item in (spec if isinstance(spec, list) else [spec]):
+                    if isinstance(item, dict):
+                        got = pick(item['q'], item.get('need') or ())
+                    else:
+                        got = pick(item)
+                    if got:
+                        break
                 if not got:
-                    print('[사진 없음] %s: "%s"에 맞는 자유 이용 사진을 찾지 못했어요' % (key, query))
+                    print('[사진 없음] %s: %s 에 맞는 자유 이용 사진을 찾지 못했어요' % (key, query))
+                    if old:  # 예전 사진은 지워요 (설정과 맞지 않으니까)
+                        path = os.path.join(ROOT, old['path'])
+                        if os.path.exists(path):
+                            os.remove(path)
+                        del index[key]
                     continue
                 req = urllib.request.Request(got['url'], headers=UA)
                 with urllib.request.urlopen(req, timeout=60) as res:

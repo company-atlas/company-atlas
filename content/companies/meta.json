@@ -149,12 +149,12 @@
     {
       "detail": "페이스북, 인스타그램, 스레드에 사용자 맞춤 광고를 보여 주고 돈을 벌어요. 매출의 거의 전부가 광고예요.",
       "examples": "페이스북, 인스타그램, 스레드",
-      "photo": "Instagram app smartphone"
+      "photo": "file:Instagram app on smartphone (grass background) (cropped).jpg"
     },
     {
       "detail": "왓츠앱과 메신저는 수십억 명이 쓰는 메시지 앱이에요. 기업이 고객과 대화할 때 내는 요금 등으로 돈을 벌기 시작했어요.",
       "examples": "왓츠앱, 메신저",
-      "photo": "WhatsApp smartphone"
+      "photo": null
     },
     {
       "detail": "모든 앱에 AI 비서 메타 AI를 넣고, AI 데이터센터에 매년 큰돈을 투자해요. 2026년 4월 새 AI 연구 조직(메타 초지능 연구소)의 첫 모델 '뮤즈 스파크'를 공개했고, 9월에는 사람 대신 여러 일을 처리해 주는 개인 AI 비서 '뮤즈'를 내놓았어요. 뮤즈는 무료와 유료 구독(월 20·100달러)으로 미국에서 먼저 시작했어요.",
@@ -164,7 +164,7 @@
     {
       "detail": "가상현실(VR) 헤드셋 퀘스트와 카메라가 달린 스마트 안경을 만들어요. 미래를 위한 투자라 매년 큰 손실을 내고 있어요.",
       "examples": "메타 퀘스트, 레이밴 메타 스마트 안경",
-      "photo": "Meta Quest 3"
+      "photo": "file:Meta Quest 3 display unit.jpg"
     }
   ]
 }

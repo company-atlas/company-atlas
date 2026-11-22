@@ -165,22 +165,36 @@
     {
       "detail": "테슬라 매출의 대부분을 차지해요. 중형 세단 모델 3와 SUV 모델 Y가 가장 많이 팔리고, 미국·중국·독일에 대형 공장(기가팩토리)이 있어요.",
       "examples": "모델 3, 모델 Y, 모델 S·X, 사이버트럭",
-      "photo": "Tesla Model Y"
+      "photo": "file:Tesla Model Y 1X7A6211.jpg"
     },
     {
       "detail": "집에 두는 배터리 파워월과 전력회사용 대형 배터리 메가팩을 팔아요. 2025년 매출이 27% 늘 만큼 빠르게 크고 있어요.",
       "examples": "메가팩, 파워월, 태양광",
-      "photo": "Tesla Megapack"
+      "photo": [
+        {
+          "q": "Tesla Megapack",
+          "need": [
+            "megapack"
+          ]
+        }
+      ]
     },
     {
       "detail": "테슬라 전용 고속 충전소 슈퍼차저, 차량 정비, 보험, 중고차 판매 등 차를 산 뒤에 쓰는 서비스예요.",
       "examples": "슈퍼차저, 정비, 보험",
-      "photo": "Tesla Supercharger station"
+      "photo": "file:Missoula (MT, USA), Tesla Supercharger -- 2022 -- 194228.jpg"
     },
     {
       "detail": "운전을 대신해 주는 FSD 소프트웨어를 구독으로 팔고, 운전자 없는 로보택시와 사람 모양 로봇 옵티머스를 개발하고 있어요.",
       "examples": "FSD, 로보택시, 옵티머스",
-      "photo": null
+      "photo": [
+        {
+          "q": "Tesla Optimus robot",
+          "need": [
+            "optimus"
+          ]
+        }
+      ]
     }
   ]
 }
