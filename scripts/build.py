@@ -152,7 +152,13 @@ def render_company(c, companies, meta):
 
     h.append('<section class="sec" id="about"><h2>이 기업은?</h2><p class="about">%s</p></section>' % e(c['about']))
 
-    cells = ''.join('<div class="cell"><div class="lbl">%s</div><div class="val">%s</div></div>' % (e(k), e(v)) for k, v in c['info'])
+    def val(k, v):
+        # 대표 칸: 그룹 회장이 따로 있으면(대표이사가 아닌 총수) 두 줄로 함께 보여줘요
+        if k == '대표' and c.get('group_head'):
+            return ('<span class="role">대표이사</span> %s<span class="line2"><span class="role">그룹 회장</span> %s</span>'
+                    % (e(v), e(c['group_head'])))
+        return e(v)
+    cells = ''.join('<div class="cell"><div class="lbl">%s</div><div class="val">%s</div></div>' % (e(k), val(k, v)) for k, v in c['info'])
     site = c['website'].replace('https://', '').replace('http://', '').replace('www.', '')
     cells += ('<div class="cell"><div class="lbl">공식 웹사이트</div><div class="val"><a href="%s" target="_blank" '
               'rel="noopener" style="color: var(--accent)">%s</a></div></div>' % (e(c['website']), e(site)))
