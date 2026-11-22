@@ -3841,10 +3841,10 @@ window.ATLAS_COMPANIES = [
   ],
   "sources": "SK스퀘어 공시, 포트폴리오 관련 보도(2026년 3월), 시가총액은 2026년 11월 20일 시세",
   "logo_url": [
-   "commons:SK Square",
    "wiki:ko:SK스퀘어",
    "wiki:en:SK Square",
-   "page:"
+   "page:",
+   "commons:SK Square"
   ],
   "financials": {
    "unit": "조 원",
@@ -3930,7 +3930,7 @@ window.ATLAS_COMPANIES = [
    ],
    "source": "Open DART"
   },
-  "logo": "data/logos/sksquare.png",
+  "logo": "data/logos/sksquare.svg",
   "logoSmall": false
  },
  {
