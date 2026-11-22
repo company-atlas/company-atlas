@@ -1,0 +1,416 @@
+{
+  "alphabet-2": {
+    "path": "data/photos/alphabet-2.jpg",
+    "query": "YouTube app smartphone",
+    "title": "Fediverse smartphone apps (photo by Elena Rossini).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Fediverse_smartphone_apps_(photo_by_Elena_Rossini).jpg",
+    "artist": "Elexfedi",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "alphabet-3": {
+    "path": "data/photos/alphabet-3.jpg",
+    "query": "Google data center",
+    "title": "Google data center.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Google_data_center.jpg",
+    "artist": "Lambtron",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "alphabet-4": {
+    "path": "data/photos/alphabet-4.jpg",
+    "query": "Waymo self-driving car",
+    "title": "Waymo self-driving car front view.gk.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Waymo_self-driving_car_front_view.gk.jpg",
+    "artist": "Grendelkhan",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "amazon-1": {
+    "path": "data/photos/amazon-1.jpg",
+    "query": "Amazon fulfillment center",
+    "title": "Amazon fulfillment center - Troutdale Oregon.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Amazon_fulfillment_center_-_Troutdale_Oregon.jpg",
+    "artist": "Tedder",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "amazon-2": {
+    "path": "data/photos/amazon-2.jpg",
+    "query": "Amazon Web Services data center",
+    "title": "Amazon AWS us-west-2 beach AZ.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Amazon_AWS_us-west-2_beach_AZ.jpg",
+    "artist": "Tedder",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "amazon-4": {
+    "path": "data/photos/amazon-4.jpg",
+    "query": "Amazon Prime delivery van",
+    "title": "Amazon Prime Delivery Van, Camp Street, New Orleans, 2020.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Amazon_Prime_Delivery_Van,_Camp_Street,_New_Orleans,_2020.jpg",
+    "artist": "Tony Webster from Minneapolis, Minnesota, United States",
+    "license": "CC BY 2.0",
+    "saved": "2026-11-22"
+  },
+  "apple-1": {
+    "path": "data/photos/apple-1.jpg",
+    "query": "iPhone 15 Pro",
+    "title": "Apple iPhone 15 Pro.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Apple_iPhone_15_Pro.jpg",
+    "artist": "IPHONE 15",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "apple-2": {
+    "path": "data/photos/apple-2.jpg",
+    "query": "App Store icon iPhone",
+    "title": "Leanne Walker- Numb Emoji - FREE (50245600671).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Leanne_Walker-_Numb_Emoji_-_FREE_(50245600671).jpg",
+    "artist": "Leanne Walker",
+    "license": "CC0",
+    "saved": "2026-11-22"
+  },
+  "apple-3": {
+    "path": "data/photos/apple-3.jpg",
+    "query": "MacBook Air M2",
+    "title": "M2 Macbook Air Starlight model.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:M2_Macbook_Air_Starlight_model.jpg",
+    "artist": "KKPCW（Kyu3）",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "apple-4": {
+    "path": "data/photos/apple-4.jpg",
+    "query": "Apple Watch Series",
+    "title": "Apple Watch Series 7; January 2022 (01).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Apple_Watch_Series_7;_January_2022_(01).jpg",
+    "artist": "MIKI Yoshihito",
+    "license": "CC BY 2.0",
+    "saved": "2026-11-22"
+  },
+  "broadcom-1": {
+    "path": "data/photos/broadcom-1.jpg",
+    "query": "Google TPU",
+    "title": "Tensor Processing Unit 3.0.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Tensor_Processing_Unit_3.0.jpg",
+    "artist": "Zinskauf",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "broadcom-2": {
+    "path": "data/photos/broadcom-2.jpg",
+    "query": "Network switch data center",
+    "title": "Cisco Switch Router Bad Wiring.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cisco_Switch_Router_Bad_Wiring.jpg",
+    "artist": "Robert.Harker",
+    "license": "CC BY-SA 3.0",
+    "saved": "2026-11-22"
+  },
+  "broadcom-4": {
+    "path": "data/photos/broadcom-4.jpg",
+    "query": "Printed circuit board chips",
+    "title": "Solar calculator - Chip-on-board of printed circuit board-1829.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Solar_calculator_-_Chip-on-board_of_printed_circuit_board-1829.jpg",
+    "artist": "Raimond Spekking",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "hyundai-1": {
+    "path": "data/photos/hyundai-1.jpg",
+    "query": "Hyundai Tucson 2024",
+    "title": "Hyundai Tucson (NX4, SWB) PHEV 1X7A1858.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Hyundai_Tucson_(NX4,_SWB)_PHEV_1X7A1858.jpg",
+    "artist": "Alexander-93",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "hyundai-2": {
+    "path": "data/photos/hyundai-2.jpg",
+    "query": "Genesis GV80",
+    "title": "Genesis GV80 IAA 2021 1X7A0230.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Genesis_GV80_IAA_2021_1X7A0230.jpg",
+    "artist": "Alexander Migl",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "hyundai-3": {
+    "path": "data/photos/hyundai-3.jpg",
+    "query": "Hyundai Ioniq 5",
+    "title": "Hyundai Ioniq 5 IAA 2021 1X7A0189.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Hyundai_Ioniq_5_IAA_2021_1X7A0189.jpg",
+    "artist": "Alexander Migl",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "kbfg-1": {
+    "path": "data/photos/kbfg-1.jpg",
+    "query": "KB Kookmin Bank branch",
+    "title": "Kookmin Bank Okcheon Branch 20240730.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Kookmin_Bank_Okcheon_Branch_20240730.jpg",
+    "artist": "LandAndTree",
+    "license": "CC0",
+    "saved": "2026-11-22"
+  },
+  "lgensol-1": {
+    "path": "data/photos/lgensol-1.jpg",
+    "query": "Lithium-ion battery electric vehicle pack",
+    "title": "Lithium-Ion Battery for BMW i3 - Battery Pack.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Lithium-Ion_Battery_for_BMW_i3_-_Battery_Pack.JPG",
+    "artist": "RudolfSimon",
+    "license": "CC BY-SA 3.0",
+    "saved": "2026-11-22"
+  },
+  "lgensol-2": {
+    "path": "data/photos/lgensol-2.jpg",
+    "query": "Battery energy storage system container",
+    "title": "Tesvolt battery energy storage system Rheineck.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Tesvolt_battery_energy_storage_system_Rheineck.jpg",
+    "artist": "Kecko from Eastern Switzerland",
+    "license": "CC BY 2.0",
+    "saved": "2026-11-22"
+  },
+  "lgensol-3": {
+    "path": "data/photos/lgensol-3.jpg",
+    "query": "18650 lithium ion cells",
+    "title": "18650 and 21700 lithium ion battery cell.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:18650_and_21700_lithium_ion_battery_cell.jpg",
+    "artist": "Sevenethics",
+    "license": "CC0",
+    "saved": "2026-11-22"
+  },
+  "meta-1": {
+    "path": "data/photos/meta-1.jpg",
+    "query": "Instagram app smartphone",
+    "title": "Instagram app on smartphone (grass background) (cropped).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Instagram_app_on_smartphone_(grass_background)_(cropped).jpg",
+    "artist": "Santeri Viinamäki (both photo and screenshot)",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "meta-2": {
+    "path": "data/photos/meta-2.jpg",
+    "query": "WhatsApp smartphone",
+    "title": "Online N'ko classroom via WhatsApp (cropped).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Online_N%27ko_classroom_via_WhatsApp_(cropped).jpg",
+    "artist": "Coleman Donaldson",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "meta-4": {
+    "path": "data/photos/meta-4.jpg",
+    "query": "Meta Quest 3",
+    "title": "Meta Quest 3 display unit.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Meta_Quest_3_display_unit.jpg",
+    "artist": "IHazACatNamedMax",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "microsoft-1": {
+    "path": "data/photos/microsoft-1.jpg",
+    "query": "Microsoft data center",
+    "title": "Microsoft Data Center Middenmeer, the Netherlands - 2.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Microsoft_Data_Center_Middenmeer,_the_Netherlands_-_2.jpg",
+    "artist": "Hay Kranen",
+    "license": "CC BY 4.0",
+    "saved": "2026-11-22"
+  },
+  "microsoft-3": {
+    "path": "data/photos/microsoft-3.jpg",
+    "query": "Microsoft Surface",
+    "title": "Microsoft Surface Pro.jpeg",
+    "page": "https://commons.wikimedia.org/wiki/File:Microsoft_Surface_Pro.jpeg",
+    "artist": "KK IN HK",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "microsoft-4": {
+    "path": "data/photos/microsoft-4.jpg",
+    "query": "Xbox Series X",
+    "title": "Xbox-console.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Xbox-console.jpg",
+    "artist": "Evan-Amos",
+    "license": "Public domain",
+    "saved": "2026-11-22"
+  },
+  "nvidia-1": {
+    "path": "data/photos/nvidia-1.jpg",
+    "query": "Nvidia DGX",
+    "title": "Nvidia DGX Spark rear ports dllu.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Nvidia_DGX_Spark_rear_ports_dllu.jpg",
+    "artist": "Daniel Lu (User:dllu)",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "nvidia-2": {
+    "path": "data/photos/nvidia-2.jpg",
+    "query": "Nvidia GeForce RTX graphics card",
+    "title": "Nvidia GeForce RTX 5060 Ti 16GB, PNY Overclocked Dual Fan, front.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Nvidia_GeForce_RTX_5060_Ti_16GB,_PNY_Overclocked_Dual_Fan,_front.jpg",
+    "artist": "FreeMediaKid!",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "samsung-1": {
+    "path": "data/photos/samsung-1.png",
+    "query": "Samsung DDR4 RAM module",
+    "title": "16 GiB-DDR4-RAM-Riegel RAM019FIX Small Crop 90 PCNT.png",
+    "page": "https://commons.wikimedia.org/wiki/File:16_GiB-DDR4-RAM-Riegel_RAM019FIX_Small_Crop_90_PCNT.png",
+    "artist": "PantheraLeo1359531",
+    "license": "CC BY 4.0",
+    "saved": "2026-11-22"
+  },
+  "samsung-2": {
+    "path": "data/photos/samsung-2.jpg",
+    "query": "Samsung Exynos chip",
+    "title": "Bee hummingbird (Mellisuga helenae) immature male.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Bee_hummingbird_(Mellisuga_helenae)_immature_male.jpg",
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "samsung-3": {
+    "path": "data/photos/samsung-3.png",
+    "query": "Samsung Galaxy S24 Ultra",
+    "title": "Samsung Galaxy S24 (webtekno) 008.png",
+    "page": "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_S24_(webtekno)_008.png",
+    "artist": "webtekno",
+    "license": "CC BY 3.0",
+    "saved": "2026-11-22"
+  },
+  "samsung-4": {
+    "path": "data/photos/samsung-4.jpg",
+    "query": "Samsung QLED TV",
+    "title": "Samsung QLED TV 8K - 75 inches - 2018-11-02.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Samsung_QLED_TV_8K_-_75_inches_-_2018-11-02.jpg",
+    "artist": "Bretwa",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "samsungbio-2": {
+    "path": "data/photos/samsungbio-2.jpg",
+    "query": "Cell culture laboratory",
+    "title": "Sterile 24-Well Cell Culture Plate Used in Laboratory Research.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Sterile_24-Well_Cell_Culture_Plate_Used_in_Laboratory_Research.jpg",
+    "artist": "Gannu03",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "samsungbio-3": {
+    "path": "data/photos/samsungbio-3.jpg",
+    "query": "Laboratory pipette analysis",
+    "title": "Bone and Wheeler gas analysis apparatus - DPLA - 20bf1bc01b599d63f03f120c59bdede8.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Bone_and_Wheeler_gas_analysis_apparatus_-_DPLA_-_20bf1bc01b599d63f03f120c59bdede8.jpg",
+    "artist": "알 수 없음",
+    "license": "Public domain",
+    "saved": "2026-11-22"
+  },
+  "semco-1": {
+    "path": "data/photos/semco-1.jpg",
+    "query": "Multilayer ceramic capacitor",
+    "title": "Ceramic capacitors mounted on a PCB.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Ceramic_capacitors_mounted_on_a_PCB.jpg",
+    "artist": "Giovanna 27",
+    "license": "CC BY 4.0",
+    "saved": "2026-11-22"
+  },
+  "semco-3": {
+    "path": "data/photos/semco-3.jpg",
+    "query": "Smartphone camera module",
+    "title": "SAMSUNG Galaxy S22 Ultra REAR CAMERA MODULES.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:SAMSUNG_Galaxy_S22_Ultra_REAR_CAMERA_MODULES.jpg",
+    "artist": "Dinkun Chen",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "skhynix-1": {
+    "path": "data/photos/skhynix-1.jpg",
+    "query": "DDR5 memory module",
+    "title": "TWSC 8GB DDR5-4800 SO-DIMM memory module - front view.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:TWSC_8GB_DDR5-4800_SO-DIMM_memory_module_-_front_view.jpg",
+    "artist": "ITEagle Europe - Sebastiaan Broekhoven",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "skhynix-2": {
+    "path": "data/photos/skhynix-2.jpg",
+    "query": "High Bandwidth Memory",
+    "title": "Marcq HBM 1 15 rue des tisserands.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Marcq_HBM_1_15_rue_des_tisserands.jpg",
+    "artist": "Velvet",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "skhynix-3": {
+    "path": "data/photos/skhynix-3.jpg",
+    "query": "NAND flash memory chip",
+    "title": "NAND plan.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:NAND_plan.jpg",
+    "artist": "2x910",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "skhynix-4": {
+    "path": "data/photos/skhynix-4.jpg",
+    "query": "Solid-state drive enterprise",
+    "title": "NTSB Engineer Ben Hsu examines a solid state hard drive that was recovered from Virgin Galactic SpaceShipTwo at the NTSB laboratory in Washington, DC (15722477121).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:NTSB_Engineer_Ben_Hsu_examines_a_solid_state_hard_drive_that_was_recovered_from_Virgin_Galactic_SpaceShipTwo_at_the_NTSB_laboratory_in_Washington,_DC_(15722477121).jpg",
+    "artist": "NTSBgov",
+    "license": "Public domain",
+    "saved": "2026-11-22"
+  },
+  "sksquare-1": {
+    "path": "data/photos/sksquare-1.jpg",
+    "query": "SK Hynix Icheon",
+    "title": "SK Hynix DDR5 Tall MRDIMM.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:SK_Hynix_DDR5_Tall_MRDIMM.jpg",
+    "artist": "4300streetcar",
+    "license": "CC BY 4.0",
+    "saved": "2026-11-22"
+  },
+  "spacex-1": {
+    "path": "data/photos/spacex-1.jpg",
+    "query": "Starlink satellite dish",
+    "title": "NYC Trump court trial 2024-04-22 139.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:NYC_Trump_court_trial_2024-04-22_139.jpg",
+    "artist": "SWinxy",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "spacex-2": {
+    "path": "data/photos/spacex-2.jpg",
+    "query": "Falcon 9 launch",
+    "title": "Falcon 9 first stage at LZ-1(two).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Falcon_9_first_stage_at_LZ-1(two).jpg",
+    "artist": "SpaceX Photos",
+    "license": "CC0",
+    "saved": "2026-11-22"
+  },
+  "spacex-4": {
+    "path": "data/photos/spacex-4.jpg",
+    "query": "SpaceX Dragon spacecraft",
+    "title": "Dragon 2 hover test (24159153709).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Dragon_2_hover_test_(24159153709).jpg",
+    "artist": "SpaceX Photos",
+    "license": "CC0",
+    "saved": "2026-11-22"
+  },
+  "tesla-1": {
+    "path": "data/photos/tesla-1.jpg",
+    "query": "Tesla Model Y",
+    "title": "Tesla Model Y 1X7A6211.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Tesla_Model_Y_1X7A6211.jpg",
+    "artist": "Alexander Migl",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  },
+  "tesla-3": {
+    "path": "data/photos/tesla-3.jpg",
+    "query": "Tesla Supercharger station",
+    "title": "Missoula (MT, USA), Tesla Supercharger -- 2022 -- 194228.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Missoula_(MT,_USA),_Tesla_Supercharger_--_2022_--_194228.jpg",
+    "artist": "Dietmar Rabich",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-22"
+  }
+}
