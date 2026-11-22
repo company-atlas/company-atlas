@@ -11,10 +11,12 @@ import os
 from common import FETCHED_DIR, get_json, load_companies, read_json, write_json
 
 BASE = 'https://data.sec.gov/api/xbrl/companyfacts/CIK%s.json'
+# 같은 줄(묶음) 안의 이름은 같은 뜻이라 섞어 써요. 뒤 묶음은 앞 묶음에 값이 없는 기간에만 써요.
 CONCEPTS = {
-    'rev': ('RevenueFromContractWithCustomerExcludingAssessedTax', 'Revenues', 'SalesRevenueNet'),
-    'op': ('OperatingIncomeLoss',),
-    'ni': ('NetIncomeLoss',),
+    'rev': [('RevenueFromContractWithCustomerExcludingAssessedTax', 'Revenues', 'SalesRevenueNet',
+             'RevenueFromContractWithCustomerIncludingAssessedTax')],
+    'op': [('OperatingIncomeLoss',)],
+    'ni': [('NetIncomeLoss',), ('NetIncomeLossAvailableToCommonStockholdersBasic',), ('ProfitLoss',)],
 }
 
 
@@ -22,36 +24,56 @@ def days(a, b):
     return (datetime.date.fromisoformat(b) - datetime.date.fromisoformat(a)).days
 
 
-def periods(facts, names):
+def periods(facts, tiers):
     """기간(시작~끝)별 값을 모아요.
 
     회사가 해마다 다른 이름(예: Revenues → RevenueFromContract…)으로 공시하기도 해서,
-    후보 이름을 모두 합친 뒤 같은 기간이면 가장 최근에 낸 공시 값을 써요.
+    같은 묶음의 이름을 모두 합친 뒤 같은 기간이면 가장 최근에 낸 공시 값을 써요.
     """
-    found = {}
-    for name in names:
-        units = facts.get('us-gaap', {}).get(name, {}).get('units', {}).get('USD', [])
-        for f in units:
-            if 'start' not in f or f.get('form') not in ('10-K', '10-Q', '10-K/A', '10-Q/A', '10-KT', 'S-1', 'S-1/A'):
-                continue
-            k = (f['start'], f['end'])
-            if k not in found or f.get('filed', '') > found[k]['filed']:
-                found[k] = {'val': f['val'], 'filed': f.get('filed', '')}
-    return {k: v['val'] for k, v in found.items()}
+    out = {}
+    for names in tiers:
+        found = {}
+        for name in names:
+            units = facts.get('us-gaap', {}).get(name, {}).get('units', {}).get('USD', [])
+            for f in units:
+                if 'start' not in f or f.get('form') not in ('10-K', '10-Q', '10-K/A', '10-Q/A', '10-KT', 'S-1', 'S-1/A'):
+                    continue
+                k = (f['start'], f['end'])
+                if k not in found or f.get('filed', '') > found[k]['filed']:
+                    found[k] = {'val': f['val'], 'filed': f.get('filed', '')}
+        for k, v in found.items():
+            out.setdefault(k, v['val'])
+    return out
 
 
 def split(vals):
-    """1년짜리 기간과 3개월짜리 기간을 나누고, 4분기 값을 계산해요."""
+    """1년짜리 기간과 3개월짜리 기간을 나누고, 빠진 분기는 다른 기간끼리 빼서 계산해요.
+
+    예) 1년 − 9개월 = 4분기, 6개월 − 2분기 = 1분기, 9개월 − 6개월 = 3분기
+    """
     annual = {k: v for k, v in vals.items() if 350 <= days(*k) <= 380}
     quarter = {k: v for k, v in vals.items() if 80 <= days(*k) <= 100}
-    for (s, e), total in annual.items():
-        inside = sorted(k for k in quarter if s <= k[0] and k[1] <= e)
-        if len(inside) == 3 and inside[-1][1] < e:
-            # 4분기 = 1년 값 − 1~3분기 합
-            start = (datetime.date.fromisoformat(inside[-1][1]) + datetime.timedelta(days=1)).isoformat()
-            quarter[(start, e)] = total - sum(quarter[k] for k in inside)
+    def shift(d, n):
+        return (datetime.date.fromisoformat(d) + datetime.timedelta(days=n)).isoformat()
+    for _ in range(3):  # 새로 계산된 분기로 또 다른 분기를 계산할 수 있어서 몇 번 반복해요
+        added = False
+        keys = list(vals.items()) + [(k, v) for k, v in quarter.items() if k not in vals]
+        for (s1, e1), v1 in keys:
+            for (s2, e2), v2 in keys:
+                # 같은 날 시작, 긴 기간 − 짧은 기간 = 뒤쪽 기간
+                if s1 == s2 and e2 > e1:
+                    k = (shift(e1, 1), e2)
+                # 같은 날 끝, 긴 기간 − 짧은 기간 = 앞쪽 기간
+                elif e1 == e2 and s2 < s1:
+                    k = (s2, shift(s1, -1))
+                else:
+                    continue
+                if 80 <= days(*k) <= 100 and k not in quarter:
+                    quarter[k] = v2 - v1
+                    added = True
+        if not added:
+            break
     return annual, quarter
-
 
 def label_quarter(start, end):
     """기간의 가운데 날짜가 속한 달력 분기로 이름을 붙여요. (예: 9월 28일~12월 27일 → 4분기)"""
@@ -103,6 +125,7 @@ def main():
     headers = {'User-Agent': 'CompanyAtlas %s' % email, 'Accept-Encoding': 'identity'}
     ok = True
     table = None
+    debug = {}
     for c in load_companies():
         ids = c.get('sources_ids') or {}
         cik = ids.get('sec_cik')
@@ -122,6 +145,7 @@ def main():
         try:
             data = get_json(BASE % cik.zfill(10), headers=headers)
             annual, quarterly = collect(data.get('facts', {}))
+            debug[c['id']] = concept_summary(data.get('facts', {}))
         except Exception as e:
             print('[실패] %s: %s' % (c['name'], e))
             ok = False
@@ -140,7 +164,22 @@ def main():
             'overview': {},
         })
         print('[완료] %s: 연간 %d개, 분기 %d개' % (c['name'], len(annual), len(quarterly)))
+    # 확인용 기록: 회사별 매출·이익 관련 계정 이름과 마지막 기간 (자료가 늦거나 빠질 때 원인을 찾으려고)
+    write_json(os.path.join(FETCHED_DIR, '_debug_sec.json'), debug)
     return ok
+
+
+def concept_summary(facts):
+    out = {}
+    for name, body in facts.get('us-gaap', {}).items():
+        if not any(w in name for w in ('Revenue', 'NetIncome', 'OperatingIncome', 'ProfitLoss')):
+            continue
+        units = body.get('units', {}).get('USD', [])
+        dur = [u for u in units if 'start' in u]
+        if dur:
+            last = max(dur, key=lambda u: u['end'])
+            out[name] = {'n': len(dur), 'last_end': last['end'], 'last_form': last.get('form'), 'last_filed': max(u.get('filed', '') for u in dur)}
+    return out
 
 
 if __name__ == '__main__':

@@ -68,7 +68,8 @@
   ],
   "sources": "SK스퀘어 공시, 포트폴리오 관련 보도(2026년 3월), 시가총액은 2026년 11월 20일 시세",
   "sources_ids": {
-    "krx_stock_code": "402340"
+    "krx_stock_code": "402340",
+    "dart_full": true
   },
   "financials_text": {
     "unit": "조 원",

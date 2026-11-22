@@ -4,12 +4,14 @@
 사용하는 API
   - company.json        기업개황 (대표, 설립일, 주소, 홈페이지)
   - fnlttSinglAcnt.json 단일회사 주요계정 (매출액, 영업이익, 당기순이익)
+  - fnlttSinglAcntAll.json 단일회사 전체 재무제표: 주요계정에 매출이나 순이익이 없을 때(금융회사 등) 여기서 찾아요
 보고서 코드: 11013 1분기, 11012 반기, 11014 3분기, 11011 사업보고서(연간)
 """
 
 import datetime
 import math
 import os
+import re
 
 import io
 import xml.etree.ElementTree as ET
@@ -47,7 +49,80 @@ def pick(rows, names):
     return None
 
 
-def report(key, corp_code, year, code, accounts=ACCOUNTS):
+# 전체 재무제표에서 찾을 때 쓰는 표준 계정 코드와 이름 (금융회사는 '매출' 대신 '영업수익'을 써요)
+FULL_IDS = {'rev': ('ifrs-full_Revenue', 'ifrs_Revenue', 'dart_OperatingRevenue', 'ifrs-full_RevenueFromContractsWithCustomers'),
+            'op': ('dart_OperatingIncomeLoss',),
+            'ni': ('ifrs-full_ProfitLoss', 'ifrs_ProfitLoss')}
+FULL_NAMES = {'rev': ('영업수익', '영업수익합계', '매출액', '수익(매출액)', '매출', '순영업수익'),
+              'op': ('영업이익', '영업이익(손실)'),
+              'ni': ('당기순이익', '당기순이익(손실)', '연결당기순이익', '분기순이익', '반기순이익',
+                     '분기순이익(손실)', '반기순이익(손실)', '당기순손익')}
+DEBUG = {}  # 회사별로 전체 재무제표의 손익 계정 이름을 남겨, 나중에 빠진 값이 있으면 원인을 볼 수 있게 해요
+
+
+def clean_name(nm):
+    """'Ⅰ. 영업수익' → '영업수익'처럼 앞 번호와 빈칸을 지워요."""
+    return re.sub(r'^[\sⅠ-Ⅻ0-9IVX.\-()]+(?=[가-힣])', '', (nm or '')).replace(' ', '')
+
+
+def full_report(key, corp_code, year, code):
+    """전체 재무제표에서 매출(영업수익)·영업이익·순이익을 찾아요. 연결(CFS)을 먼저, 없으면 별도(OFS)."""
+    for fs in ('CFS', 'OFS'):
+        data = get_json(BASE + 'fnlttSinglAcntAll.json', {
+            'crtfc_key': key, 'corp_code': corp_code, 'bsns_year': str(year), 'reprt_code': code, 'fs_div': fs})
+        if data.get('status') != '000':
+            continue
+        rows = [r for r in data.get('list', []) if r.get('sj_div') in ('IS', 'CIS')]
+        if not rows:
+            continue
+        out = {}
+        for k in ('rev', 'op', 'ni'):
+            # 이름을 먼저(앞에 있는 이름일수록 우선), 없으면 표준 계정 코드로 찾아요
+            row = None
+            for name in FULL_NAMES[k]:
+                row = next((r for r in rows if clean_name(r.get('account_nm')) == name), None)
+                if row:
+                    break
+            if not row:
+                row = next((r for r in rows if (r.get('account_id') or '') in FULL_IDS[k]), None)
+            out[k] = {'q': to_won(row.get('thstrm_amount')), 'cum': to_won(row.get('thstrm_add_amount')), 'fs': fs} if row else None
+        out['_fs'] = fs
+        out['_names'] = [(r.get('sj_div'), r.get('account_id'), r.get('account_nm')) for r in rows][:80]
+        return out
+    return None
+
+
+def report(key, corp_code, year, code, accounts=ACCOUNTS, debug_id=None, full_first=False):
+    out = summary_report(key, corp_code, year, code, accounts)
+    if out is None:
+        if debug_id and code == '11011':
+            DEBUG.setdefault(debug_id, {}).setdefault('_no_summary', []).append(year)
+        return None
+    # 주요계정에 매출이나 순이익이 없거나, 일부가 연결이 아닌 별도 재무제표 값이면
+    # 전체 재무제표(연결 우선)에서 찾아 채워요 (금융회사 등)
+    fs = {v.get('fs') for v in out.values() if v}
+    if full_first or out.get('rev') is None or out.get('ni') is None or len(fs) > 1:
+        try:
+            full = full_report(key, corp_code, year, code)
+        except Exception as e:
+            print('  전체 재무제표를 받지 못했어요 (%s %s): %s' % (year, code, e))
+            full = None
+        if full:
+            for k in ('rev', 'op', 'ni'):
+                mixed = out.get(k) and out[k].get('fs') == 'OFS' and full.get('_fs') == 'CFS'
+                if full.get(k) and (out.get(k) is None or mixed or full_first):
+                    out[k] = full[k]
+            if debug_id and code == '11011':
+                DEBUG.setdefault(debug_id, {})[str(year)] = full['_names']
+        # 연결 값과 별도 값을 섞지 않아요 (지주회사의 별도 매출은 배당금 등이라 뜻이 달라요)
+        if any(v and v.get('fs') == 'CFS' for v in out.values()):
+            for k in ('rev', 'op', 'ni'):
+                if out.get(k) and out[k].get('fs') == 'OFS':
+                    out[k] = None
+    return out
+
+
+def summary_report(key, corp_code, year, code, accounts=ACCOUNTS):
     data = get_json(BASE + 'fnlttSinglAcnt.json', {
         'crtfc_key': key, 'corp_code': corp_code, 'bsns_year': str(year), 'reprt_code': code})
     status = data.get('status')
@@ -63,16 +138,17 @@ def report(key, corp_code, year, code, accounts=ACCOUNTS):
             out[k] = None
             continue
         # 분기·반기 보고서: thstrm_amount = 그 3개월, thstrm_add_amount = 연초부터 누적
-        out[k] = {'q': to_won(row.get('thstrm_amount')), 'cum': to_won(row.get('thstrm_add_amount'))}
+        out[k] = {'q': to_won(row.get('thstrm_amount')), 'cum': to_won(row.get('thstrm_add_amount')),
+                  'fs': row.get('fs_div', 'CFS')}
     return out
 
 
-def collect(key, corp_code, years, accounts=ACCOUNTS):
+def collect(key, corp_code, years, accounts=ACCOUNTS, debug_id=None, full_first=False):
     annual, quarterly = [], []
     for year in years:
         got = {}
         for code, q in REPORTS:
-            r = report(key, corp_code, year, code, accounts)
+            r = report(key, corp_code, year, code, accounts, debug_id, full_first)
             if r:
                 got[q] = r
         if 4 in got:
@@ -165,7 +241,8 @@ def main():
         for k, names in (ids.get('dart_accounts') or {}).items():
             accounts[k] = tuple(names)
         try:
-            annual, quarterly = collect(key, corp, years, accounts)
+            # 금융·투자회사는 'dart_full': true로 처음부터 전체 재무제표(영업수익 등)를 써요
+            annual, quarterly = collect(key, corp, years, accounts, c['id'], bool(ids.get('dart_full')))
             info = overview(key, corp)
         except Exception as e:  # 한 기업이 실패해도 나머지는 계속해요
             print('[실패] %s: %s' % (c['name'], e))
@@ -185,6 +262,9 @@ def main():
             'overview': info,
         })
         print('[완료] %s: 연간 %d개, 분기 %d개' % (c['name'], len(conv(annual)[-5:]), len(conv(quarterly)[-8:])))
+    # 확인용 기록: 전체 재무제표를 쓴 회사의 손익 계정 이름 (최근 2년)
+    write_json(os.path.join(FETCHED_DIR, '_debug_dart.json'),
+               {k: dict(sorted(v.items())[-2:]) for k, v in DEBUG.items()})
     return ok
 
 

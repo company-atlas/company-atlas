@@ -76,7 +76,8 @@
   ],
   "sources": "삼성생명 공시, 시가총액은 2026년 11월 20일 시세",
   "sources_ids": {
-    "krx_stock_code": "032830"
+    "krx_stock_code": "032830",
+    "dart_full": true
   },
   "financials_text": {
     "unit": "조 원",
@@ -98,5 +99,19 @@
   "logo_url": [
     "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Life_Insurance_logo.svg",
     "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Life_Insurance_Logo.svg"
-  ]
+  ],
+  "share": {
+    "title": "이익 구성",
+    "note": "2025년 회사 발표 기준이에요. 보험을 팔아 남긴 이익(보험손익)보다, 고객이 낸 보험료를 채권·주식 등에 굴려서 남긴 이익(투자손익)이 두 배쯤 커요.",
+    "items": [
+      [
+        "투자손익 (모은 돈을 굴려 남긴 이익)",
+        2.022
+      ],
+      [
+        "보험손익 (보험을 팔아 남긴 이익)",
+        0.975
+      ]
+    ]
+  }
 }
