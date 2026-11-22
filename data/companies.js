@@ -1551,6 +1551,7 @@ window.ATLAS_COMPANIES = [
     ]
    ]
   },
+  "group_head": "서정진 (셀트리온그룹)",
   "financials": {
    "unit": "조 원",
    "annualTitle": "연도별 (최근 5년)",
@@ -2349,6 +2350,7 @@ window.ATLAS_COMPANIES = [
    "wiki:en:LG Energy Solution",
    "page:"
   ],
+  "group_head": "구광모 (LG그룹)",
   "financials": {
    "unit": "조 원",
    "annualTitle": "연도별 (최근 5년)",
@@ -3619,6 +3621,7 @@ window.ATLAS_COMPANIES = [
    "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Logo.svg",
    "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_wordmark.svg"
   ],
+  "group_head": "이재용 (삼성그룹)",
   "financials": {
    "unit": "조 원",
    "annualTitle": "연도별 (최근 5년)",
@@ -3890,6 +3893,7 @@ window.ATLAS_COMPANIES = [
    "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Biologics_logo.svg",
    "https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_Biologics_Logo.svg"
   ],
+  "group_head": "이재용 (삼성그룹)",
   "financials": {
    "unit": "조 원",
    "annualTitle": "연도별 (최근 5년)",
@@ -4169,6 +4173,7 @@ window.ATLAS_COMPANIES = [
     ]
    ]
   },
+  "group_head": "이재용 (삼성그룹)",
   "financials": {
    "unit": "조 원",
    "annualTitle": "연도별 (최근 5년)",
@@ -4422,6 +4427,7 @@ window.ATLAS_COMPANIES = [
    "wiki:en:Samsung Electro-Mechanics",
    "page:"
   ],
+  "group_head": "이재용 (삼성그룹)",
   "financials": {
    "unit": "조 원",
    "annualTitle": "연도별 (최근 5년)",
@@ -4705,6 +4711,7 @@ window.ATLAS_COMPANIES = [
    "https://commons.wikimedia.org/wiki/Special:FilePath/SK_hynix_logo.svg",
    "https://commons.wikimedia.org/wiki/Special:FilePath/SK_Hynix_logo.svg"
   ],
+  "group_head": "최태원 (SK그룹)",
   "financials": {
    "unit": "조 원",
    "annualTitle": "연도별 (최근 5년)",
@@ -4970,6 +4977,7 @@ window.ATLAS_COMPANIES = [
    "page:",
    "commons:SK Square"
   ],
+  "group_head": "최태원 (SK그룹)",
   "financials": {
    "unit": "조 원",
    "annualTitle": "연도별 (최근 5년)",
