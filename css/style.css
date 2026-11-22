@@ -301,3 +301,8 @@ button, input, select { font: inherit; color: inherit; }
   .biz-card.open .more { display: none; }
   .biz-pop img { height: 180px; }
 }
+
+/* 숫자로 보기: 시가총액은 시세 페이지로 연결 */
+.cell.cap-link { display: flex; flex-direction: column; justify-content: center; gap: 6px; border: 1px dashed var(--accent); background: #FFFFFF; text-decoration: none; color: inherit; }
+.cell.cap-link:hover { background: var(--hero); }
+.cell.cap-link .go { font-size: 18px; font-weight: 700; color: var(--accent); }

@@ -34,11 +34,7 @@
   "currency": "KRW",
   "highlights": [
     {
-      "value": 60.1,
-      "unit": "조 원",
-      "label": "시가총액",
-      "note": "2026년 11월 20일 기준, 보통주·우선주 합계",
-      "approx": true
+      "label": "시가총액"
     }
   ],
   "history": [
@@ -101,12 +97,7 @@
   ],
   "sources": "현대자동차 2025년 연간 경영실적 발표",
   "sources_ids": {
-    "krx_stock_code": "005380",
-    "krx_pref_codes": [
-      "005385",
-      "005387",
-      "005389"
-    ]
+    "krx_stock_code": "005380"
   },
   "financials_text": {
     "unit": "조 원",

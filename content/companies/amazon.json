@@ -46,12 +46,7 @@
   "currency": "USD",
   "highlights": [
     {
-      "value": 2.782,
-      "unit": "조 달러",
-      "label": "시가총액",
-      "note": "2026년 11월 19일 종가 기준",
-      "approx": true,
-      "compareTo": "samsung"
+      "label": "시가총액"
     }
   ],
   "history": [

@@ -57,6 +57,12 @@ def merge(c, fetched):
 
     out = {k: v for k, v in c.items() if k not in ('financials_fallback', 'financials_text', 'sources_ids')}
     out['financials'] = fin
+    # 시가총액은 숫자 대신 실시간 시세 페이지로 연결해요 (시세 자료는 상업적으로 쓰려면 사용료가 필요해서)
+    ids = c.get('sources_ids') or {}
+    if ids.get('krx_stock_code'):
+        out['capLink'] = ['https://finance.naver.com/item/main.naver?code=' + ids['krx_stock_code'], '네이버 증권']
+    elif ids.get('ticker'):
+        out['capLink'] = ['https://www.nasdaq.com/market-activity/stocks/' + ids['ticker'].lower(), '나스닥']
 
     # 숫자로 보기의 매출·영업이익은 가장 최근 연간 실적으로 자동 갱신
     cap = [h for h in c['highlights'] if h['label'] == '시가총액']
@@ -172,6 +178,8 @@ def render_company(c, companies, meta):
     # 숫자로 보기
     parts = []
     for hl in c['highlights']:
+        if hl['label'] == '시가총액':
+            continue  # 시가총액은 아래에 링크로 보여줘요
         v = hl['value']
         big = ('약 ' if hl.get('approx') else '') + num(v, 1 if v % 1 else 0) + hl['unit']
         big = big.replace('-', '−')
@@ -180,14 +188,12 @@ def render_company(c, companies, meta):
         if is_usd:
             krw = to_krw_trillion(v, hl['unit'], fx['usdKrw'])
             krw_line = '<div class="krw">≈ 약 %s조 원</div>' % num(krw)
-            other = by_id.get(hl.get('compareTo', ''))
-            if other:
-                cap = [x for x in other['highlights'] if x['label'] == '시가총액']
-                if cap:
-                    ratio = krw / cap[0]['value']
-                    note += ' · %s의 약 %s배' % (other['name'], ('%.1f' % ratio).rstrip('0').rstrip('.') if ratio < 10 else '%d' % round(ratio))
         parts.append('<div class="cell"><div class="big">%s</div>%s<div class="lbl" style="margin-top: 4px">%s · %s</div></div>' % (
             e(big), krw_line, e(hl['label']), e(note)))
+    if c.get('capLink'):
+        parts.append('<a class="cell cap-link" href="%s" target="_blank" rel="noopener"><div class="lbl">시가총액 · 주가</div>'
+                     '<div class="go">지금 시세 보러 가기 →</div><div class="lbl">%s에서 실시간으로 확인할 수 있어요</div></a>'
+                     % (e(c['capLink'][0]), e(c['capLink'][1])))
     fx_note = ('<p class="note">원화 금액은 1달러 = %s원(%s)으로 환산한 대략적인 값이에요.</p>' % (num(fx['usdKrw'], 1), e(fx['asOf']))) if is_usd else ''
     h.append('<section class="sec" id="nums"><h2>숫자로 보기</h2>%s<div class="cards nums">%s</div></section>' % (fx_note, ''.join(parts)))
 
@@ -280,8 +286,6 @@ def rest_of_page(h, c, by_id, root, fx, meta, is_usd, f):
     if f.get('source') and f['source'] != '직접 정리':
         src = '실적 %s 자동 수집, %s' % (f['source'], src)
     fx_src = ' · 환율 1달러 = %s원(%s)' % (num(fx['usdKrw'], 1), e(fx['asOf'])) if is_usd else ''
-    if c.get('capSource'):
-        fx_src += ' · 시가총액: %s' % e(c['capSource'])
     h.append('<div class="sources">출처: %s%s · 마지막 업데이트: %s</div>' % (e(src), fx_src, e(meta['updated'])))
     h.append('</div>')
 
@@ -319,7 +323,7 @@ def main():
     site_url = (os.environ.get('SITE_URL') or '').rstrip('/') + '/' if os.environ.get('SITE_URL') else ''
     site = read_json(os.path.join(ROOT, 'content', 'site.json'))
     now = datetime.datetime.now(KST)
-    # 매일 자동으로 받은 환율·시가총액 (없으면 content/site.json과 기업 파일의 값을 써요)
+    # 매일 자동으로 받은 환율 (없으면 content/site.json과 기업 파일의 값을 써요)
     market = read_json(os.path.join(FETCHED_DIR, '_market.json')) or {}
     fx = market.get('fx') or site['fx']
     meta = {'fx': {'usdKrw': fx['usdKrw'], 'asOf': fx['asOf']}, 'updated': '%d년 %d월 %d일' % (now.year, now.month, now.day)}
@@ -330,12 +334,6 @@ def main():
     for c in load_companies():
         fetched = read_json(os.path.join(FETCHED_DIR, c['id'] + '.json'))
         m = merge(c, fetched)
-        mc = (market.get('caps') or {}).get(c['id'])
-        if mc:
-            for hl in m['highlights']:
-                if hl['label'] == '시가총액':
-                    hl.update(value=mc['value'], unit=mc['unit'], note=mc['note'])
-            m['capSource'] = mc.get('source')
         lg = logos.get(c['id'])
         # 32px보다 작은 로고는 흐릿해서 첫 글자 상자를 써요
         if lg and c.get('logo') is not False and os.path.exists(os.path.join(ROOT, lg['path'])) and lg.get('px', 64) >= 32:

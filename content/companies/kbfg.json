@@ -38,11 +38,7 @@
   "currency": "KRW",
   "highlights": [
     {
-      "value": 54.1,
-      "unit": "조 원",
-      "label": "시가총액",
-      "note": "2026년 11월 20일 기준, 보통주·우선주 합계",
-      "approx": true
+      "label": "시가총액"
     }
   ],
   "history": [

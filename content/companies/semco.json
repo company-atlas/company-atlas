@@ -34,11 +34,7 @@
   "currency": "KRW",
   "highlights": [
     {
-      "value": 58.6,
-      "unit": "조 원",
-      "label": "시가총액",
-      "note": "2026년 11월 20일 기준, 보통주·우선주 합계",
-      "approx": true
+      "label": "시가총액"
     }
   ],
   "history": [
@@ -105,10 +101,7 @@
   ],
   "sources": "삼성전기 2025년 4분기 경영실적 발표",
   "sources_ids": {
-    "krx_stock_code": "009150",
-    "krx_pref_codes": [
-      "009155"
-    ]
+    "krx_stock_code": "009150"
   },
   "financials_text": {
     "unit": "조 원",
