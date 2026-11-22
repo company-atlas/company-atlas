@@ -157,6 +157,28 @@ button, input, select { font: inherit; color: inherit; }
 .chart .bar-col { display: flex; flex-direction: column; align-items: center; gap: 2px; width: 30px; }
 .chart .bar-col span { font-size: 11px; white-space: nowrap; }
 .chart .bar { width: 26px; border-radius: 4px 4px 0 0; }
+/* 0 선 위는 이익, 아래는 손실 */
+.chart { position: relative; align-items: flex-start; }
+.chart.has-loss { border-bottom: none; }
+.chart .group { align-items: flex-start; height: auto; cursor: pointer; border-radius: 8px 8px 0 0; outline: none; }
+.chart .group:hover, .chart .group.active, .chart .group:focus-visible { background: var(--hero); }
+.chart .group:focus-visible { box-shadow: 0 0 0 2px var(--accent) inset; }
+.chart .bar-col .up { display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 2px; }
+.chart .bar-col .down { display: flex; flex-direction: column; justify-content: flex-start; align-items: center; gap: 2px; }
+.chart .bar.neg { border-radius: 0 0 4px 4px; }
+.chart .zero { position: absolute; left: 0; right: 0; height: 1px; background: var(--line-strong); pointer-events: none; }
+.chart-labels div { cursor: pointer; }
+.chart .group, .chart-labels div { -webkit-tap-highlight-color: transparent; }
+.chart-labels div.active { color: var(--ink); font-weight: 700; }
+/* 기간을 고르면 나오는 정확한 금액 */
+.chart-detail { border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; display: flex; flex-direction: column; gap: 10px; background: #FFFFFF; }
+.chart-detail .cd-head { display: flex; align-items: center; gap: 8px; font-size: 16px; }
+.chart-detail .cd-tag { font-size: 12px; color: var(--accent); background: var(--hero); border-radius: 999px; padding: 2px 8px; }
+.chart-detail .cd-rows { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 24px; }
+.chart-detail .cd-rows div { display: flex; align-items: center; gap: 8px; font-size: 15px; }
+.chart-detail .cd-rows .n { color: var(--muted); min-width: 56px; }
+.chart-detail .cd-loss { font-size: 12px; color: #B42318; background: #FEF3F2; border-radius: 999px; padding: 1px 7px; }
+.chart-detail .cd-hint { font-size: 13px; color: var(--muted); }
 .chart-labels { display: flex; gap: 8px; margin-top: 6px; }
 .chart-labels div { flex: 1 1 0; min-width: 84px; text-align: center; font-size: 14px; color: var(--muted); }
 .fin-table { width: 100%; border-collapse: collapse; font-size: 14px; display: none; }
@@ -225,6 +247,9 @@ button, input, select { font: inherit; color: inherit; }
   .chart .bar-col { width: auto; }
   .chart .bar-col span { display: none; }
   .chart .bar { width: 13px; border-radius: 3px 3px 0 0; }
+  .chart .bar.neg { border-radius: 0 0 3px 3px; }
+  .chart-detail { padding: 12px 14px; }
+  .chart-detail .cd-rows { grid-template-columns: 1fr; gap: 6px; }
   .chart-labels { gap: 6px; }
   .chart-labels div { min-width: 52px; font-size: 12px; }
   .fin-table { display: table; }

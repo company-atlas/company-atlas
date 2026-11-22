@@ -133,6 +133,10 @@ def main():
             'unit': '억 달러',
             'annual': conv(annual),
             'quarterly': conv(quarterly),
+            # 정확한 금액(달러 단위): 그래프에서 기간을 누르면 보여줘요
+            'exact_unit': '달러',
+            'annual_exact': annual,
+            'quarterly_exact': quarterly,
             'overview': {},
         })
         print('[완료] %s: 연간 %d개, 분기 %d개' % (c['name'], len(annual), len(quarterly)))

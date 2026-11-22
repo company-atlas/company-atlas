@@ -178,6 +178,10 @@ def main():
             'unit': '조 원',
             'annual': conv(annual)[-5:],
             'quarterly': conv(quarterly)[-8:],
+            # 정확한 금액(원 단위): 그래프에서 기간을 누르면 보여줘요
+            'exact_unit': '원',
+            'annual_exact': [r for r in annual if r[3] is not None][-5:],
+            'quarterly_exact': [r for r in quarterly if r[3] is not None][-8:],
             'overview': info,
         })
         print('[완료] %s: 연간 %d개, 분기 %d개' % (c['name'], len(conv(annual)[-5:]), len(conv(quarterly)[-8:])))

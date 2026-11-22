@@ -49,6 +49,11 @@ def merge(c, fetched):
     fin['annual'] = (src or {}).get('annual') or fb.get('annual', [])
     fin['quarterly'] = (src or {}).get('quarterly') or fb.get('quarterly', [])
     fin['source'] = src['source'] if src else '직접 정리'
+    # 정확한 금액: 기간 이름 → [매출, 영업이익, 순이익] (자동 수집한 기간만 있어요)
+    if src and src.get('exact_unit'):
+        fin['exactUnit'] = src['exact_unit']
+        fin['exact'] = {r[0]: r[1:] for r in (src.get('annual_exact') or []) + (src.get('quarterly_exact') or [])
+                        if r[0] in {x[0] for x in fin['annual'] + fin['quarterly']}}
 
     out = {k: v for k, v in c.items() if k not in ('financials_fallback', 'financials_text', 'sources_ids')}
     out['financials'] = fin
@@ -87,6 +92,8 @@ def merge(c, fetched):
         fin['annual'] = [[r[0]] + r[2:] for r in fin['annual']]
         fin['quarterly'] = [[r[0]] + r[2:] for r in fin['quarterly']]
         fin['labels'] = fin['labels'][1:]
+        if fin.get('exact'):
+            fin['exact'] = {k: v[1:] for k, v in fin['exact'].items()}
         if c['financials_text'].get('labelNoteNoRevenue'):
             fin['labelNote'] = c['financials_text']['labelNoteNoRevenue']
 
@@ -213,7 +220,8 @@ def render_perf(c, f, is_usd):
     return ('<section class="sec" id="perf"><h2>실적 흐름</h2><div class="chart-controls"><div class="tabs" role="group" aria-label="기간">'
             '%s%s</div>%s</div>'
             '<div class="legend">%s<span class="unit" id="unit"></span></div>'
-            '<div class="chart-scroll"><div class="chart" id="chart" role="img"></div><div class="chart-labels" id="chart-labels"></div></div>'
+            '<div class="chart-scroll"><div class="chart" id="chart" role="group"></div><div class="chart-labels" id="chart-labels"></div></div>'
+            '<div class="chart-detail" id="chart-detail" aria-live="polite"></div>'
             '<table class="fin-table" id="fin-table"><thead><tr><th scope="col">기간</th>%s</tr></thead><tbody></tbody></table>'
             '<p class="chart-note" id="chart-note"></p>%s%s</section>' % (
                 a_tab, q_tab, cur_tabs,
