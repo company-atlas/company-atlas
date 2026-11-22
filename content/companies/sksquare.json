@@ -88,9 +88,9 @@
     "quarterly": []
   },
   "logo_url": [
-    "commons:SK Square",
     "wiki:ko:SK스퀘어",
     "wiki:en:SK Square",
-    "page:"
+    "page:",
+    "commons:SK Square"
   ]
 }

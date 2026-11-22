@@ -171,7 +171,11 @@ def commons_search(query):
         title = r['title'].split(':', 1)[1]
         name = words(title)
         joined = ''.join(name)
-        if ('logo' in name or 'ci' in name or '로고' in joined) and all(w in name or w in joined for w in need):
+        # 회사 이름의 낱말이 파일 이름에 '붙어서 순서대로' 있어야 해요
+        # (예: 'Aktuality.sk-logo-square'는 sk와 square가 떨어져 있어서 SK Square로 보지 않아요)
+        n = len(need)
+        phrase = any(name[i:i + n] == need for i in range(len(name) - n + 1)) or ''.join(need) in joined
+        if ('logo' in name or 'ci' in name or '로고' in joined) and phrase:
             hits.append(title)
     hits.sort(key=lambda t: (not t.lower().endswith('.svg'), len(t)))
     return ['https://commons.wikimedia.org/wiki/Special:FilePath/' + urllib.parse.quote(t.replace(' ', '_')) for t in hits[:3]]
