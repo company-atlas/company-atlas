@@ -9,6 +9,7 @@ on:
 
 permissions:
   contents: write
+  pages: write
 
 concurrency:
   group: update-data
@@ -43,3 +44,11 @@ jobs:
             git commit -m "기업 자료 자동 업데이트"
             git push
           fi
+
+      - name: 사이트 화면에 반영하기
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" \
+            || echo "사이트 화면 반영 요청에 실패했어요. 다음에 파일을 올릴 때 반영돼요."
