@@ -436,5 +436,176 @@
     "ratio": 4.24,
     "override": true,
     "bg": null
+  },
+  "amd": {
+    "path": "data/logos/amd.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/AMD_logo_pre-2013.svg",
+    "px": 1024,
+    "saved": "2026-11-24",
+    "logo_url": [
+      "commons:AMD Logo",
+      "wiki:en:AMD",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 4.19,
+    "override": true,
+    "bg": null
+  },
+  "doosanenerbility": {
+    "path": "data/logos/doosanenerbility.png",
+    "from": "https://www.doosanenerbility.com/images/common/logo-blue.png",
+    "px": 15,
+    "saved": "2026-11-24",
+    "logo_url": [
+      "commons:Doosan Enerbility",
+      "wiki:ko:두산에너빌리티",
+      "wiki:en:Doosan Enerbility",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 7.03,
+    "override": true,
+    "bg": null
+  },
+  "exxon": {
+    "path": "data/logos/exxon.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/ExxonMobil_Logo.svg",
+    "px": 1024,
+    "saved": "2026-11-24",
+    "logo_url": [
+      "commons:ExxonMobil",
+      "wiki:en:ExxonMobil",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 5.44,
+    "override": true,
+    "bg": null
+  },
+  "hana": {
+    "path": "data/logos/hana.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Hana_Financial_Group_Logo_%28eng%29.svg",
+    "px": 1024,
+    "saved": "2026-11-24",
+    "logo_url": [
+      "commons:Hana Financial Group",
+      "wiki:ko:하나금융그룹",
+      "wiki:en:Hana Financial Group",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 8.08,
+    "override": true,
+    "bg": null
+  },
+  "hanwhaaero": {
+    "path": "data/logos/hanwhaaero.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Hanwha_Aerospace_Logo.svg",
+    "px": 1024,
+    "saved": "2026-11-24",
+    "logo_url": [
+      "commons:Hanwha Aerospace",
+      "wiki:ko:한화에어로스페이스",
+      "wiki:en:Hanwha Aerospace",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 1.24,
+    "override": true,
+    "bg": null
+  },
+  "hdhhi": {
+    "path": "data/logos/hdhhi.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/HD_Hyundai_heavy_Industries_logo.svg",
+    "px": 1024,
+    "saved": "2026-11-24",
+    "logo_url": [
+      "commons:HD Hyundai Heavy Industries",
+      "wiki:ko:HD현대중공업",
+      "wiki:en:HD Hyundai Heavy Industries",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 6.05,
+    "override": true,
+    "bg": null
+  },
+  "jnj": {
+    "path": "data/logos/jnj.svg",
+    "from": "https://jnj-content-lab2.brightspotcdn.com/ac/25/bd2078f54d5992dd486ed26140ce/johnson-johnson-logo.svg",
+    "px": 1024,
+    "saved": "2026-11-24",
+    "logo_url": [
+      "commons:Johnson & Johnson",
+      "wiki:en:Johnson & Johnson",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 10.27,
+    "override": true,
+    "bg": null
+  },
+  "koreanair": {
+    "path": "data/logos/koreanair.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Korean_Air_Cargo_logo.svg",
+    "px": 1024,
+    "saved": "2026-11-24",
+    "logo_url": [
+      "commons:Korean Air",
+      "wiki:ko:대한항공",
+      "wiki:en:Korean Air",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 13.0,
+    "override": true,
+    "bg": null
+  },
+  "mastercard": {
+    "path": "data/logos/mastercard.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Mastercard-logo.svg",
+    "px": 1024,
+    "saved": "2026-11-24",
+    "logo_url": [
+      "commons:Mastercard",
+      "wiki:en:Mastercard",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 1.29,
+    "override": true,
+    "bg": null
+  },
+  "micron": {
+    "path": "data/logos/micron.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Micron_Technology_logo.svg",
+    "px": 1024,
+    "saved": "2026-11-24",
+    "logo_url": [
+      "commons:Micron Technology",
+      "wiki:en:Micron Technology",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 3.63,
+    "override": true,
+    "bg": null
+  },
+  "mobis": {
+    "path": "data/logos/mobis.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Hyundai_Mobis_Logo.svg",
+    "px": 1024,
+    "saved": "2026-11-24",
+    "logo_url": [
+      "commons:Hyundai Mobis",
+      "wiki:ko:현대모비스",
+      "wiki:en:Hyundai Mobis",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 2.9,
+    "override": true,
+    "bg": null
   }
 }

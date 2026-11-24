@@ -225,6 +225,152 @@
       "last_filed": "2011-01-28"
     }
   },
+  "amd": {
+    "AdjustmentsNoncashItemsToReconcileNetIncomeLossToCashProvidedByUsedInOperatingActivitiesOther": {
+      "n": 9,
+      "last_end": "2011-04-02",
+      "last_form": "10-Q",
+      "last_filed": "2011-05-10"
+    },
+    "BusinessAcquisitionsProFormaNetIncomeLoss": {
+      "n": 27,
+      "last_end": "2022-12-31",
+      "last_form": "10-K",
+      "last_filed": "2025-02-05"
+    },
+    "BusinessAcquisitionsProFormaRevenue": {
+      "n": 27,
+      "last_end": "2022-12-31",
+      "last_form": "10-K",
+      "last_filed": "2025-02-05"
+    },
+    "ContractWithCustomerLiabilityRevenueRecognized": {
+      "n": 26,
+      "last_end": "2020-12-26",
+      "last_form": "10-K",
+      "last_filed": "2021-01-29"
+    },
+    "MinorityInterestInNetIncomeLossLimitedPartnerships": {
+      "n": 1,
+      "last_end": "2009-12-26",
+      "last_form": "10-K",
+      "last_filed": "2012-02-24"
+    },
+    "NetIncomeLoss": {
+      "n": 246,
+      "last_end": "2026-09-26",
+      "last_form": "10-Q",
+      "last_filed": "2026-11-04"
+    },
+    "NetIncomeLossAttributableToNoncontrollingInterest": {
+      "n": 7,
+      "last_end": "2009-12-26",
+      "last_form": "10-K",
+      "last_filed": "2012-02-24"
+    },
+    "NetIncomeLossAttributableToParentDiluted": {
+      "n": 37,
+      "last_end": "2022-12-31",
+      "last_form": "10-K",
+      "last_filed": "2023-02-27"
+    },
+    "NetIncomeLossAvailableToCommonStockholdersBasic": {
+      "n": 20,
+      "last_end": "2013-03-30",
+      "last_form": "10-Q",
+      "last_filed": "2013-05-06"
+    },
+    "NetIncomeLossAvailableToCommonStockholdersDiluted": {
+      "n": 10,
+      "last_end": "2012-06-30",
+      "last_form": "10-Q",
+      "last_filed": "2012-08-02"
+    },
+    "OperatingIncomeLoss": {
+      "n": 296,
+      "last_end": "2026-09-26",
+      "last_form": "10-Q",
+      "last_filed": "2026-11-04"
+    },
+    "OtherComprehensiveIncomeLossReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeNetOfTax": {
+      "n": 3,
+      "last_end": "2012-12-29",
+      "last_form": "10-K",
+      "last_filed": "2013-02-21"
+    },
+    "OtherComprehensiveIncomeLossReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeTax": {
+      "n": 3,
+      "last_end": "2012-12-29",
+      "last_form": "10-K",
+      "last_filed": "2013-02-21"
+    },
+    "OtherComprehensiveIncomeLossReclassificationAdjustmentOnDerivativesIncludedInNetIncomeNetOfTax": {
+      "n": 5,
+      "last_end": "2013-03-30",
+      "last_form": "10-Q",
+      "last_filed": "2013-05-06"
+    },
+    "OtherComprehensiveIncomeLossReclassificationAdjustmentOnDerivativesIncludedInNetIncomeTax": {
+      "n": 5,
+      "last_end": "2013-03-30",
+      "last_form": "10-Q",
+      "last_filed": "2013-05-06"
+    },
+    "OtherComprehensiveIncomeReclassificationAdjustmentOnDerivativesIncludedInNetIncomeNetOfTax": {
+      "n": 5,
+      "last_end": "2010-12-25",
+      "last_form": "10-K",
+      "last_filed": "2012-02-24"
+    },
+    "OtherComprehensiveIncomeReclassificationAdjustmentOnDerivativesIncludedInNetIncomeTax": {
+      "n": 5,
+      "last_end": "2010-12-25",
+      "last_form": "10-K",
+      "last_filed": "2012-02-24"
+    },
+    "OtherOperatingIncome": {
+      "n": 73,
+      "last_end": "2019-09-28",
+      "last_form": "10-Q",
+      "last_filed": "2019-10-30"
+    },
+    "ProfitLoss": {
+      "n": 42,
+      "last_end": "2012-09-29",
+      "last_form": "10-Q",
+      "last_filed": "2012-11-01"
+    },
+    "RevenueFromContractWithCustomerExcludingAssessedTax": {
+      "n": 136,
+      "last_end": "2026-09-26",
+      "last_form": "10-Q",
+      "last_filed": "2026-11-04"
+    },
+    "Revenues": {
+      "n": 4,
+      "last_end": "2017-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2018-10-31"
+    },
+    "SalesRevenueGoodsNet": {
+      "n": 152,
+      "last_end": "2018-03-31",
+      "last_form": "10-Q",
+      "last_filed": "2018-05-03"
+    },
+    "SalesRevenueNet": {
+      "n": 78,
+      "last_end": "2018-03-31",
+      "last_form": "10-Q",
+      "last_filed": "2018-05-03"
+    },
+    "BusinessCombinationProFormaInformationRevenueOfAcquireeSinceAcquisitionDateActual": {
+      "n": 1,
+      "last_end": "2022-03-26",
+      "last_form": "10-Q",
+      "last_filed": "2022-05-04"
+    }
+  },
   "anthropic": {},
   "apple": {
     "ContractWithCustomerLiabilityRevenueRecognized": {
@@ -526,6 +672,136 @@
       "last_filed": "2018-06-14"
     }
   },
+  "exxon": {
+    "NetIncomeLoss": {
+      "n": 8,
+      "last_end": "2026-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2026-11-02"
+    },
+    "NetIncomeLossAttributableToNoncontrollingInterest": {
+      "n": 8,
+      "last_end": "2026-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2026-11-02"
+    },
+    "ProfitLoss": {
+      "n": 8,
+      "last_end": "2026-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2026-11-02"
+    },
+    "Revenues": {
+      "n": 8,
+      "last_end": "2026-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2026-11-02"
+    }
+  },
+  "jnj": {
+    "EntityWideDisclosureOnGeographicAreasRevenueFromExternalCustomersAttributedToIndividualForeignCountriesAmount": {
+      "n": 3,
+      "last_end": "2011-01-02",
+      "last_form": "10-K",
+      "last_filed": "2011-02-25"
+    },
+    "NetIncomeLoss": {
+      "n": 274,
+      "last_end": "2026-09-27",
+      "last_form": "10-Q",
+      "last_filed": "2026-10-21"
+    },
+    "NetIncomeLossAttributableToNoncontrollingInterest": {
+      "n": 18,
+      "last_end": "2023-07-02",
+      "last_form": "10-Q",
+      "last_filed": "2024-07-25"
+    },
+    "OperatingIncomeLoss": {
+      "n": 52,
+      "last_end": "2015-03-29",
+      "last_form": "10-Q",
+      "last_filed": "2015-05-01"
+    },
+    "OtherComprehensiveIncomeLossReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeNetOfTax": {
+      "n": 5,
+      "last_end": "2013-03-31",
+      "last_form": "10-Q",
+      "last_filed": "2013-05-03"
+    },
+    "OtherComprehensiveIncomeLossReclassificationAdjustmentOnDerivativesIncludedInNetIncomeNetOfTax": {
+      "n": 5,
+      "last_end": "2013-03-31",
+      "last_form": "10-Q",
+      "last_filed": "2013-05-03"
+    },
+    "OtherComprehensiveIncomeReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeNetOfTax": {
+      "n": 15,
+      "last_end": "2012-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2012-11-09"
+    },
+    "OtherComprehensiveIncomeReclassificationAdjustmentOnDerivativesIncludedInNetIncomeNetOfTax": {
+      "n": 15,
+      "last_end": "2012-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2012-11-09"
+    },
+    "ProfitLoss": {
+      "n": 64,
+      "last_end": "2014-12-28",
+      "last_form": "10-K",
+      "last_filed": "2015-02-24"
+    },
+    "RevenueFromContractWithCustomerExcludingAssessedTax": {
+      "n": 132,
+      "last_end": "2026-09-27",
+      "last_form": "10-Q",
+      "last_filed": "2026-10-21"
+    },
+    "Revenues": {
+      "n": 18,
+      "last_end": "2014-09-28",
+      "last_form": "10-Q",
+      "last_filed": "2014-10-30"
+    },
+    "SalesRevenueGoodsNet": {
+      "n": 185,
+      "last_end": "2018-07-01",
+      "last_form": "10-Q",
+      "last_filed": "2018-08-02"
+    },
+    "SegmentReportingInformationOperatingIncomeLoss": {
+      "n": 5,
+      "last_end": "2011-04-03",
+      "last_form": "10-Q",
+      "last_filed": "2011-05-10"
+    },
+    "SegmentReportingInformationRevenue": {
+      "n": 2,
+      "last_end": "2013-03-31",
+      "last_form": "10-Q",
+      "last_filed": "2013-05-03"
+    },
+    "SegmentReportingSegmentOperatingProfitLoss": {
+      "n": 8,
+      "last_end": "2010-10-03",
+      "last_form": "10-Q",
+      "last_filed": "2010-11-10"
+    },
+    "DisposalGroupIncludingDiscontinuedOperationGrossProfitLoss": {
+      "n": 15,
+      "last_end": "2023-12-31",
+      "last_form": "10-K",
+      "last_filed": "2026-02-11"
+    },
+    "DisposalGroupIncludingDiscontinuedOperationRevenue": {
+      "n": 15,
+      "last_end": "2024-03-31",
+      "last_form": "10-Q",
+      "last_filed": "2026-02-11"
+    }
+  },
   "jpmorgan": {
     "AdministrativeServicesRevenue": {
       "n": 65,
@@ -728,6 +1004,128 @@
       "last_filed": "2018-04-27"
     }
   },
+  "mastercard": {
+    "AdjustmentsNoncashItemsToReconcileNetIncomeLossToCashProvidedByUsedInOperatingActivitiesOther": {
+      "n": 18,
+      "last_end": "2011-06-30",
+      "last_form": "10-Q",
+      "last_filed": "2011-08-03"
+    },
+    "ContractWithCustomerLiabilityRevenueRecognized": {
+      "n": 74,
+      "last_end": "2026-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2026-10-29"
+    },
+    "NetIncomeLoss": {
+      "n": 102,
+      "last_end": "2025-12-31",
+      "last_form": "DEF 14A",
+      "last_filed": "2026-04-27"
+    },
+    "NetIncomeLossAttributableToNoncontrollingInterest": {
+      "n": 171,
+      "last_end": "2026-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2026-10-29"
+    },
+    "NetIncomeLossAttributableToRedeemableNoncontrollingInterest": {
+      "n": 74,
+      "last_end": "2024-12-31",
+      "last_form": "10-K",
+      "last_filed": "2026-02-11"
+    },
+    "NetIncomeLossAvailableToCommonStockholdersBasic": {
+      "n": 52,
+      "last_end": "2014-03-31",
+      "last_form": "10-Q",
+      "last_filed": "2014-05-01"
+    },
+    "OperatingIncomeLoss": {
+      "n": 309,
+      "last_end": "2026-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2026-10-29"
+    },
+    "OtherComprehensiveIncomeLossReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeBeforeTax": {
+      "n": 3,
+      "last_end": "2012-12-31",
+      "last_form": "10-K",
+      "last_filed": "2013-02-14"
+    },
+    "OtherComprehensiveIncomeLossReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeNetOfTax": {
+      "n": 4,
+      "last_end": "2013-03-31",
+      "last_form": "10-Q",
+      "last_filed": "2013-05-01"
+    },
+    "OtherComprehensiveIncomeLossReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeTax": {
+      "n": 3,
+      "last_end": "2012-12-31",
+      "last_form": "10-K",
+      "last_filed": "2013-02-14"
+    },
+    "OtherComprehensiveIncomeReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeBeforeTax": {
+      "n": 6,
+      "last_end": "2010-12-31",
+      "last_form": "10-K",
+      "last_filed": "2011-02-24"
+    },
+    "OtherComprehensiveIncomeReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeNetOfTax": {
+      "n": 6,
+      "last_end": "2010-12-31",
+      "last_form": "10-K",
+      "last_filed": "2011-02-24"
+    },
+    "OtherComprehensiveIncomeReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeTax": {
+      "n": 3,
+      "last_end": "2009-12-31",
+      "last_form": "10-K",
+      "last_filed": "2010-02-18"
+    },
+    "OtherComprehensiveIncomeReclassificationAdjustmentOnDerivativesIncludedInNetIncomeBeforeTax": {
+      "n": 3,
+      "last_end": "2009-12-31",
+      "last_form": "10-K",
+      "last_filed": "2010-02-18"
+    },
+    "OtherComprehensiveIncomeReclassificationAdjustmentOnDerivativesIncludedInNetIncomeNetOfTax": {
+      "n": 3,
+      "last_end": "2009-12-31",
+      "last_form": "10-K",
+      "last_filed": "2010-02-18"
+    },
+    "OtherComprehensiveIncomeReclassificationAdjustmentOnDerivativesIncludedInNetIncomeTax": {
+      "n": 3,
+      "last_end": "2009-12-31",
+      "last_form": "10-K",
+      "last_filed": "2010-02-18"
+    },
+    "ProfitLoss": {
+      "n": 271,
+      "last_end": "2026-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2026-10-29"
+    },
+    "RevenueFromContractWithCustomerExcludingAssessedTax": {
+      "n": 54,
+      "last_end": "2022-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2022-10-27"
+    },
+    "Revenues": {
+      "n": 250,
+      "last_end": "2026-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2026-10-29"
+    },
+    "SalesRevenueNet": {
+      "n": 59,
+      "last_end": "2018-06-30",
+      "last_form": "10-Q",
+      "last_filed": "2018-07-26"
+    }
+  },
   "meta": {
     "AdvertisingRevenue": {
       "n": 18,
@@ -794,6 +1192,176 @@
       "last_end": "2026-09-30",
       "last_form": "10-Q",
       "last_filed": "2026-10-22"
+    }
+  },
+  "micron": {
+    "BusinessAcquisitionsProFormaNetIncomeLoss": {
+      "n": 31,
+      "last_end": "2017-08-31",
+      "last_form": "10-K",
+      "last_filed": "2019-10-17"
+    },
+    "BusinessAcquisitionsProFormaRevenue": {
+      "n": 31,
+      "last_end": "2017-08-31",
+      "last_form": "10-K",
+      "last_filed": "2019-10-17"
+    },
+    "BusinessCombinationProFormaInformationRevenueOfAcquireeSinceAcquisitionDateActual": {
+      "n": 3,
+      "last_end": "2013-08-29",
+      "last_form": "10-K",
+      "last_filed": "2014-10-27"
+    },
+    "ContractWithCustomerLiabilityCumulativeCatchUpAdjustmentToRevenueChangeInEstimateOfTransactionPrice": {
+      "n": 1,
+      "last_end": "2018-11-29",
+      "last_form": "10-Q",
+      "last_filed": "2018-12-19"
+    },
+    "ContractWithCustomerLiabilityRevenueRecognized": {
+      "n": 19,
+      "last_end": "2025-08-28",
+      "last_form": "10-K",
+      "last_filed": "2025-10-03"
+    },
+    "EntityWideDisclosureOnGeographicAreasRevenueFromExternalCustomersAttributedToForeignCountries": {
+      "n": 1,
+      "last_end": "2011-09-01",
+      "last_form": "10-K",
+      "last_filed": "2011-10-25"
+    },
+    "EquityMethodInvestmentSummarizedFinancialInformationGrossProfitLoss": {
+      "n": 27,
+      "last_end": "2017-08-31",
+      "last_form": "10-K",
+      "last_filed": "2017-10-26"
+    },
+    "EquityMethodInvestmentSummarizedFinancialInformationNetIncomeLoss": {
+      "n": 27,
+      "last_end": "2017-08-31",
+      "last_form": "10-K",
+      "last_filed": "2017-10-26"
+    },
+    "EquityMethodInvestmentSummarizedFinancialInformationNetSalesOrGrossRevenue": {
+      "n": 3,
+      "last_end": "2011-09-01",
+      "last_form": "10-K",
+      "last_filed": "2011-10-25"
+    },
+    "EquityMethodInvestmentSummarizedFinancialInformationRevenue": {
+      "n": 24,
+      "last_end": "2017-08-31",
+      "last_form": "10-K",
+      "last_filed": "2017-10-26"
+    },
+    "IncreaseDecreaseInDeferredRevenue": {
+      "n": 35,
+      "last_end": "2017-08-31",
+      "last_form": "10-K",
+      "last_filed": "2017-10-26"
+    },
+    "NetIncomeLoss": {
+      "n": 339,
+      "last_end": "2026-09-03",
+      "last_form": "10-K",
+      "last_filed": "2026-10-09"
+    },
+    "NetIncomeLossAttributableToNoncontrollingInterest": {
+      "n": 154,
+      "last_end": "2022-09-01",
+      "last_form": "10-K",
+      "last_filed": "2022-10-07"
+    },
+    "NetIncomeLossAttributableToParentDiluted": {
+      "n": 166,
+      "last_end": "2026-09-03",
+      "last_form": "10-K",
+      "last_filed": "2026-10-09"
+    },
+    "NetIncomeLossAvailableToCommonStockholdersDiluted": {
+      "n": 26,
+      "last_end": "2012-08-30",
+      "last_form": "10-K",
+      "last_filed": "2012-10-29"
+    },
+    "NetIncomeLossIncludingPortionAttributableToNonredeemableNoncontrollingInterest": {
+      "n": 30,
+      "last_end": "2020-09-03",
+      "last_form": "10-K",
+      "last_filed": "2022-10-07"
+    },
+    "OperatingIncomeLoss": {
+      "n": 312,
+      "last_end": "2026-09-03",
+      "last_form": "10-K",
+      "last_filed": "2026-10-09"
+    },
+    "OperatingLeasesIncomeStatementLeaseRevenue": {
+      "n": 2,
+      "last_end": "2011-09-01",
+      "last_form": "10-K",
+      "last_filed": "2011-10-25"
+    },
+    "OperatingLeasesIncomeStatementSubleaseRevenue": {
+      "n": 3,
+      "last_end": "2012-08-30",
+      "last_form": "10-K",
+      "last_filed": "2012-10-29"
+    },
+    "OtherComprehensiveIncomeLossReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeBeforeTax": {
+      "n": 3,
+      "last_end": "2012-08-30",
+      "last_form": "10-K",
+      "last_filed": "2013-07-08"
+    },
+    "OtherComprehensiveIncomeReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeBeforeTax": {
+      "n": 1,
+      "last_end": "2012-03-01",
+      "last_form": "10-Q",
+      "last_filed": "2012-07-09"
+    },
+    "OtherOperatingIncomeExpenseNet": {
+      "n": 201,
+      "last_end": "2026-09-03",
+      "last_form": "10-K",
+      "last_filed": "2026-10-09"
+    },
+    "ProfitLoss": {
+      "n": 253,
+      "last_end": "2022-09-01",
+      "last_form": "10-K",
+      "last_filed": "2022-10-07"
+    },
+    "RevenueFromContractWithCustomerExcludingAssessedTax": {
+      "n": 120,
+      "last_end": "2026-09-03",
+      "last_form": "10-K",
+      "last_filed": "2026-10-09"
+    },
+    "RevenueFromGrants": {
+      "n": 2,
+      "last_end": "2010-12-02",
+      "last_form": "10-Q",
+      "last_filed": "2011-01-11"
+    },
+    "Revenues": {
+      "n": 11,
+      "last_end": "2018-08-30",
+      "last_form": "10-K",
+      "last_filed": "2018-10-15"
+    },
+    "RoyaltyRevenue": {
+      "n": 20,
+      "last_end": "2012-08-30",
+      "last_form": "10-K",
+      "last_filed": "2012-10-29"
+    },
+    "SalesRevenueNet": {
+      "n": 181,
+      "last_end": "2018-05-31",
+      "last_form": "10-Q",
+      "last_filed": "2018-06-22"
     }
   },
   "microsoft": {

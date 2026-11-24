@@ -412,5 +412,122 @@
     "artist": "HualinXMN",
     "license": "CC BY-SA 4.0",
     "saved": "2026-11-22"
+  },
+  "amd-1": {
+    "path": "data/photos/amd-1.png",
+    "query": "[{\"need\": [\"amd\", \"epyc\"], \"q\": \"AMD EPYC\"}]",
+    "title": "20471017-A AMD EPYC INSTINCT Lockup Landscape K Web.png",
+    "page": "https://commons.wikimedia.org/wiki/File:20471017-A_AMD_EPYC_INSTINCT_Lockup_Landscape_K_Web.png",
+    "artist": "Advanced Micro Devices",
+    "license": "Public domain",
+    "saved": "2026-11-24"
+  },
+  "amd-2": {
+    "path": "data/photos/amd-2.jpg",
+    "query": "[{\"need\": [\"amd\", \"ryzen\"], \"q\": \"AMD Ryzen\"}]",
+    "title": "AMD Ryzen 7 1800X.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:AMD_Ryzen_7_1800X.jpg",
+    "artist": "Brian Wong",
+    "license": "CC BY-SA 2.0",
+    "saved": "2026-11-24"
+  },
+  "amd-3": {
+    "path": "data/photos/amd-3.png",
+    "query": "[{\"need\": [\"radeon\"], \"q\": \"AMD Radeon graphics card\"}]",
+    "title": "ตัวอย่าง AMD Radeon RX 6000 Black.png",
+    "page": "https://commons.wikimedia.org/wiki/File:%E0%B8%95%E0%B8%B1%E0%B8%A7%E0%B8%AD%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87_AMD_Radeon_RX_6000_Black.png",
+    "artist": "Nzest1981",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-24"
+  },
+  "doosanenerbility-4": {
+    "path": "data/photos/doosanenerbility-4.jpg",
+    "query": "[{\"need\": [\"bobcat\"], \"q\": \"Bobcat skid-steer loader\"}]",
+    "title": "Bobcat T650 compact track loader (side view).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Bobcat_T650_compact_track_loader_(side_view).jpg",
+    "artist": "Dmitry Ivanov.",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-24"
+  },
+  "exxon-1": {
+    "path": "data/photos/exxon-1.jpg",
+    "query": "[{\"need\": [\"exxon\"], \"q\": \"ExxonMobil oil platform\"}, {\"need\": [\"exxon\", \"refinery\"], \"q\": \"Exxon refinery\"}]",
+    "title": "Exxon Mobil oil refinery - Baton Rouge, Louisiana.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Exxon_Mobil_oil_refinery_-_Baton_Rouge,_Louisiana.jpg",
+    "artist": "WClarke",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-24"
+  },
+  "exxon-2": {
+    "path": "data/photos/exxon-2.jpg",
+    "query": "[{\"need\": [\"exxon\", \"station\"], \"q\": \"Exxon gas station\"}]",
+    "title": "Exxon Gas Station (34035531150).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Exxon_Gas_Station_(34035531150).jpg",
+    "artist": "Ben P L",
+    "license": "CC BY-SA 2.0",
+    "saved": "2026-11-24"
+  },
+  "hana-1": {
+    "path": "data/photos/hana-1.jpg",
+    "query": "[{\"need\": [\"hana\", \"bank\"], \"q\": \"Hana Bank branch\"}]",
+    "title": "Resona Bank Hana-Koganei Branch.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Resona_Bank_Hana-Koganei_Branch.jpg",
+    "artist": "Suikotei",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-24"
+  },
+  "hanwhaaero-1": {
+    "path": "data/photos/hanwhaaero-1.jpg",
+    "query": "[{\"need\": [\"k9\", \"thunder\"], \"q\": \"K9 Thunder\"}, {\"need\": [\"k9\"], \"q\": \"K9 self-propelled howitzer\"}]",
+    "title": "Lippujuhlan päivän 2017 paraati 104 K9 Thunder.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Lippujuhlan_p%C3%A4iv%C3%A4n_2017_paraati_104_K9_Thunder.JPG",
+    "artist": "MKFI",
+    "license": "Public domain",
+    "saved": "2026-11-24"
+  },
+  "hdhhi-1": {
+    "path": "data/photos/hdhhi-1.jpg",
+    "query": "[{\"need\": [\"hyundai\", \"heavy\"], \"q\": \"Hyundai Heavy Industries shipyard Ulsan\"}, {\"need\": [\"hd hyundai\"], \"q\": \"HD Hyundai Heavy Industries\"}]",
+    "title": "Hyundai Heavy Industries Ulsan Shipyard from Jujeon Beacon Mound - 2023-07-24.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Hyundai_Heavy_Industries_Ulsan_Shipyard_from_Jujeon_Beacon_Mound_-_2023-07-24.jpg",
+    "artist": "Wvdp",
+    "license": "CC0",
+    "saved": "2026-11-24"
+  },
+  "koreanair-1": {
+    "path": "data/photos/koreanair-1.png",
+    "query": "[{\"need\": [\"korean air\"], \"q\": \"Korean Air Boeing 777\"}, {\"need\": [\"korean air\"], \"q\": \"Korean Air Airbus A380\"}]",
+    "title": "Korean Air Boeing 777-200ER HL7526 SVO 2011-6-17.png",
+    "page": "https://commons.wikimedia.org/wiki/File:Korean_Air_Boeing_777-200ER_HL7526_SVO_2011-6-17.png",
+    "artist": "Sergey Kustov",
+    "license": "CC BY-SA 3.0",
+    "saved": "2026-11-24"
+  },
+  "koreanair-2": {
+    "path": "data/photos/koreanair-2.jpg",
+    "query": "[{\"need\": [\"korean air\", \"cargo\"], \"q\": \"Korean Air Cargo\"}]",
+    "title": "\"Korean Air Cargo\" B-747 HL7499 (3139379530).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:%22Korean_Air_Cargo%22_B-747_HL7499_(3139379530).jpg",
+    "artist": "Aleksandr Markin",
+    "license": "CC BY-SA 2.0",
+    "saved": "2026-11-24"
+  },
+  "mastercard-1": {
+    "path": "data/photos/mastercard-1.jpg",
+    "query": "[{\"need\": [\"mastercard\", \"card\"], \"q\": \"Mastercard credit card\"}]",
+    "title": "MasterCard credit card (5532390715).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:MasterCard_credit_card_(5532390715).jpg",
+    "artist": "Håkan Dahlström from Malmö, Sweden",
+    "license": "CC BY 2.0",
+    "saved": "2026-11-24"
+  },
+  "micron-1": {
+    "path": "data/photos/micron-1.jpg",
+    "query": "[{\"need\": [\"micron\", \"ddr5\"], \"q\": \"Micron DDR5\"}, {\"need\": [\"micron\", \"dram\"], \"q\": \"Micron DRAM\"}]",
+    "title": "Micron 32 GB DDR5-5600 SO-DIMM - front view.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Micron_32_GB_DDR5-5600_SO-DIMM_-_front_view.jpg",
+    "artist": "ITEagle Europe - Sebastiaan Broekhoven",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-24"
   }
 }
