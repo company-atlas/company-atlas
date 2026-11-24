@@ -106,6 +106,10 @@ def merge(c, fetched):
                 fin['exact'] = {k: [v[j - 1] for j in keep] for k, v in fin['exact'].items()}
             if 1 in empty and c['financials_text'].get('labelNoteNoRevenue'):
                 fin['labelNote'] = c['financials_text']['labelNoteNoRevenue']
+            elif 2 in empty and not fin.get('labelNote'):
+                # 영업이익을 따로 공시하지 않는 회사 (일라이 릴리 등)
+                fin['labelNote'] = ('이 회사는 손익계산서에 영업이익을 따로 적지 않아서(공시에 영업이익 항목이 없어요) '
+                                    '%s과 순이익만 보여드려요.' % fin['labels'][0])
 
     # 기업 개요: 손으로 쓴 값이 없을 때만 DART 값으로 채워요
     ov = (fetched or {}).get('overview') or {}
@@ -252,7 +256,9 @@ def render_perf(c, f, is_usd):
                 (('<p class="note">%s</p>' % e(c['fiscalNote'])) if c.get('fiscalNote') else ''))
     labels = f['labels']
     q_tab = ('<button type="button" class="tab" data-mode="quarterly">분기별 (최근 %d분기)</button>' % len(f['quarterly'])) if f['quarterly'] else ''
-    a_tab = ('<button type="button" class="tab" data-mode="annual">%s</button>' % e(f['annualTitle'])) if f['annual'] else ''
+    # 제목의 "최근 5년"은 실제로 보여주는 해의 수에 맞춰요 (자료가 3년뿐이면 "최근 3년")
+    a_title = re.sub(r'최근 \d+년', '최근 %d년' % len(f['annual']), f['annualTitle'])
+    a_tab = ('<button type="button" class="tab" data-mode="annual">%s</button>' % e(a_title)) if f['annual'] else ''
     cur_tabs = ('<div class="tabs" role="group" aria-label="통화"><button type="button" class="tab" data-cur="orig">달러</button>'
                 '<button type="button" class="tab" data-cur="krw">원화로 보기</button></div>') if is_usd else ''
     return ('<section class="sec" id="perf"><h2>실적 흐름</h2><div class="chart-controls"><div class="tabs" role="group" aria-label="기간">'
@@ -294,6 +300,9 @@ def rest_of_page(h, c, by_id, root, fx, meta, is_usd, f):
     h.append('</div>')
 
 
+# 카카오톡 등 링크 미리보기 그림은 전체 주소가 필요해요. SITE_URL이 없을 때 쓰는 기본 주소예요.
+DEFAULT_SITE = 'https://company-atlas.github.io/company-atlas/'
+
 PAGE = '''<!doctype html>
 <html lang="ko">
 <head>
@@ -301,9 +310,15 @@ PAGE = '''<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{name} 기업 정보 · Company Atlas</title>
 <meta name="description" content="{desc}">
-{canonical}<meta property="og:title" content="{name} · Company Atlas">
-<meta property="og:description" content="{desc}">
+{canonical}<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Company Atlas">
+<meta property="og:title" content="{name} 기업 정보 · Company Atlas">
+<meta property="og:description" content="{desc}">
+<meta property="og:image" content="{site}og-image.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../css/style.css">
@@ -330,7 +345,8 @@ def main():
     # 매일 자동으로 받은 환율 (없으면 content/site.json과 기업 파일의 값을 써요)
     market = read_json(os.path.join(FETCHED_DIR, '_market.json')) or {}
     fx = market.get('fx') or site['fx']
-    meta = {'fx': {'usdKrw': fx['usdKrw'], 'asOf': fx['asOf']}, 'updated': '%d년 %d월 %d일' % (now.year, now.month, now.day)}
+    meta = {'fx': {'usdKrw': fx['usdKrw'], 'asOf': fx['asOf']}, 'updated': '%d년 %d월 %d일' % (now.year, now.month, now.day),
+            'homeOrder': site.get('homeOrder') or {}}
 
     logos = read_json(os.path.join(ROOT, 'data', 'logos.json')) or {}
     photos = read_json(os.path.join(ROOT, 'data', 'photos.json')) or {}
@@ -372,8 +388,20 @@ def main():
         canonical = '<link rel="canonical" href="%scompany/%s/">\n' % (site_url, c['id']) if site_url else ''
         with open(os.path.join(page_dir, 'index.html'), 'w', encoding='utf-8') as f:
             f.write(PAGE.format(name=e(c['name']), desc=e(c['tagline']), canonical=canonical, id=e(c['id']),
+                                site=e(site_url or DEFAULT_SITE),
                                 body=render_company(c, companies, meta)))
 
+    # 첫 화면 등 직접 만든 페이지의 미리보기 그림 주소도 지금 사이트 주소로 맞춰요 (주소를 옮겼을 때 대비)
+    if site_url:
+        for name in ('index.html', 'search.html', 'browse.html', 'about.html', 'company.html'):
+            path = os.path.join(ROOT, name)
+            if os.path.exists(path):
+                with open(path, encoding='utf-8') as f:
+                    page = f.read()
+                fixed = re.sub(r'content="https?://[^"]*og-image\.png"', 'content="%sog-image.png"' % site_url, page)
+                if fixed != page:
+                    with open(path, 'w', encoding='utf-8') as f:
+                        f.write(fixed)
     if site_url:
         urls = [site_url, site_url + 'browse.html', site_url + 'about.html'] + [site_url + 'company/%s/' % c['id'] for c in companies]
         today = now.date().isoformat()

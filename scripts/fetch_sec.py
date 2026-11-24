@@ -14,7 +14,8 @@ BASE = 'https://data.sec.gov/api/xbrl/companyfacts/CIK%s.json'
 # 같은 줄(묶음) 안의 이름은 같은 뜻이라 섞어 써요. 뒤 묶음은 앞 묶음에 값이 없는 기간에만 써요.
 CONCEPTS = {
     'rev': [('RevenueFromContractWithCustomerExcludingAssessedTax', 'Revenues', 'SalesRevenueNet',
-             'RevenueFromContractWithCustomerIncludingAssessedTax')],
+             'RevenueFromContractWithCustomerIncludingAssessedTax',
+             'RevenuesNetOfInterestExpense')],  # 은행(JP모건 등)의 순영업수익
     'op': [('OperatingIncomeLoss',)],
     'ni': [('NetIncomeLoss',), ('NetIncomeLossAvailableToCommonStockholdersBasic',), ('ProfitLoss',)],
 }

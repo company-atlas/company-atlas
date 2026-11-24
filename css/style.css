@@ -307,3 +307,20 @@ button, input, select { font: inherit; color: inherit; }
 .cell.cap-link { display: flex; flex-direction: column; justify-content: center; gap: 6px; border: 1px dashed var(--accent); background: #FFFFFF; text-decoration: none; color: inherit; }
 .cell.cap-link:hover { background: var(--hero); }
 .cell.cap-link .go { font-size: 18px; font-weight: 700; color: var(--accent); }
+
+/* 첫 화면: 기업 둘러보기 */
+.sec-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+.co-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px; }
+.co-card { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; padding: 14px; border: 1px solid var(--line); border-radius: 12px; background: #FFFFFF; text-decoration: none; color: var(--ink); transition: border-color .15s, box-shadow .15s; }
+.co-card:hover { border-color: var(--accent); box-shadow: 0 6px 18px rgba(20, 33, 61, .08); }
+.co-card .logo-box { width: 100%; height: 56px; margin-bottom: 4px; }
+.co-card strong { font-size: 15px; }
+.co-card span { font-size: 12px; color: var(--muted); }
+.co-more { display: flex; justify-content: center; }
+.btn-ghost { font: inherit; font-size: 14px; color: var(--accent); background: #FFFFFF; border: 1px solid var(--line); border-radius: 999px; padding: 8px 20px; cursor: pointer; }
+.btn-ghost:hover { border-color: var(--accent); }
+@media (max-width: 640px) {
+  .co-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .co-card { padding: 10px; }
+  .co-card .logo-box { height: 48px; }
+}

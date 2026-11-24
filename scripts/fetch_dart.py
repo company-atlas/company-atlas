@@ -97,7 +97,10 @@ def report(key, corp_code, year, code, accounts=ACCOUNTS, debug_id=None, full_fi
     if out is None:
         if debug_id and code == '11011':
             DEBUG.setdefault(debug_id, {}).setdefault('_no_summary', []).append(year)
-        return None
+        if not full_first:
+            return None
+        # 금융회사는 예전 해의 요약 자료가 없는 경우가 있어서, 전체 재무제표에서 직접 찾아요
+        out = {'rev': None, 'op': None, 'ni': None}
     # 주요계정에 매출이나 순이익이 없거나, 일부가 연결이 아닌 별도 재무제표 값이면
     # 전체 재무제표(연결 우선)에서 찾아 채워요 (금융회사 등)
     fs = {v.get('fs') for v in out.values() if v}
@@ -114,6 +117,8 @@ def report(key, corp_code, year, code, accounts=ACCOUNTS, debug_id=None, full_fi
                     out[k] = full[k]
             if debug_id and code == '11011':
                 DEBUG.setdefault(debug_id, {})[str(year)] = full['_names']
+        if not any(out.get(k) for k in ('rev', 'op', 'ni')):
+            return None
         # 연결 값과 별도 값을 섞지 않아요 (지주회사의 별도 매출은 배당금 등이라 뜻이 달라요)
         if any(v and v.get('fs') == 'CFS' for v in out.values()):
             for k in ('rev', 'op', 'ni'):

@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Company Atlas · 세계 모든 기업의 정보를 쉽게</title>
 <meta name="description" content="기업명을 검색하거나, 국가·산업별로 둘러보세요. 한국·미국 상장사 정보를 쉽게 정리했어요.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Company Atlas">
+<meta property="og:title" content="Company Atlas · 세계 모든 기업의 정보를 쉽게">
+<meta property="og:description" content="기업명을 검색하거나, 국가·산업별로 둘러보세요. 한국·미국 상장사 정보를 쉽게 정리했어요.">
+<meta property="og:image" content="https://company-atlas.github.io/company-atlas/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
@@ -33,6 +42,14 @@
     </section>
 
     <div class="wrap home-sections">
+      <section class="sec" id="explore">
+        <div class="sec-head">
+          <h2>기업 둘러보기</h2>
+          <div class="tabs" role="group" aria-label="국가 선택" id="explore-tabs"></div>
+        </div>
+        <div class="co-grid" id="explore-grid"></div>
+        <div class="co-more"><button type="button" class="btn-ghost" id="explore-more"></button></div>
+      </section>
       <section class="sec">
         <h2>산업별로 찾기</h2>
         <div class="cat-grid" id="industry-cards"></div>

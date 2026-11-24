@@ -3,5 +3,42 @@
     "usdKrw": 1345.7,
     "asOf": "2026년 11월 20일 종가"
   },
-  "note": "환율은 매일 자동으로 받아요(scripts/fetch_market.py). 자동으로 받지 못했을 때만 이 값을 써요."
+  "note": "환율은 매일 자동으로 받아요(scripts/fetch_market.py). 자동으로 받지 못했을 때만 이 값을 써요.",
+  "homeOrder": {
+    "한국": [
+      "samsung",
+      "skhynix",
+      "sksquare",
+      "lgensol",
+      "samsungbio",
+      "hyundai",
+      "semco",
+      "kbfg",
+      "celltrion",
+      "samsunglife",
+      "samsungcnt",
+      "shinhan",
+      "sk",
+      "kia",
+      "samsungsdi"
+    ],
+    "미국": [
+      "nvidia",
+      "apple",
+      "microsoft",
+      "alphabet",
+      "amazon",
+      "spacex",
+      "broadcom",
+      "meta",
+      "tesla",
+      "anthropic",
+      "lilly",
+      "berkshire",
+      "walmart",
+      "jpmorgan",
+      "visa"
+    ]
+  },
+  "homeOrderNote": "첫 화면 \"기업 둘러보기\"에 보여줄 순서예요 (대략 시가총액 순). 여기 없는 기업은 맨 뒤에 붙어요."
 }

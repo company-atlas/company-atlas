@@ -142,21 +142,7 @@
     {
       "detail": "쌀알보다 작은 부품으로, 전기를 잠깐 저장했다가 일정하게 내보내 전자회로를 안정시켜요. 스마트폰 한 대에 1천 개, 전기차 한 대에 1만 개 넘게 들어가고, AI 서버에서도 수요가 크게 늘었어요.",
       "examples": "스마트폰·서버·전기차용 MLCC",
-      "photo": [
-        {
-          "q": "Samsung Electro-Mechanics MLCC",
-          "need": [
-            "mlcc"
-          ]
-        },
-        {
-          "q": "Multilayer ceramic capacitor",
-          "need": [
-            "multilayer",
-            "ceramic"
-          ]
-        }
-      ]
+      "photo": null
     },
     {
       "detail": "반도체 칩을 올려 메인보드와 연결해 주는 기판이에요. 특히 AI 서버용 고성능 기판(FC-BGA)이 빠르게 커지고 있어요.",
