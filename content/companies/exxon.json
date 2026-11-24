@@ -129,7 +129,7 @@
       ]
     ]
   ],
-  "sources": "엑슨모빌 2025년 실적 발표",
+  "sources": "엑슨모빌 2025년 실적 발표, 연간 실적은 회사 연례 실적 발표",
   "sources_ids": {
     "ticker": "XOM"
   },
@@ -158,7 +158,7 @@
   "financials_text": {
     "unit": "억 달러",
     "annualTitle": "회계연도별 (최근 5년)",
-    "annualNote": "",
+    "annualNote": "엑슨모빌은 미국 공시 자동 수집 자료에 연간 실적이 빠져 있어서, 회사가 발표한 연간 실적(매출과 기타 수입 합계, 순이익)을 직접 넣었어요.",
     "quarterlyNote": ""
   },
   "logo_url": [
@@ -172,7 +172,38 @@
     }
   ],
   "financials_fallback": {
-    "annual": [],
+    "annual": [
+      [
+        "FY2021",
+        2856,
+        null,
+        230
+      ],
+      [
+        "FY2022",
+        4137,
+        null,
+        557
+      ],
+      [
+        "FY2023",
+        3446,
+        null,
+        360
+      ],
+      [
+        "FY2024",
+        3496,
+        null,
+        337
+      ],
+      [
+        "FY2025",
+        3322,
+        null,
+        288
+      ]
+    ],
     "quarterly": []
   }
 }
