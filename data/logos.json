@@ -439,10 +439,11 @@
   },
   "amd": {
     "path": "data/logos/amd.svg",
-    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/AMD_logo_pre-2013.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/AMD_Logo.svg",
     "px": 1024,
     "saved": "2026-11-24",
     "logo_url": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/AMD_Logo.svg",
       "commons:AMD Logo",
       "wiki:en:AMD",
       "page:"
@@ -453,18 +454,20 @@
     "bg": null
   },
   "doosanenerbility": {
-    "path": "data/logos/doosanenerbility.png",
-    "from": "https://www.doosanenerbility.com/images/common/logo-blue.png",
-    "px": 15,
+    "path": "data/logos/doosanenerbility.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Doosan_Group_and_Corporation_-_Logo.svg",
+    "px": 1024,
     "saved": "2026-11-24",
     "logo_url": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Doosan_Group_and_Corporation_-_Logo.svg",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Doosan_logo.svg",
       "commons:Doosan Enerbility",
       "wiki:ko:두산에너빌리티",
       "wiki:en:Doosan Enerbility",
       "page:"
     ],
     "logo_site": null,
-    "ratio": 7.03,
+    "ratio": 7.15,
     "override": true,
     "bg": null
   },
@@ -548,17 +551,18 @@
   },
   "koreanair": {
     "path": "data/logos/koreanair.svg",
-    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Korean_Air_Cargo_logo.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Korean_Air_2025.svg",
     "px": 1024,
     "saved": "2026-11-24",
     "logo_url": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Korean_Air_2025.svg",
       "commons:Korean Air",
       "wiki:ko:대한항공",
       "wiki:en:Korean Air",
       "page:"
     ],
     "logo_site": null,
-    "ratio": 13.0,
+    "ratio": 6.55,
     "override": true,
     "bg": null
   },

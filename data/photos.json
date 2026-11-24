@@ -413,15 +413,6 @@
     "license": "CC BY-SA 4.0",
     "saved": "2026-11-22"
   },
-  "amd-1": {
-    "path": "data/photos/amd-1.png",
-    "query": "[{\"need\": [\"amd\", \"epyc\"], \"q\": \"AMD EPYC\"}]",
-    "title": "20471017-A AMD EPYC INSTINCT Lockup Landscape K Web.png",
-    "page": "https://commons.wikimedia.org/wiki/File:20471017-A_AMD_EPYC_INSTINCT_Lockup_Landscape_K_Web.png",
-    "artist": "Advanced Micro Devices",
-    "license": "Public domain",
-    "saved": "2026-11-24"
-  },
   "amd-2": {
     "path": "data/photos/amd-2.jpg",
     "query": "[{\"need\": [\"amd\", \"ryzen\"], \"q\": \"AMD Ryzen\"}]",
@@ -469,11 +460,11 @@
   },
   "hana-1": {
     "path": "data/photos/hana-1.jpg",
-    "query": "[{\"need\": [\"hana\", \"bank\"], \"q\": \"Hana Bank branch\"}]",
-    "title": "Resona Bank Hana-Koganei Branch.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Resona_Bank_Hana-Koganei_Branch.jpg",
-    "artist": "Suikotei",
-    "license": "CC BY-SA 4.0",
+    "query": "[{\"need\": [\"hana bank\"], \"q\": \"Hana Bank\"}, {\"need\": [\"hana bank\"], \"q\": \"KEB Hana Bank\"}]",
+    "title": "Hana Bank Skorea 2010.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Hana_Bank_Skorea_2010.jpg",
+    "artist": "Bill Marmie",
+    "license": "CC BY 2.0",
     "saved": "2026-11-24"
   },
   "hanwhaaero-1": {

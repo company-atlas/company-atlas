@@ -786,6 +786,7 @@ window.ATLAS_COMPANIES = [
    ]
   },
   "logo_url": [
+   "https://commons.wikimedia.org/wiki/Special:FilePath/AMD_Logo.svg",
    "commons:AMD Logo",
    "wiki:en:AMD",
    "page:"
@@ -806,6 +807,9 @@ window.ATLAS_COMPANIES = [
    {
     "label": "시가총액"
    }
+  ],
+  "logo_reject": [
+   "pre-2013"
   ],
   "financials": {
    "unit": "억 달러",
@@ -2528,6 +2532,8 @@ window.ATLAS_COMPANIES = [
   ],
   "sources": "두산에너빌리티 공시, 수주 보도",
   "logo_url": [
+   "https://commons.wikimedia.org/wiki/Special:FilePath/Doosan_Group_and_Corporation_-_Logo.svg",
+   "https://commons.wikimedia.org/wiki/Special:FilePath/Doosan_logo.svg",
    "commons:Doosan Enerbility",
    "wiki:ko:두산에너빌리티",
    "wiki:en:Doosan Enerbility",
@@ -2716,7 +2722,10 @@ window.ATLAS_COMPANIES = [
   "capLink": [
    "https://finance.naver.com/item/main.naver?code=034020",
    "네이버 증권"
-  ]
+  ],
+  "logo": "data/logos/doosanenerbility.svg",
+  "logoSmall": false,
+  "logoWide": true
  },
  {
   "id": "exxon",
@@ -2775,7 +2784,7 @@ window.ATLAS_COMPANIES = [
    ],
    [
     "1972",
-    "회사 이름을 엑손으로 변경"
+    "회사 이름을 엑슨으로 변경"
    ],
    [
     "1999",
@@ -3523,8 +3532,8 @@ window.ATLAS_COMPANIES = [
   "nameEn": "HD Hyundai Heavy Industries",
   "country": "한국",
   "industry": "조선·기계",
-  "tagline": "LNG선·컨테이너선·군함을 만드는, 세계 최대 조선소를 가진 조선회사",
-  "about": "울산에 세계 최대 규모의 조선소를 가진 회사예요. LNG 운반선, 대형 컨테이너선 같은 상선과 군함·잠수함을 만들고, 선박용 엔진도 직접 만들어요. 2025년 12월 HD현대미포와 합쳐 통합 HD현대중공업으로 새로 출발했어요.",
+  "tagline": "LNG선·컨테이너선·군함을 만드는, 세계 최대 규모로 꼽히는 조선소를 가진 조선회사",
+  "about": "울산에 세계 최대 규모로 꼽히는 조선소를 가진 회사예요. LNG 운반선, 대형 컨테이너선 같은 상선과 군함·잠수함을 만들고, 선박용 엔진도 직접 만들어요. 2025년 12월 HD현대미포와 합쳐 통합 HD현대중공업으로 새로 출발했어요.",
   "info": [
    [
     "설립연도",
@@ -4253,12 +4262,12 @@ window.ATLAS_COMPANIES = [
    ],
    "annual": [
     [
-     "FY2022",
+     "FY2021",
      787,
      209
     ],
     [
-     "FY2023",
+     "FY2022",
      800,
      179
     ],
@@ -4323,9 +4332,13 @@ window.ATLAS_COMPANIES = [
    "source": "SEC EDGAR",
    "exactUnit": "달러",
    "exact": {
-    "FY2022": [
+    "FY2021": [
      78740000000,
      20878000000
+    ],
+    "FY2022": [
+     79990000000,
+     17941000000
     ],
     "FY2023": [
      85159000000,
@@ -5347,6 +5360,7 @@ window.ATLAS_COMPANIES = [
   ],
   "sources": "대한항공 공시, 통합 일정 보도",
   "logo_url": [
+   "https://commons.wikimedia.org/wiki/Special:FilePath/Korean_Air_2025.svg",
    "commons:Korean Air",
    "wiki:ko:대한항공",
    "wiki:en:Korean Air",
@@ -5368,6 +5382,9 @@ window.ATLAS_COMPANIES = [
    {
     "label": "시가총액"
    }
+  ],
+  "logo_reject": [
+   "Cargo"
   ],
   "financials": {
    "unit": "조 원",
