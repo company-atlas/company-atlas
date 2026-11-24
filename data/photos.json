@@ -215,15 +215,6 @@
     "license": "CC BY-SA 4.0",
     "saved": "2026-11-22"
   },
-  "semco-1": {
-    "path": "data/photos/semco-1.jpg",
-    "query": "[{\"need\": [\"mlcc\"], \"q\": \"Samsung Electro-Mechanics MLCC\"}, {\"need\": [\"multilayer\", \"ceramic\"], \"q\": \"Multilayer ceramic capacitor\"}]",
-    "title": "SEMSZ MLCC corrugated fiberboard carton at Hall A, World Trade Center 20241209.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:SEMSZ_MLCC_corrugated_fiberboard_carton_at_Hall_A,_World_Trade_Center_20241209.jpg",
-    "artist": "Solomon203",
-    "license": "CC BY-SA 4.0",
-    "saved": "2026-11-22"
-  },
   "semco-3": {
     "path": "data/photos/semco-3.jpg",
     "query": "\"file:SAMSUNG Galaxy S22 Ultra REAR CAMERA MODULES.jpg\"",
@@ -359,15 +350,6 @@
     "license": "CC BY-SA 4.0",
     "saved": "2026-11-22"
   },
-  "kia-2": {
-    "path": "data/photos/kia-2.jpg",
-    "query": "[{\"need\": [\"kia\", \"k5\"], \"q\": \"Kia K5\"}]",
-    "title": "KIA K5 TF China.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:KIA_K5_TF_China.jpg",
-    "artist": "Dinkun Chen",
-    "license": "CC BY-SA 4.0",
-    "saved": "2026-11-22"
-  },
   "kia-3": {
     "path": "data/photos/kia-3.jpg",
     "query": "[{\"need\": [\"kia\", \"ev6\"], \"q\": \"Kia EV6\"}, {\"need\": [\"kia\", \"ev9\"], \"q\": \"Kia EV9\"}]",
@@ -392,15 +374,6 @@
     "title": "Lilly mounjaro KwikPen Tirzepatid 5 mg per dose rate-9442.jpg",
     "page": "https://commons.wikimedia.org/wiki/File:Lilly_mounjaro_KwikPen_Tirzepatid_5_mg_per_dose_rate-9442.jpg",
     "artist": "Raimond Spekking",
-    "license": "CC BY-SA 4.0",
-    "saved": "2026-11-22"
-  },
-  "samsungcnt-1": {
-    "path": "data/photos/samsungcnt-1.jpg",
-    "query": "[{\"need\": [\"raemian\"], \"q\": \"Raemian apartment\"}]",
-    "title": "Hannam Bridge and and Raemian Caelitus.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Hannam_Bridge_and_and_Raemian_Caelitus.jpg",
-    "artist": "Ox1997cow",
     "license": "CC BY-SA 4.0",
     "saved": "2026-11-22"
   },
