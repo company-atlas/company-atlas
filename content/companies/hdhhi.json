@@ -1,0 +1,146 @@
+{
+  "id": "hdhhi",
+  "name": "HD현대중공업",
+  "nameEn": "HD Hyundai Heavy Industries",
+  "country": "한국",
+  "industry": "조선·기계",
+  "tagline": "LNG선·컨테이너선·군함을 만드는, 세계 최대 조선소를 가진 조선회사",
+  "about": "울산에 세계 최대 규모의 조선소를 가진 회사예요. LNG 운반선, 대형 컨테이너선 같은 상선과 군함·잠수함을 만들고, 선박용 엔진도 직접 만들어요. 2025년 12월 HD현대미포와 합쳐 통합 HD현대중공업으로 새로 출발했어요.",
+  "info": [
+    [
+      "상장 여부",
+      "상장 · 코스피 329180"
+    ]
+  ],
+  "website": "https://www.hhi.co.kr",
+  "currency": "KRW",
+  "group_head": "정기선 (HD현대)",
+  "businesses": [
+    [
+      "상선",
+      "LNG 운반선, 컨테이너선, 유조선"
+    ],
+    [
+      "특수선 (방산)",
+      "구축함, 잠수함 등 군함"
+    ],
+    [
+      "해양·플랜트",
+      "해양 원유·가스 생산 설비"
+    ],
+    [
+      "엔진기계",
+      "선박용 엔진, 발전용 엔진"
+    ]
+  ],
+  "business_details": [
+    {
+      "detail": "천연가스를 영하 162도로 실어 나르는 LNG 운반선, 대형 컨테이너선, 유조선 등을 만들어요. 매출의 대부분이 여기서 나와요.",
+      "examples": "LNG 운반선, 컨테이너선, 유조선",
+      "photo": [
+        {
+          "q": "Hyundai Heavy Industries shipyard Ulsan",
+          "need": [
+            "hyundai",
+            "heavy"
+          ]
+        },
+        {
+          "q": "HD Hyundai Heavy Industries",
+          "need": [
+            "hd hyundai"
+          ]
+        }
+      ]
+    },
+    {
+      "detail": "한국 해군의 이지스 구축함과 잠수함을 만들고, 해외 군함 수출과 미국 해군 함정 정비 사업도 넓히고 있어요.",
+      "examples": "이지스 구축함, 잠수함, 호위함",
+      "photo": null
+    },
+    {
+      "detail": "바다 위에서 원유·가스를 뽑아 올리는 거대한 해양 설비를 만들어요.",
+      "examples": "해양 생산 설비(FPSO 등)",
+      "photo": null
+    },
+    {
+      "detail": "선박을 움직이는 대형 엔진과 발전용 엔진을 직접 만들어요. 대형 선박 엔진은 세계 1위권이에요.",
+      "examples": "선박용 대형 엔진, 힘센엔진",
+      "photo": null
+    }
+  ],
+  "history": [
+    [
+      "1972",
+      "정주영 창업주가 울산 조선소 건설 시작"
+    ],
+    [
+      "1974",
+      "첫 선박(대형 유조선) 완성"
+    ],
+    [
+      "1978",
+      "현대중공업으로 이름 변경"
+    ],
+    [
+      "1983",
+      "선박 건조량 세계 1위"
+    ],
+    [
+      "2019",
+      "회사를 나눠 조선 사업을 맡는 새 현대중공업 출범"
+    ],
+    [
+      "2021",
+      "코스피 상장"
+    ],
+    [
+      "2025",
+      "HD현대미포와 합병해 통합 HD현대중공업 출범"
+    ]
+  ],
+  "rivals": [
+    [
+      "조선",
+      [
+        [
+          "한화오션",
+          "한국"
+        ],
+        [
+          "삼성중공업",
+          "한국"
+        ],
+        [
+          "중국선박집단",
+          "중국"
+        ]
+      ]
+    ]
+  ],
+  "sources": "HD현대중공업 통합 출범 보도",
+  "sources_ids": {
+    "krx_stock_code": "329180"
+  },
+  "financials_text": {
+    "unit": "조 원",
+    "annualTitle": "연도별 (최근 5년)",
+    "annualNote": "",
+    "quarterlyNote": ""
+  },
+  "logo_url": [
+    "commons:HD Hyundai Heavy Industries",
+    "wiki:ko:HD현대중공업",
+    "wiki:en:HD Hyundai Heavy Industries",
+    "page:"
+  ],
+  "highlights": [
+    {
+      "label": "시가총액"
+    }
+  ],
+  "financials_fallback": {
+    "annual": [],
+    "quarterly": []
+  }
+}

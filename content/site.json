@@ -19,8 +19,14 @@
       "samsungcnt",
       "shinhan",
       "sk",
+      "hana",
       "kia",
-      "samsungsdi"
+      "samsungsdi",
+      "hanwhaaero",
+      "mobis",
+      "doosanenerbility",
+      "hdhhi",
+      "koreanair"
     ],
     "미국": [
       "nvidia",
@@ -37,7 +43,12 @@
       "berkshire",
       "walmart",
       "jpmorgan",
-      "visa"
+      "visa",
+      "micron",
+      "amd",
+      "jnj",
+      "exxon",
+      "mastercard"
     ]
   },
   "homeOrderNote": "첫 화면 \"기업 둘러보기\"에 보여줄 순서예요 (대략 시가총액 순). 여기 없는 기업은 맨 뒤에 붙어요."
