@@ -28,7 +28,8 @@ INDEX = os.path.join(ROOT, 'data', 'photos.json')
 API = 'https://commons.wikimedia.org/w/api.php'
 UA = {'User-Agent': 'CompanyAtlas/1.0 (https://company-atlas.github.io/company-atlas/; photo fetch) python-urllib'}
 FREE = re.compile(r'^(cc0|public domain|pd\b|cc[ -]by(-sa)?([ -][\d.]+)?\b)', re.I)
-SKIP_WORDS = ('logo', 'icon', 'map', 'diagram', 'chart', 'graph', 'flag', 'coat of arms', 'signature')
+SKIP_WORDS = ('logo', 'icon', 'map', 'diagram', 'chart', 'graph', 'flag', 'coat of arms', 'signature',
+              'lockup', 'wordmark', 'banner', 'slide', 'screenshot')
 
 
 def api(params):
@@ -68,6 +69,8 @@ def pick(query, need=()):
             if any(w in title.lower() for w in SKIP_WORDS):
                 continue
             if info.get('width', 0) < 600 or info.get('height', 0) < 300:
+                continue
+            if info.get('mime') != 'image/jpeg':  # 검색으로 찾을 때는 사진(JPG)만: PNG는 대부분 로고·그림이에요
                 continue
         if info.get('mime') not in ('image/jpeg', 'image/png') or not FREE.match(lic):
             continue

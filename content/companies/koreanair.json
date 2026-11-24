@@ -135,6 +135,7 @@
     "quarterlyNote": ""
   },
   "logo_url": [
+    "https://commons.wikimedia.org/wiki/Special:FilePath/Korean_Air_2025.svg",
     "commons:Korean Air",
     "wiki:ko:대한항공",
     "wiki:en:Korean Air",
@@ -148,5 +149,8 @@
   "financials_fallback": {
     "annual": [],
     "quarterly": []
-  }
+  },
+  "logo_reject": [
+    "Cargo"
+  ]
 }

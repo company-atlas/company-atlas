@@ -50,10 +50,15 @@
       "examples": "에픽(EPYC) CPU, 인스팅트(Instinct) GPU",
       "photo": [
         {
-          "q": "AMD EPYC",
+          "q": "AMD EPYC processor",
           "need": [
-            "amd",
             "epyc"
+          ]
+        },
+        {
+          "q": "AMD Instinct",
+          "need": [
+            "instinct"
           ]
         }
       ]
@@ -177,6 +182,7 @@
     "quarterlyNote": ""
   },
   "logo_url": [
+    "https://commons.wikimedia.org/wiki/Special:FilePath/AMD_Logo.svg",
     "commons:AMD Logo",
     "wiki:en:AMD",
     "page:"
@@ -189,5 +195,8 @@
   "financials_fallback": {
     "annual": [],
     "quarterly": []
-  }
+  },
+  "logo_reject": [
+    "pre-2013"
+  ]
 }

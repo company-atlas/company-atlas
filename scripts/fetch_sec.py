@@ -83,12 +83,19 @@ def label_quarter(start, end):
     return '%02d.%dQ' % (d.year % 100, (d.month - 1) // 3 + 1)
 
 
+def fy_label(end):
+    """회계연도 이름. 끝나는 날의 연도를 쓰되, 1월 초(10일 이내)에 끝나면 앞 해로 쳐요.
+    (예: 존슨앤드존슨은 2022 회계연도가 2023년 1월 1일에 끝나요)"""
+    d = datetime.date.fromisoformat(end) - datetime.timedelta(days=10)
+    return 'FY%d' % d.year
+
+
 def collect(facts):
     series = {k: split(periods(facts, names)) for k, names in CONCEPTS.items()}
     ends_a = sorted({k for k in series['rev'][0]}, key=lambda k: k[1])
     annual = []
     for k in ends_a:
-        row = ['FY%s' % k[1][:4]] + [series[m][0].get(k) for m in ('rev', 'op', 'ni')]
+        row = [fy_label(k[1])] + [series[m][0].get(k) for m in ('rev', 'op', 'ni')]
         if row[1] is not None and row[3] is not None:
             annual.append(row)
     ends_q = sorted({k for k in series['rev'][1]}, key=lambda k: k[1])

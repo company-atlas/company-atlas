@@ -38,10 +38,15 @@
       "examples": "예금·적금, 대출, 환전·해외송금, 하나원큐 앱",
       "photo": [
         {
-          "q": "Hana Bank branch",
+          "q": "Hana Bank",
           "need": [
-            "hana",
-            "bank"
+            "hana bank"
+          ]
+        },
+        {
+          "q": "KEB Hana Bank",
+          "need": [
+            "hana bank"
           ]
         }
       ]
