@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     tabs.industry.setAttribute('aria-pressed', tab === 'industry' ? 'true' : 'false');
     filter.placeholder = tab === 'country' ? '국가 이름으로 찾기' : '산업 이름으로 찾기';
 
-    var names = (tab === 'country' ? Atlas.COUNTRIES : Atlas.ALL_INDUSTRIES).slice()
+    var names = (tab === 'country' ? Atlas.COUNTRIES : Atlas.usedIndustries()).slice()
       .sort(function (a, b) { return a.localeCompare(b, 'ko'); });
     var needle = filter.value.trim();
     if (needle) names = names.filter(function (n) { return n.indexOf(needle) !== -1; });

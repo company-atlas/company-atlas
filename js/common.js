@@ -42,6 +42,14 @@ var Atlas = (function () {
   function param(name) { return new URLSearchParams(location.search).get(name) || ''; }
   function count(key, value) { return companies().filter(function (c) { return c[key] === value; }).length; }
 
+  // 기업이 1개 이상 있는 산업만 (0개인 산업은 화면에 보여주지 않아요)
+  function usedIndustries() { return ALL_INDUSTRIES.filter(function (i) { return count('industry', i) > 0; }); }
+  // 홈 카드용: 기업이 많은 산업부터 최대 8개
+  function homeIndustries() {
+    return usedIndustries().map(function (i, n) { return { i: i, c: count('industry', i), n: n }; })
+      .sort(function (a, b) { return b.c - a.c || a.n - b.n; }).slice(0, 8).map(function (x) { return x.i; });
+  }
+
   // 숫자 표시: 1151 → "1,151", 333.6 → "333.6"
   function num(v, digits) {
     return Number(v).toLocaleString('ko-KR', { minimumFractionDigits: digits || 0, maximumFractionDigits: digits || 0 });
@@ -86,7 +94,9 @@ var Atlas = (function () {
     el.innerHTML =
       'Company Atlas · 정보는 각 기업의 공시와 공개 자료를 바탕으로 정리했으며, 투자 판단의 책임은 이용자에게 있어요.' +
       '<br>기업 로고는 각 회사의 상표이며, 기업을 알아보기 쉽도록 보여드리는 것이에요.' +
-      '<br>마지막 업데이트: ' + esc(window.ATLAS_META.updated);
+      '<br>마지막 업데이트: ' + esc(window.ATLAS_META.updated) +
+      '<br><a href="' + ROOT + 'about.html">소개</a> · <a href="' + ROOT + 'terms.html">이용약관</a> · ' +
+      '<a href="' + ROOT + 'privacy.html"><strong>개인정보처리방침</strong></a>';
   }
 
   function initials(c) { return esc(c.name.slice(0, 1)); }
@@ -117,7 +127,7 @@ var Atlas = (function () {
 
   return {
     COUNTRIES: COUNTRIES, INDUSTRIES: INDUSTRIES, ALL_INDUSTRIES: ALL_INDUSTRIES, icon: icon, esc: esc, companies: companies,
-    find: find, param: param, count: count, num: num, toKrwTrillion: toKrwTrillion, initials: initials, logoBox: logoBox,
+    find: find, param: param, count: count, usedIndustries: usedIndustries, homeIndustries: homeIndustries, num: num, toKrwTrillion: toKrwTrillion, initials: initials, logoBox: logoBox,
     companyUrl: companyUrl, ROOT: ROOT
   };
 })();

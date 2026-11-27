@@ -393,7 +393,7 @@ def main():
 
     # 첫 화면 등 직접 만든 페이지의 미리보기 그림 주소도 지금 사이트 주소로 맞춰요 (주소를 옮겼을 때 대비)
     if site_url:
-        for name in ('index.html', 'search.html', 'browse.html', 'about.html', 'company.html'):
+        for name in ('index.html', 'search.html', 'browse.html', 'about.html', 'company.html', 'terms.html', 'privacy.html'):
             path = os.path.join(ROOT, name)
             if os.path.exists(path):
                 with open(path, encoding='utf-8') as f:
@@ -403,7 +403,7 @@ def main():
                     with open(path, 'w', encoding='utf-8') as f:
                         f.write(fixed)
     if site_url:
-        urls = [site_url, site_url + 'browse.html', site_url + 'about.html'] + [site_url + 'company/%s/' % c['id'] for c in companies]
+        urls = [site_url, site_url + 'browse.html', site_url + 'about.html', site_url + 'terms.html', site_url + 'privacy.html'] + [site_url + 'company/%s/' % c['id'] for c in companies]
         today = now.date().isoformat()
         with open(os.path.join(ROOT, 'sitemap.xml'), 'w', encoding='utf-8') as f:
             f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')

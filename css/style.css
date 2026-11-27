@@ -212,6 +212,9 @@ button, input, select { font: inherit; color: inherit; }
 .sources { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 16px; line-height: 1.6; }
 
 .site-footer { border-top: 1px solid var(--line); padding: 24px 32px; text-align: center; font-size: 13px; color: var(--muted); margin-top: auto; }
+.site-footer a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+.site-footer a:hover { color: var(--accent); }
+.site-footer br + a { display: inline-block; margin-top: 6px; }
 .page-shell { min-height: 100vh; display: flex; flex-direction: column; }
 
 /* 휴대폰 화면 */

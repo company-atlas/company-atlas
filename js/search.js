@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var countrySel = document.getElementById('country');
   var industrySel = document.getElementById('industry');
   Atlas.COUNTRIES.forEach(function (c) { countrySel.add(new Option(c, c)); });
-  Atlas.ALL_INDUSTRIES.forEach(function (i) { industrySel.add(new Option(i, i)); });
+  Atlas.usedIndustries().forEach(function (i) { industrySel.add(new Option(i, i)); });
   qInput.value = q;
   countrySel.value = country;
   industrySel.value = industry;
