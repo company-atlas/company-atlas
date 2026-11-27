@@ -1,5 +1,5 @@
 // 이 파일은 scripts/build.py가 자동으로 만들어요. 직접 고치지 말고 content/ 폴더를 고쳐 주세요.
-window.ATLAS_META = {"fx": {"usdKrw": 1344.7, "asOf": "2026년 11월 26일 유럽중앙은행 기준환율"}, "updated": "2026년 11월 27일", "homeOrder": {"한국": ["samsung", "skhynix", "sksquare", "lgensol", "samsungbio", "hyundai", "semco", "kbfg", "celltrion", "samsunglife", "samsungcnt", "shinhan", "sk", "hana", "kia", "samsungsdi", "hanwhaaero", "mobis", "doosanenerbility", "hdhhi", "koreanair"], "미국": ["nvidia", "apple", "microsoft", "alphabet", "amazon", "spacex", "broadcom", "meta", "tesla", "anthropic", "lilly", "berkshire", "walmart", "jpmorgan", "visa", "micron", "amd", "jnj", "exxon", "mastercard"]}};
+window.ATLAS_META = {"fx": {"usdKrw": 1334.9, "asOf": "2026년 11월 27일 유럽중앙은행 기준환율"}, "updated": "2026년 11월 28일", "homeOrder": {"한국": ["samsung", "skhynix", "sksquare", "lgensol", "samsungbio", "hyundai", "semco", "kbfg", "celltrion", "samsunglife", "samsungcnt", "shinhan", "sk", "hana", "kia", "samsungsdi", "hanwhaaero", "mobis", "doosanenerbility", "hdhhi", "koreanair"], "미국": ["nvidia", "apple", "microsoft", "alphabet", "amazon", "spacex", "broadcom", "meta", "tesla", "anthropic", "lilly", "berkshire", "walmart", "jpmorgan", "visa", "micron", "amd", "jnj", "exxon", "mastercard"]}};
 window.ATLAS_COMPANIES = [
  {
   "id": "alphabet",
