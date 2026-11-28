@@ -301,12 +301,18 @@ def rest_of_page(h, c, by_id, root, fx, meta, is_usd, f):
 
 
 # 카카오톡 등 링크 미리보기 그림은 전체 주소가 필요해요. SITE_URL이 없을 때 쓰는 기본 주소예요.
-DEFAULT_SITE = 'https://company-atlas.github.io/company-atlas/'
+DEFAULT_SITE = 'https://company-atlas-eko.pages.dev/'
+
+# 예전 주소(GitHub Pages, ...github.io/company-atlas/)로 들어오면 새 주소의 같은 페이지로 보내 줘요.
+REDIRECT = ('<script>(function(){if(/\\.github\\.io$/.test(location.hostname)){'
+            'var p=location.pathname.replace(/^\\/[^\\/]+/,"")||"/";'
+            'location.replace("%s"+p.replace(/^\\//,"")+location.search+location.hash);}})();</script>')
 
 PAGE = '''<!doctype html>
 <html lang="ko">
 <head>
 <meta charset="utf-8">
+{redirect}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{name} 기업 정보 · Company Atlas</title>
 <meta name="description" content="{desc}">
@@ -339,8 +345,11 @@ PAGE = '''<!doctype html>
 
 
 def main():
-    site_url = (os.environ.get('SITE_URL') or '').rstrip('/') + '/' if os.environ.get('SITE_URL') else ''
     site = read_json(os.path.join(ROOT, 'content', 'site.json'))
+    # 사이트 주소: content/site.json의 siteUrl을 먼저 쓰고, 없으면 환경변수 SITE_URL을 써요
+    raw = (site or {}).get('siteUrl') or os.environ.get('SITE_URL') or ''
+    site_url = raw.rstrip('/') + '/' if raw else ''
+    redirect = REDIRECT % (site_url or DEFAULT_SITE)
     now = datetime.datetime.now(KST)
     # 매일 자동으로 받은 환율 (없으면 content/site.json과 기업 파일의 값을 써요)
     market = read_json(os.path.join(FETCHED_DIR, '_market.json')) or {}
@@ -387,7 +396,7 @@ def main():
         os.makedirs(page_dir)
         canonical = '<link rel="canonical" href="%scompany/%s/">\n' % (site_url, c['id']) if site_url else ''
         with open(os.path.join(page_dir, 'index.html'), 'w', encoding='utf-8') as f:
-            f.write(PAGE.format(name=e(c['name']), desc=e(c['tagline']), canonical=canonical, id=e(c['id']),
+            f.write(PAGE.format(name=e(c['name']), desc=e(c['tagline']), canonical=canonical, id=e(c['id']), redirect=redirect,
                                 site=e(site_url or DEFAULT_SITE),
                                 body=render_company(c, companies, meta)))
 
@@ -399,6 +408,11 @@ def main():
                 with open(path, encoding='utf-8') as f:
                     page = f.read()
                 fixed = re.sub(r'content="https?://[^"]*og-image\.png"', 'content="%sog-image.png"' % site_url, page)
+                # 진짜 주소(canonical)와 예전 주소 넘겨주기를 <head> 맨 앞에 넣어요 (매번 새로 바꿔 끼워요)
+                fixed = re.sub(r'<!--atlas-head-->.*?<!--/atlas-head-->\n', '', fixed, flags=re.S)
+                canon = site_url + ('' if name == 'index.html' else name)
+                block = '<!--atlas-head-->%s\n<link rel="canonical" href="%s">\n<!--/atlas-head-->\n' % (redirect, e(canon))
+                fixed = fixed.replace('<meta charset="utf-8">\n', '<meta charset="utf-8">\n' + block, 1)
                 if fixed != page:
                     with open(path, 'w', encoding='utf-8') as f:
                         f.write(fixed)
