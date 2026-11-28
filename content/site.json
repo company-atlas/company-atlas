@@ -27,7 +27,12 @@
       "mobis",
       "doosanenerbility",
       "hdhhi",
-      "koreanair"
+      "koreanair",
+      "naver",
+      "lge",
+      "kakao",
+      "posco",
+      "hybe"
     ],
     "미국": [
       "nvidia",
@@ -49,7 +54,12 @@
       "amd",
       "jnj",
       "exxon",
-      "mastercard"
+      "mastercard",
+      "netflix",
+      "palantir",
+      "costco",
+      "coupang",
+      "disney"
     ]
   },
   "homeOrderNote": "첫 화면 \"기업 둘러보기\"에 보여줄 순서예요 (대략 시가총액 순). 여기 없는 기업은 맨 뒤에 붙어요."

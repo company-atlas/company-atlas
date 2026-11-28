@@ -72,8 +72,8 @@ def merge(c, fetched):
         names = fin['labels']
         year_word = label[2:] + ' 회계연도' if label.startswith('FY') else label + '년'
         unit = fin['unit']
-        if unit == '조 원':
-            per_day = rev * 10000 / 365  # 억 원
+        if unit in ('조 원', '억 원'):
+            per_day = rev * (10000 if unit == '조 원' else 1) / 365  # 억 원
             day_text = '하루 평균 약 %s억 원' % num(round(per_day, -3) if per_day >= 1000 else round(per_day))
         else:
             per_day = rev / 365

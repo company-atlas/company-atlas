@@ -253,11 +253,14 @@ def main():
             print('[실패] %s: %s' % (c['name'], e))
             ok = False
             continue
-        conv = lambda rows: [[r[0]] + [trillion(v) for v in r[1:]] for r in rows if r[3] is not None]
+        # 매출이 작은 회사는 'unit': '억 원'으로 억 원 단위를 써요 (조 원이면 0.0처럼 보여서)
+        small = ids.get('unit') == '억 원'
+        to_unit = (lambda v: None if v is None else int(math.floor(v / 1e8 + 0.5))) if small else trillion
+        conv = lambda rows: [[r[0]] + [to_unit(v) for v in r[1:]] for r in rows if r[3] is not None]
         write_json(os.path.join(FETCHED_DIR, c['id'] + '.json'), {
             'source': 'Open DART',
             'fetched_at': datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds'),
-            'unit': '조 원',
+            'unit': '억 원' if small else '조 원',
             'annual': conv(annual)[-5:],
             'quarterly': conv(quarterly)[-8:],
             # 정확한 금액(원 단위): 그래프에서 기간을 누르면 보여줘요

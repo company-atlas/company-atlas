@@ -7,7 +7,7 @@ var Atlas = (function () {
   // 홈 화면에 카드로 보여주는 주요 산업 8개
   var INDUSTRIES = ['반도체·전자', '자동차', 'IT·소프트웨어', '금융·은행', '바이오·제약', '에너지·화학', '유통·소비재', '통신·미디어'];
   // 전체 보기·검색 칸에만 나오는 그 밖의 산업
-  var MORE_INDUSTRIES = ['항공우주', '지주·투자', '조선·기계', '운송·항공'];
+  var MORE_INDUSTRIES = ['항공우주', '지주·투자', '조선·기계', '운송·항공', '철강·소재'];
   var ALL_INDUSTRIES = INDUSTRIES.concat(MORE_INDUSTRIES);
 
   var ICON_PATHS = {
@@ -22,6 +22,7 @@ var Atlas = (function () {
     '지주·투자': '<path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 17.5l9 5 9-5" opacity=".6"/>',
     '조선·기계': '<path d="M3 15h18l-2.5 5h-13L3 15z"/><path d="M6 15V9h9l3 6"/><path d="M9 9V5h3v4"/>',
     '운송·항공': '<path d="M21 15.5l-7.5-3V6a1.5 1.5 0 0 0-3 0v6.5L3 15.5V17l7.5-2v4l-2 1.5V22l3.5-1 3.5 1v-1.5l-2-1.5v-4l7.5 2z"/>',
+    '철강·소재': '<path d="M4 9h16l-2 4H6L4 9z"/><path d="M7 13v6M17 13v6M5 19h14"/><path d="M9 9V6h6v3"/>',
     '통신·미디어': '<circle cx="12" cy="12" r="2"/><path d="M8.5 8.5a5 5 0 0 0 0 7M15.5 8.5a5 5 0 0 1 0 7M5.6 5.6a9 9 0 0 0 0 12.8M18.4 5.6a9 9 0 0 1 0 12.8"/>'
   };
 

@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function unitLabel() { return state.cur === 'krw' ? '조 원' : f.unit; }
   function fmt(v) {
     if (v == null) return '—';
-    return (unitLabel() === '억 달러' ? Atlas.num(v, 0) : Atlas.num(v, 1)).replace('-', '−');
+    return (/^억/.test(unitLabel()) ? Atlas.num(v, 0) : Atlas.num(v, 1)).replace('-', '−');
   }
 
   // 큰 금액을 "79조 1,405억 원", "1,024억 3,500만 달러"처럼 읽기 쉽게 써요

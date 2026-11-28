@@ -53,7 +53,8 @@ def split(vals):
     예) 1년 − 9개월 = 4분기, 6개월 − 2분기 = 1분기, 9개월 − 6개월 = 3분기
     """
     annual = {k: v for k, v in vals.items() if 350 <= days(*k) <= 380}
-    quarter = {k: v for k, v in vals.items() if 80 <= days(*k) <= 100}
+    # 분기는 보통 13주(약 91일)지만, 코스트코처럼 4분기가 16주(112일)인 회사도 있어요
+    quarter = {k: v for k, v in vals.items() if 80 <= days(*k) <= 115}
     def shift(d, n):
         return (datetime.date.fromisoformat(d) + datetime.timedelta(days=n)).isoformat()
     for _ in range(3):  # 새로 계산된 분기로 또 다른 분기를 계산할 수 있어서 몇 번 반복해요
@@ -69,7 +70,7 @@ def split(vals):
                     k = (s2, shift(s1, -1))
                 else:
                     continue
-                if 80 <= days(*k) <= 100 and k not in quarter:
+                if 80 <= days(*k) <= 115 and k not in quarter:
                     quarter[k] = v2 - v1
                     added = True
         if not added:
@@ -80,6 +81,12 @@ def label_quarter(start, end):
     """기간의 가운데 날짜가 속한 달력 분기로 이름을 붙여요. (예: 9월 28일~12월 27일 → 4분기)"""
     s, e = datetime.date.fromisoformat(start), datetime.date.fromisoformat(end)
     d = s + (e - s) / 2
+    return '%02d.%dQ' % (d.year % 100, (d.month - 1) // 3 + 1)
+
+
+def label_quarter_end(end):
+    """끝나는 날짜(보름 앞당김)가 속한 달력 분기로 이름을 붙여요. (예: 2월 15일에 끝나면 1분기)"""
+    d = datetime.date.fromisoformat(end) - datetime.timedelta(days=15)
     return '%02d.%dQ' % (d.year % 100, (d.month - 1) // 3 + 1)
 
 
@@ -99,9 +106,14 @@ def collect(facts):
         if row[1] is not None and row[3] is not None:
             annual.append(row)
     ends_q = sorted({k for k in series['rev'][1]}, key=lambda k: k[1])
+    # 보통은 기간 가운데 날짜로 분기 이름을 붙여요. 분기 길이가 들쭉날쭉해서(코스트코 12·12·12·16주)
+    # 이름이 겹치면, 끝나는 날짜 기준으로 다시 붙여요.
+    names = [label_quarter(*k) for k in ends_q]
+    if len(set(names)) != len(names):
+        names = [label_quarter_end(k[1]) for k in ends_q]
     quarterly = []
-    for k in ends_q:
-        row = [label_quarter(*k)] + [series[m][1].get(k) for m in ('rev', 'op', 'ni')]
+    for k, name in zip(ends_q, names):
+        row = [name] + [series[m][1].get(k) for m in ('rev', 'op', 'ni')]
         if row[1] is not None and row[3] is not None:
             quarterly.append(row)
     return annual[-5:], quarterly[-8:]
