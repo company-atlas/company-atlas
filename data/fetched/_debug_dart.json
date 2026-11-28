@@ -303,6 +303,11 @@
       2026
     ]
   },
+  "hybe": {
+    "_no_summary": [
+      2026
+    ]
+  },
   "hyundai": {
     "2022": [
       [
@@ -474,6 +479,168 @@
         "CIS",
         "-표준계정코드 미사용-",
         "비지배지분"
+      ]
+    ],
+    "_no_summary": [
+      2026
+    ]
+  },
+  "kakao": {
+    "2022": [
+      [
+        "CIS",
+        "ifrs-full_GrossProfit",
+        "영업수익"
+      ],
+      [
+        "CIS",
+        "dart_TotalSellingGeneralAdministrativeExpenses",
+        "영업비용"
+      ],
+      [
+        "CIS",
+        "dart_OperatingIncomeLoss",
+        "영업이익(손실)"
+      ],
+      [
+        "CIS",
+        "dart_OtherGains",
+        "기타수익"
+      ],
+      [
+        "CIS",
+        "dart_OtherLosses",
+        "기타비용"
+      ],
+      [
+        "CIS",
+        "ifrs-full_FinanceIncome",
+        "금융수익"
+      ],
+      [
+        "CIS",
+        "dart_InterestIncomeFinanceIncome",
+        "이자수익"
+      ],
+      [
+        "CIS",
+        "dart_OtherFinancialIncome",
+        "기타금융수익"
+      ],
+      [
+        "CIS",
+        "ifrs-full_FinanceCosts",
+        "금융비용"
+      ],
+      [
+        "CIS",
+        "ifrs-full_GainsArisingFromDerecognitionOfFinancialAssetsMeasuredAtAmortisedCost",
+        "지분법이익"
+      ],
+      [
+        "CIS",
+        "ifrs-full_LossesArisingFromDerecognitionOfFinancialAssetsMeasuredAtAmortisedCost",
+        "지분법손실"
+      ],
+      [
+        "CIS",
+        "ifrs-full_ProfitLossBeforeTax",
+        "법인세비용차감전순이익(손실)"
+      ],
+      [
+        "CIS",
+        "ifrs-full_IncomeTaxExpenseContinuingOperations",
+        "법인세비용"
+      ],
+      [
+        "CIS",
+        "ifrs-full_ProfitLoss",
+        "당기순이익(손실)"
+      ],
+      [
+        "CIS",
+        "ifrs-full_ProfitLossAttributableToOwnersOfParent",
+        "지배기업 소유주지분"
+      ],
+      [
+        "CIS",
+        "ifrs-full_ProfitLossAttributableToNoncontrollingInterests",
+        "비지배지분"
+      ],
+      [
+        "CIS",
+        "ifrs-full_OtherComprehensiveIncome",
+        "기타포괄손익"
+      ],
+      [
+        "CIS",
+        "dart_OtherComprehensiveIncomeThatWillNotBeReclassifiedToProfitOrLossNetOfTax",
+        "후속적으로 당기손익으로 재분류될 수 없는 항목"
+      ],
+      [
+        "CIS",
+        "dart_OtherComprehensiveIncomeNetOfTaxGainsLossesOnRemeasurementsOfDefinedBenefitPlans",
+        "순확정급여부채의 재측정요소"
+      ],
+      [
+        "CIS",
+        "ifrs-full_OtherComprehensiveIncomeNetOfTaxGainsLossesFromInvestmentsInEquityInstruments",
+        "기타포괄손익-공정가치 측정 지분상품 평가손익"
+      ],
+      [
+        "CIS",
+        "dart_ShareOfOtherComprehensiveIncomeOfAssociatesAndJointVenturesAccountedForUsingEquityMethodThatWillNotBeReclassifiedToProfitOrLossNetOfTax",
+        "지분법자본변동"
+      ],
+      [
+        "CIS",
+        "ifrs-full_OtherComprehensiveIncomeNetOfTaxGainsLossesOnRevaluation",
+        "재평가잉여금"
+      ],
+      [
+        "CIS",
+        "dart_OtherComprehensiveIncomeThatWillBeReclassifiedToProfitOrLossNetOfTax",
+        "후속적으로 당기손익으로 재분류될 수 있는 항목"
+      ],
+      [
+        "CIS",
+        "dart_ShareOfOtherComprehensiveIncomeOfAssociatesAndJointVenturesAccountedForUsingEquityMethodThatWillBeReclassifiedToProfitOrLossNetOfTax",
+        "지분법자본변동"
+      ],
+      [
+        "CIS",
+        "-표준계정코드 미사용-",
+        "지분법이익잉여금변동"
+      ],
+      [
+        "CIS",
+        "ifrs-full_GainsLossesOnExchangeDifferencesOnTranslationNetOfTax",
+        "해외사업환산이익"
+      ],
+      [
+        "CIS",
+        "ifrs-full_ComprehensiveIncome",
+        "총포괄손익"
+      ],
+      [
+        "CIS",
+        "ifrs-full_ComprehensiveIncomeAttributableToOwnersOfParent",
+        "지배기업 소유주지분"
+      ],
+      [
+        "CIS",
+        "ifrs-full_ComprehensiveIncomeAttributableToNoncontrollingInterests",
+        "비지배지분"
+      ],
+      [
+        "CIS",
+        "ifrs-full_BasicEarningsLossPerShare",
+        "기본주당이익(손실)"
+      ],
+      [
+        "CIS",
+        "ifrs-full_DilutedEarningsLossPerShare",
+        "희석주당이익(손실)"
       ]
     ],
     "_no_summary": [
@@ -744,12 +911,189 @@
       2026
     ]
   },
+  "lge": {
+    "_no_summary": [
+      2026
+    ]
+  },
   "lgensol": {
     "_no_summary": [
       2026
     ]
   },
   "mobis": {
+    "_no_summary": [
+      2026
+    ]
+  },
+  "naver": {
+    "_no_summary": [
+      2026
+    ]
+  },
+  "posco": {
+    "2022": [
+      [
+        "CIS",
+        "-표준계정코드 미사용-",
+        "매출액"
+      ],
+      [
+        "CIS",
+        "ifrs-full_CostOfSales",
+        "매출원가"
+      ],
+      [
+        "CIS",
+        "ifrs-full_GrossProfit",
+        "매출총이익"
+      ],
+      [
+        "CIS",
+        "dart_TotalSellingGeneralAdministrativeExpenses",
+        "판매비와관리비"
+      ],
+      [
+        "CIS",
+        "-표준계정코드 미사용-",
+        "대손상각비"
+      ],
+      [
+        "CIS",
+        "-표준계정코드 미사용-",
+        "기타일반관리비"
+      ],
+      [
+        "CIS",
+        "-표준계정코드 미사용-",
+        "판매및물류비"
+      ],
+      [
+        "CIS",
+        "dart_OperatingIncomeLoss",
+        "영업이익"
+      ],
+      [
+        "CIS",
+        "-표준계정코드 미사용-",
+        "지분법손익"
+      ],
+      [
+        "CIS",
+        "-표준계정코드 미사용-",
+        "금융손익"
+      ],
+      [
+        "CIS",
+        "-표준계정코드 미사용-",
+        "금융수익"
+      ],
+      [
+        "CIS",
+        "-표준계정코드 미사용-",
+        "금융비용"
+      ],
+      [
+        "CIS",
+        "-표준계정코드 미사용-",
+        "기타영업외손익"
+      ],
+      [
+        "CIS",
+        "-표준계정코드 미사용-",
+        "기타의대손상각비"
+      ],
+      [
+        "CIS",
+        "-표준계정코드 미사용-",
+        "기타영업외수익"
+      ],
+      [
+        "CIS",
+        "-표준계정코드 미사용-",
+        "기타영업외비용"
+      ],
+      [
+        "CIS",
+        "ifrs-full_ProfitLossBeforeTax",
+        "법인세비용차감전순이익"
+      ],
+      [
+        "CIS",
+        "ifrs-full_IncomeTaxExpenseContinuingOperations",
+        "법인세비용"
+      ],
+      [
+        "CIS",
+        "ifrs-full_ProfitLoss",
+        "당기순이익(손실)"
+      ],
+      [
+        "CIS",
+        "ifrs-full_OtherComprehensiveIncome",
+        "기타포괄손익"
+      ],
+      [
+        "CIS",
+        "dart_OtherComprehensiveIncomeNetOfTaxGainsLossesOnRemeasurementsOfDefinedBenefitPlans",
+        "확정급여제도의 재측정요소"
+      ],
+      [
+        "CIS",
+        "-표준계정코드 미사용-",
+        "지분증권평가손익"
+      ],
+      [
+        "CIS",
+        "dart_ShareOfOtherComprehensiveIncomeOfAssociatesAndJointVenturesAccountedForUsingEquityMethodThatWillBeReclassifiedToProfitOrLossNetOfTax",
+        "지분법자본변동"
+      ],
+      [
+        "CIS",
+        "ifrs-full_GainsLossesOnExchangeDifferencesOnTranslationNetOfTax",
+        "해외사업환산손익"
+      ],
+      [
+        "CIS",
+        "-표준계정코드 미사용-",
+        "파생상품평가손익"
+      ],
+      [
+        "CIS",
+        "ifrs-full_ComprehensiveIncome",
+        "총포괄손익"
+      ],
+      [
+        "CIS",
+        "ifrs-full_ProfitLossAttributableToOwnersOfParent",
+        "지배기업의 소유주지분"
+      ],
+      [
+        "CIS",
+        "ifrs-full_ProfitLossAttributableToNoncontrollingInterests",
+        "비지배지분"
+      ],
+      [
+        "CIS",
+        "ifrs-full_ComprehensiveIncomeAttributableToOwnersOfParent",
+        "지배기업의 소유주지분"
+      ],
+      [
+        "CIS",
+        "ifrs-full_ComprehensiveIncomeAttributableToNoncontrollingInterests",
+        "비지배지분"
+      ],
+      [
+        "CIS",
+        "ifrs-full_BasicEarningsLossPerShare",
+        "기본주당순이익(손실)"
+      ],
+      [
+        "CIS",
+        "ifrs-full_DilutedEarningsLossPerShare",
+        "희석주당순이익(손실)"
+      ]
+    ],
     "_no_summary": [
       2026
     ]

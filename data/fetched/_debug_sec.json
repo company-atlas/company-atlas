@@ -672,6 +672,198 @@
       "last_filed": "2018-06-14"
     }
   },
+  "costco": {
+    "AdjustmentsNoncashItemsToReconcileNetIncomeLossToCashProvidedByUsedInOperatingActivitiesOther": {
+      "n": 15,
+      "last_end": "2011-05-08",
+      "last_form": "10-Q",
+      "last_filed": "2011-06-09"
+    },
+    "DeferredRevenueRevenueRecognized1": {
+      "n": 1,
+      "last_end": "2018-11-25",
+      "last_form": "10-Q",
+      "last_filed": "2018-12-20"
+    },
+    "NetIncomeLoss": {
+      "n": 309,
+      "last_end": "2026-08-30",
+      "last_form": "10-K",
+      "last_filed": "2026-10-07"
+    },
+    "NetIncomeLossAttributableToNoncontrollingInterest": {
+      "n": 273,
+      "last_end": "2024-09-01",
+      "last_form": "10-K",
+      "last_filed": "2024-10-09"
+    },
+    "NetIncomeLossAvailableToCommonStockholdersDiluted": {
+      "n": 96,
+      "last_end": "2019-05-12",
+      "last_form": "10-Q",
+      "last_filed": "2019-06-06"
+    },
+    "OperatingIncomeLoss": {
+      "n": 354,
+      "last_end": "2026-08-30",
+      "last_form": "10-K",
+      "last_filed": "2026-10-07"
+    },
+    "OperatingLeasesIncomeStatementSubleaseRevenue": {
+      "n": 6,
+      "last_end": "2011-08-28",
+      "last_form": "10-K",
+      "last_filed": "2011-10-14"
+    },
+    "ProfitLoss": {
+      "n": 286,
+      "last_end": "2025-08-31",
+      "last_form": "10-K",
+      "last_filed": "2025-10-08"
+    },
+    "RevenueFromContractWithCustomerExcludingAssessedTax": {
+      "n": 131,
+      "last_end": "2026-08-30",
+      "last_form": "10-K",
+      "last_filed": "2026-10-07"
+    },
+    "RevenueFromEnrollmentAndRegistrationFeesExcludingHospitalityEnterprises": {
+      "n": 178,
+      "last_end": "2018-05-13",
+      "last_form": "10-Q",
+      "last_filed": "2018-06-07"
+    },
+    "Revenues": {
+      "n": 323,
+      "last_end": "2026-02-15",
+      "last_form": "10-Q",
+      "last_filed": "2026-03-11"
+    },
+    "SalesRevenueNet": {
+      "n": 178,
+      "last_end": "2018-05-13",
+      "last_form": "10-Q",
+      "last_filed": "2018-06-07"
+    }
+  },
+  "coupang": {
+    "ContractWithCustomerLiabilityRevenueRecognized": {
+      "n": 51,
+      "last_end": "2026-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2026-11-03"
+    },
+    "NetIncomeLoss": {
+      "n": 87,
+      "last_end": "2026-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2026-11-03"
+    },
+    "NetIncomeLossAvailableToCommonStockholdersBasic": {
+      "n": 16,
+      "last_end": "2022-12-31",
+      "last_form": "10-K",
+      "last_filed": "2023-03-01"
+    },
+    "OperatingIncomeLoss": {
+      "n": 75,
+      "last_end": "2026-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2026-11-03"
+    },
+    "RevenueFromContractWithCustomerExcludingAssessedTax": {
+      "n": 75,
+      "last_end": "2026-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2026-11-03"
+    },
+    "NetIncomeLossAttributableToNoncontrollingInterest": {
+      "n": 36,
+      "last_end": "2026-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2026-11-03"
+    },
+    "ProfitLoss": {
+      "n": 43,
+      "last_end": "2026-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2026-11-03"
+    },
+    "NetIncomeLossIncludingPortionAttributableToNonredeemableNoncontrollingInterest": {
+      "n": 27,
+      "last_end": "2026-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2026-11-03"
+    }
+  },
+  "disney": {
+    "BusinessAcquisitionsProFormaNetIncomeLoss": {
+      "n": 2,
+      "last_end": "2019-06-29",
+      "last_form": "10-Q",
+      "last_filed": "2020-08-04"
+    },
+    "BusinessAcquisitionsProFormaRevenue": {
+      "n": 2,
+      "last_end": "2019-06-29",
+      "last_form": "10-Q",
+      "last_filed": "2020-08-04"
+    },
+    "ContractWithCustomerLiabilityRevenueRecognized": {
+      "n": 98,
+      "last_end": "2026-10-03",
+      "last_form": "10-K",
+      "last_filed": "2026-11-17"
+    },
+    "EquityMethodInvestmentSummarizedFinancialInformationNetIncomeLoss": {
+      "n": 6,
+      "last_end": "2019-09-28",
+      "last_form": "10-K",
+      "last_filed": "2019-11-20"
+    },
+    "EquityMethodInvestmentSummarizedFinancialInformationRevenue": {
+      "n": 6,
+      "last_end": "2019-09-28",
+      "last_form": "10-K",
+      "last_filed": "2019-11-20"
+    },
+    "NetIncomeLoss": {
+      "n": 144,
+      "last_end": "2026-10-03",
+      "last_form": "10-K",
+      "last_filed": "2026-11-17"
+    },
+    "NetIncomeLossAttributableToNoncontrollingInterest": {
+      "n": 110,
+      "last_end": "2026-10-03",
+      "last_form": "10-K",
+      "last_filed": "2026-11-17"
+    },
+    "OperatingIncomeLoss": {
+      "n": 141,
+      "last_end": "2026-10-03",
+      "last_form": "10-K",
+      "last_filed": "2026-11-17"
+    },
+    "ProfitLoss": {
+      "n": 117,
+      "last_end": "2026-10-03",
+      "last_form": "10-K",
+      "last_filed": "2026-11-17"
+    },
+    "RevenueFromRelatedParties": {
+      "n": 12,
+      "last_end": "2020-10-03",
+      "last_form": "10-K",
+      "last_filed": "2021-04-01"
+    },
+    "Revenues": {
+      "n": 141,
+      "last_end": "2026-10-03",
+      "last_form": "10-K",
+      "last_filed": "2026-11-17"
+    }
+  },
   "exxon": {
     "NetIncomeLoss": {
       "n": 8,
@@ -1522,6 +1714,62 @@
       "last_filed": "2011-01-27"
     }
   },
+  "netflix": {
+    "CostOfRevenue": {
+      "n": 249,
+      "last_end": "2026-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2026-10-21"
+    },
+    "IncreaseDecreaseInDeferredRevenue": {
+      "n": 132,
+      "last_end": "2018-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2018-10-18"
+    },
+    "NetIncomeLoss": {
+      "n": 330,
+      "last_end": "2026-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2026-10-21"
+    },
+    "NetIncomeLossAttributableToParentDiluted": {
+      "n": 43,
+      "last_end": "2015-12-31",
+      "last_form": "10-K",
+      "last_filed": "2016-01-28"
+    },
+    "OperatingIncomeLoss": {
+      "n": 250,
+      "last_end": "2026-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2026-10-21"
+    },
+    "Revenues": {
+      "n": 329,
+      "last_end": "2026-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2026-10-21"
+    },
+    "NetIncomeLossAvailableToCommonStockholdersBasic": {
+      "n": 8,
+      "last_end": "2022-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2022-10-20"
+    },
+    "NetIncomeLossAvailableToCommonStockholdersDiluted": {
+      "n": 8,
+      "last_end": "2022-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2022-10-20"
+    },
+    "OtherCostOfOperatingRevenue": {
+      "n": 3,
+      "last_end": "2024-12-31",
+      "last_form": "10-K",
+      "last_filed": "2025-01-27"
+    }
+  },
   "nvidia": {
     "AdjustmentsNoncashItemsToReconcileNetIncomeLossToCashProvidedByUsedInOperatingActivitiesOther": {
       "n": 20,
@@ -1636,6 +1884,74 @@
       "last_end": "2026-07-26",
       "last_form": "10-Q",
       "last_filed": "2026-08-26"
+    }
+  },
+  "palantir": {
+    "ContractWithCustomerLiabilityRevenueRecognized": {
+      "n": 49,
+      "last_end": "2026-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2026-11-03"
+    },
+    "CostOfRevenue": {
+      "n": 82,
+      "last_end": "2026-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2026-11-03"
+    },
+    "IncreaseDecreaseInDeferredRevenue": {
+      "n": 41,
+      "last_end": "2024-12-31",
+      "last_form": "10-K",
+      "last_filed": "2025-02-18"
+    },
+    "NetIncomeLoss": {
+      "n": 87,
+      "last_end": "2026-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2026-11-03"
+    },
+    "NetIncomeLossAvailableToCommonStockholdersBasic": {
+      "n": 23,
+      "last_end": "2022-12-31",
+      "last_form": "10-K",
+      "last_filed": "2023-02-21"
+    },
+    "NetIncomeLossAvailableToCommonStockholdersDiluted": {
+      "n": 82,
+      "last_end": "2026-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2026-11-03"
+    },
+    "OperatingIncomeLoss": {
+      "n": 82,
+      "last_end": "2026-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2026-11-03"
+    },
+    "RevenueFromContractWithCustomerExcludingAssessedTax": {
+      "n": 78,
+      "last_end": "2026-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2026-11-03"
+    },
+    "RevenueFromContractWithCustomerIncludingAssessedTax": {
+      "n": 4,
+      "last_end": "2020-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2020-11-13"
+    },
+    "NetIncomeLossAttributableToNoncontrollingInterest": {
+      "n": 52,
+      "last_end": "2026-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2026-11-03"
+    },
+    "ProfitLoss": {
+      "n": 52,
+      "last_end": "2026-09-30",
+      "last_form": "10-Q",
+      "last_filed": "2026-11-03"
     }
   },
   "spacex": {

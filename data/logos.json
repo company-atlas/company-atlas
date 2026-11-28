@@ -611,5 +611,161 @@
     "ratio": 2.9,
     "override": true,
     "bg": null
+  },
+  "costco": {
+    "path": "data/logos/costco.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Costco_Wholesale_logo_2010-10-26.svg",
+    "px": 1024,
+    "saved": "2026-11-28",
+    "logo_url": [
+      "commons:Costco Wholesale logo",
+      "wiki:en:Costco",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 3.4,
+    "override": true,
+    "bg": null
+  },
+  "coupang": {
+    "path": "data/logos/coupang.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Coupang_logo.svg",
+    "px": 1024,
+    "saved": "2026-11-28",
+    "logo_url": [
+      "commons:Coupang logo",
+      "wiki:en:Coupang",
+      "wiki:ko:쿠팡",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 4.41,
+    "override": true,
+    "bg": null
+  },
+  "disney": {
+    "path": "data/logos/disney.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Walt_Disney_Company_Logo.svg",
+    "px": 1024,
+    "saved": "2026-11-28",
+    "logo_url": [
+      "commons:The Walt Disney Company logo",
+      "wiki:en:The Walt Disney Company",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 6.61,
+    "override": true,
+    "bg": null
+  },
+  "hybe": {
+    "path": "data/logos/hybe.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Hybe_logo.svg",
+    "px": 1024,
+    "saved": "2026-11-28",
+    "logo_url": [
+      "commons:HYBE logo",
+      "wiki:en:Hybe Corporation",
+      "wiki:ko:하이브 (기업)",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 4.0,
+    "override": true,
+    "bg": null
+  },
+  "kakao": {
+    "path": "data/logos/kakao.png",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Fashion_by_kakao_Logo.png",
+    "px": 300,
+    "saved": "2026-11-28",
+    "logo_url": [
+      "commons:Kakao logo",
+      "wiki:en:Kakao",
+      "wiki:ko:카카오 (기업)",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 1.0,
+    "override": true,
+    "bg": null
+  },
+  "lge": {
+    "path": "data/logos/lge.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/LG_logo_%282014%29.svg",
+    "px": 1024,
+    "saved": "2026-11-28",
+    "logo_url": [
+      "commons:LG logo (2014)",
+      "wiki:en:LG Electronics",
+      "wiki:ko:LG전자",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 2.18,
+    "override": true,
+    "bg": null
+  },
+  "naver": {
+    "path": "data/logos/naver.png",
+    "from": "https://www.navercorp.com/img/tmp/search-banner-02.png",
+    "px": 504,
+    "saved": "2026-11-28",
+    "logo_url": [
+      "commons:Naver Logotype",
+      "wiki:en:Naver Corporation",
+      "wiki:ko:네이버 (기업)",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 1.78,
+    "override": true,
+    "bg": null
+  },
+  "netflix": {
+    "path": "data/logos/netflix.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Netflix_2015_logo.svg",
+    "px": 1024,
+    "saved": "2026-11-28",
+    "logo_url": [
+      "commons:Netflix 2015 logo",
+      "wiki:en:Netflix",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 3.7,
+    "override": true,
+    "bg": null
+  },
+  "palantir": {
+    "path": "data/logos/palantir.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/Palantir_Technologies_logo.svg",
+    "px": 1024,
+    "saved": "2026-11-28",
+    "logo_url": [
+      "commons:Palantir Technologies logo",
+      "wiki:en:Palantir Technologies",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 4.15,
+    "override": true,
+    "bg": null
+  },
+  "posco": {
+    "path": "data/logos/posco.svg",
+    "from": "https://commons.wikimedia.org/wiki/Special:FilePath/POSCO_logo.svg",
+    "px": 1024,
+    "saved": "2026-11-28",
+    "logo_url": [
+      "commons:POSCO logo",
+      "wiki:en:POSCO Holdings",
+      "wiki:ko:포스코홀딩스",
+      "page:"
+    ],
+    "logo_site": null,
+    "ratio": 3.69,
+    "override": true,
+    "bg": null
   }
 }

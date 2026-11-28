@@ -520,5 +520,50 @@
     "artist": "ITEagle Europe - Sebastiaan Broekhoven",
     "license": "CC BY-SA 4.0",
     "saved": "2026-11-24"
+  },
+  "costco-3": {
+    "path": "data/photos/costco-3.jpg",
+    "query": "[{\"need\": [\"costco\"], \"q\": \"Costco warehouse interior\"}]",
+    "title": "Costco Neihu Warehouse 1st Floor Food Area 20160320b.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Costco_Neihu_Warehouse_1st_Floor_Food_Area_20160320b.jpg",
+    "artist": "玄史生",
+    "license": "CC0",
+    "saved": "2026-11-28"
+  },
+  "coupang-1": {
+    "path": "data/photos/coupang-1.jpg",
+    "query": "[{\"need\": [\"coupang\"], \"q\": \"Coupang delivery truck\"}]",
+    "title": "Coupang 1.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Coupang_1.jpg",
+    "artist": "Bonnielou2013",
+    "license": "CC BY-SA 4.0",
+    "saved": "2026-11-28"
+  },
+  "disney-3": {
+    "path": "data/photos/disney-3.jpg",
+    "query": "[{\"need\": [\"castle\"], \"q\": \"Sleeping Beauty Castle Disneyland\"}]",
+    "title": "Sleeping Beauty Castle Disneyland Anaheim 2013.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Sleeping_Beauty_Castle_Disneyland_Anaheim_2013.jpg",
+    "artist": "Tuxyso",
+    "license": "CC BY-SA 3.0",
+    "saved": "2026-11-28"
+  },
+  "lge-2": {
+    "path": "data/photos/lge-2.jpg",
+    "query": "[{\"need\": [\"lg\", \"oled\"], \"q\": \"LG OLED TV\"}]",
+    "title": "IFA 2012 LG전자 OLED TV (2).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:IFA_2012_LG%EC%A0%84%EC%9E%90_OLED_TV_(2).jpg",
+    "artist": "LG전자",
+    "license": "CC BY 2.0",
+    "saved": "2026-11-28"
+  },
+  "posco-1": {
+    "path": "data/photos/posco-1.jpg",
+    "query": "[{\"need\": [\"posco\"], \"q\": \"POSCO Pohang steel works\"}]",
+    "title": "POSCO (POhang Steel Corp.) Entrance - panoramio.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:POSCO_(POhang_Steel_Corp.)_Entrance_-_panoramio.jpg",
+    "artist": "Cho's",
+    "license": "CC BY-SA 3.0",
+    "saved": "2026-11-28"
   }
 }
